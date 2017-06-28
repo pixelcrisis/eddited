@@ -10,7 +10,11 @@ const cfg = {
   map: false,
   plugins: [
     require('postcss-import'),
-    require('postcss-cssnext'),
+    require('postcss-cssnext')({
+      features: {
+        fontVariant: false
+      }
+    }),
     require('cssnano')
   ]
 };
