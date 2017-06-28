@@ -2,7 +2,7 @@
 
 const fin = './dist/';
 const src = './src/**/*.css';
-const css = './src/BLANQ.css';
+const css = './src/theme.css';
 const min = { suffix: '.min' };
 const cfg = {
   to: fin,

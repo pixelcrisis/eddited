@@ -1,9 +1,9 @@
 {
-  "name": "BLANQ",
+  "name": "eddited",
   "version": "0.0.0",
   "description": "A Subreddit Theme",
   "main": "dist/theme.css",
-  "repository": "git://github.com/12px/BLANQ.git",
+  "repository": "git://github.com/12px/eddited.git",
   "author": "12px, dalton@12px.io",
   "license": "MIT",
   "devDependencies": {
