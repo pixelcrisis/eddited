@@ -1,0 +1,50 @@
+/* :root {} variables */
+
+  :root {
+
+    /* colors */
+    --color-bg: #fff;
+    --color-font: #222;
+    --color-mute: #aaa;
+    --color-border: #eaeaea;
+    --color-shadow: #f7f7f7;
+
+    --color-accent: #0071c5;
+
+    /* sizes */
+    --width-sidebar: 300px;
+
+    /* text */
+    --submit-link: 'Show';
+    --submit-text: 'Tell';
+    --subscribers: 'Users';
+    --here-now: 'Browsing';
+
+
+    /* padding */
+    --pad: 12px;
+    --half-pad: 6px;
+    --third-pad: 4px;
+    --double-pad: 24px;
+    --quarter-pad: 3px;
+
+    /* styles */
+    --ease-in: { transition: all 0.25s ease; };
+
+    /* button */
+    --button: {
+      font-weight: 400;
+      font-size: 0.75em;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      border: 1px solid var(--color-accent);
+    }
+    --button-main: {
+      color: var(--color-bg);
+      background: var(--color-accent);
+    }
+    --button-outline: {
+      background: transparent;
+      color: var(--color-accent);
+    }
+  }

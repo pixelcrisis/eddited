@@ -1,0 +1,25 @@
+{
+  "name": "BLANQ",
+  "version": "0.0.0",
+  "description": "A Subreddit Theme",
+  "main": "dist/theme.css",
+  "repository": "git://github.com/12px/BLANQ.git",
+  "author": "12px, dalton@12px.io",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-core": "^6.25.0",
+    "cssnano": "^3.10.0",
+    "fly": "^2.0.6",
+    "fly-babel": "^2.1.1",
+    "fly-esnext": "^2.0.1",
+    "fly-postcss": "hzlmn/fly-postcss#v2",
+    "fly-rename": "^0.1.1",
+    "fly-watch": "^1.1.1",
+    "postcss": "^6.0.2",
+    "postcss-cssnext": "^2.11.0",
+    "postcss-import": "^10.0.0"
+  },
+  "browserslist": [
+    "last 2 versions"
+  ]
+}

@@ -1,0 +1,21 @@
+/* topbar */
+
+/* collapse topbar by default */
+#header:not(:hover) #sr-header-area { margin-top: -19px; }
+#sr-header-area:not(:hover) { margin-top: -13px; }
+
+#sr-more-link,
+#sr-header-area {
+  @apply --ease-in;
+  font-size: 0;
+  color: var(--color-bg);
+  background: var(--color-accent);
+}
+#sr-header-area a {
+  font-size: 0.5rem;
+  color: var(--color-bg);
+  margin-right: var(--half-pad);
+}
+#sr-more-link { margin-right: 0!important; }
+
+#sr-header-area .dropdown.srdrop { font-size: 0; }

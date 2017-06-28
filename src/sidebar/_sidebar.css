@@ -1,0 +1,40 @@
+/* sidebar */
+
+.side {
+  order: 2;
+  margin: 65px var(--pad) 0 0;
+  width: calc(var(--width-sidebar) - var(--pad));
+}
+
+.side hr {
+  height: 1px;
+  margin: var(--pad) 0;
+  background-color: var(--color-border);
+}
+
+.side .create { display: none; }
+
+.sidecontentbox .title { margin-bottom: var(--pad); }
+#moderation_tools { margin-bottom: var(--double-pad); }
+#moderation_tools .title h1 { font-size: 0; }
+#moderation_tools .title h1::before {
+  font-size: 0.75rem;
+  content: 'Mod Tools';
+  text-transform: capitalize;
+}
+
+.sidecontentbox .collapse-button {
+  font-size: 0;
+  line-height: 7px;
+  background: transparent;
+  border-color: transparent;
+}
+.sidecontentbox .collapse-button::before {
+  content: '[-]';
+  font-size: 0.65rem;
+}
+
+.sidecontentbox .content {
+  padding: 0;
+  border: none;
+}

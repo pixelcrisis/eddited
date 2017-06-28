@@ -1,0 +1,39 @@
+/* input elements */
+
+a { color: var(--color-accent); }
+
+
+textarea,
+input[type='text'] {
+  box-sizing: border-box;
+  color: var(--color-font)!important;
+  background: var(--color-bg)!important;
+  padding: var(--half-pad) var(--pad)!important;
+  border: 2px solid var(--color-border)!important;
+}
+
+textarea:focus,
+input[type='text']:focus {
+  outline: none;
+  border-color: var(--color-accent)!important;
+}
+
+/* buttons */
+
+.morelink a,
+[href="#btn"] + a,
+[href="#obtn"] + a,
+.fancy-toggle-button .option.active,
+.fancy-toggle-button .option { @apply --button; }
+
+[href="#btn"] + a,
+[href="#obtn"] + a {
+  font-size: 0.65rem;
+  display: inline-block;
+  padding: var(--half-pad) var(--pad);
+}
+
+[href="#btn"] + a { @apply --button-main; }
+
+.morelink a,
+[href="#obtn"] { @apply --button-outline; }

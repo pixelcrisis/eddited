@@ -1,0 +1,73 @@
+/* titlebox */
+
+.titlebox .bottom {
+  padding-bottom: var(--pad);
+  border-top-color: var(--color-border);
+}
+
+#search input[type='text'] { width: 100%; }
+
+.submit-link,
+.submit-text {
+  width: 47.5%;
+  box-sizing: border-box;
+}
+
+.submit-link { float: left; }
+.submit-text {
+  float: right;
+  margin-right: 4px;
+}
+
+.side .nub,
+.side .nub { display: none; }
+
+.submit-link .morelink,
+.submit-text .morelink {
+  border: none;
+  font-size: 0;
+  background: transparent;
+  margin-bottom: var(--half-pad);
+}
+
+
+.morelink:not(:hover) { opacity: 0.8; }
+
+.submit-text .morelink a::before,
+.submit-link .morelink a::before {
+  display: inline;
+  font-size: 0.75rem;
+}
+
+.submit-text .morelink a::before { content: var(--submit-text); }
+.submit-link .morelink a::before { content: var(--submit-link); }
+
+.morelink:hover a { color: var(--color-accent); }
+
+.titlebox .redditname { display: none; }
+
+.fancy-toggle-button {
+  width: 100%;
+  padding: .5rem 0;
+  text-align: center;
+}
+
+.fancy-toggle-button .option.active {
+  width: 100%;
+  font-size: 0.65rem;
+  border-radius: 0;
+  display: inline-block;
+  box-sizing: border-box;
+}
+
+.fancy-toggle-button .remove {
+  color: var(--color-font);
+  background: var(--color-border);
+  border-color: var(--color-border)!important;
+}
+
+.fancy-toggle-button .add {
+  color: var(--color-bg);
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+}

@@ -1,0 +1,11 @@
+/* sidebar user text */
+
+.side .usertext-body {
+  padding: var(--pad) 0;
+  margin-top: var(--pad);
+  border-top: 1px solid var(--color-border);
+}
+
+/* centered text hack */
+hr + hr { display: none; }
+hr + hr + p { text-align: center; }

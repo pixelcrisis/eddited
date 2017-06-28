@@ -1,0 +1,20 @@
+/* BLANQ
+   A back-to-basics subreddit theme */
+
+@import '_root.css';
+@import '_structure.css';
+@import '_inputs.css';
+
+@import './header/_header.css';
+@import './header/_topbar.css';
+@import './header/_userbar.css';
+@import './header/_tabmenu.css';
+
+@import '_content.css';
+
+@import './sidebar/_sidebar.css';
+@import './sidebar/_titlebox.css';
+@import './sidebar/_usertext.css';
+@import './sidebar/_details.css';
+
+@import '_footer.css';
