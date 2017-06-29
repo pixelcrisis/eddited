@@ -10,11 +10,12 @@
 @import './header/_userbar.css';
 @import './header/_tabmenu.css';
 
-@import '_content.css';
+@import './content/_content.css';
+@import './content/_entry.css';
 
 @import './sidebar/_sidebar.css';
 @import './sidebar/_titlebox.css';
 @import './sidebar/_usertext.css';
 @import './sidebar/_details.css';
 
-@import '_footer.css';
+@import './content/_footer.css';

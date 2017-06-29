@@ -1,0 +1,12 @@
+/* footer */
+
+.footer-parent {
+  order: 3;
+  width: 100%;
+}
+.footer-parent .bottommenu:first-of-type {   margin-top: var(--double-pad); }
+.footer-parent .bottommenu:last-of-type {   margin-bottom: var(--double-pad); }
+
+.debuginfo, #hsts_pixel {
+  order: 4;
+}

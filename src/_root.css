@@ -11,6 +11,9 @@
 
     --color-accent: #0071c5;
 
+    --color-upvote: #e89d25;
+    --color-downvote: #0071c5;
+
     /* sizes */
     --width-sidebar: 300px;
 

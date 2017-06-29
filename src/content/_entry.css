@@ -1,0 +1,86 @@
+/* an actual post */
+
+.thing {
+  padding: var(--half-pad) 0;
+  margin-bottom: var(--half-pad);
+  border-bottom: 1px solid var(--color-shadow);
+}
+
+.entry .buttons li a:not(.comments) { font-weight: 400; }
+
+/* thumbnail */
+.thing .thumbnail {
+  width: 45px;
+  border-radius: 45px;
+  height: 45px!important;
+  margin: 0 var(--pad) 0 0;
+  background: var(--color-border);
+}
+.thing .thumbnail img {
+  width: auto!important;
+  height: 45px!important;
+}
+
+.thumbnail::before {
+  width: 44px;
+  height: 45px;
+  display: block;
+  line-height: 45px;
+  position: absolute;
+  font-size: 0.65rem;
+  text-align: center;
+  color: var(--color-font);
+}
+
+.thing.self .thumbnail::before { content: 'self'; }
+.thing.lockeed .thumbnail::before { content: 'locked'; }
+
+.thing .expando-button {
+  width: 16px;
+  height: 16px;
+  border: 2px solid;
+  position: absolute;
+  border-radius: 100%;
+  margin: 4px 0 0 -24px;
+  background: transparent;
+  color: var(--color-mute);
+  background-image: none!important;
+}
+
+.thing .expando-button::before {
+  width: 16px;
+  height: 16px;
+  content: '+';
+  display: block;
+  font-weight: 700;
+  line-height: 15px;
+  position: absolute;
+  font-size: 0.75rem;
+  text-align: center;
+}
+
+.thing .expando-button:hover,
+.thing .expando-button.expanded {
+  color: var(--color-accent);
+  background: var(--color-bg);
+}
+.thing .expando-button.expanded::before { content: '-'; }
+
+.arrow {
+  margin: 0 auto;
+  line-height: 1.2;
+  text-align: center;
+  color: var(--color-mute);
+  background-image: none!important;
+}
+
+.arrow.up::before,
+.arrow.upmod::before { content: '▲'; }
+
+.arrow.down::before,
+.arrow.downmod::before { content: '▼'; }
+
+.arrow.upmod,
+.link .score.likes { color: var(--color-upvote); }
+.arrow.downmod,
+.link .score.dislikes { color: var(--color-downvote); }

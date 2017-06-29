@@ -1,9 +1,0 @@
-/* footer */
-
-.footer-parent {
-  order: 3;
-}
-
-.debuginfo, #hsts_pixel {
-  order: 4;
-}

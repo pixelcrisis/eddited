@@ -2,7 +2,7 @@
 
 .side {
   order: 2;
-  margin: 65px var(--pad) 0 0;
+  margin: 55px var(--pad) 0 0;
   width: calc(var(--width-sidebar) - var(--pad));
 }
 
@@ -11,6 +11,8 @@
   margin: var(--pad) 0;
   background-color: var(--color-border);
 }
+
+.linkinfo { border-radius: 0; }
 
 .side .create { display: none; }
 

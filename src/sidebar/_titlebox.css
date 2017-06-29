@@ -44,7 +44,8 @@
 
 .morelink:hover a { color: var(--color-accent); }
 
-.titlebox .redditname { display: none; }
+.titlebox .redditname { margin-bottom: -4px; }
+.titlebox .redditname a { color: var(--color-accent); }
 
 .fancy-toggle-button {
   width: 100%;
