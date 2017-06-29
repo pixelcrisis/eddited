@@ -6,11 +6,10 @@ a back-to-basics subreddit theme.
 
 * `yarn install`
 
+#### config
+
+* Change any of the variables in `src/_root.css`
+
 #### build
 
 * `npm run build`
-
-
-#### config
-
-* Change any of the variables in `src/_root.css` to see changes!
