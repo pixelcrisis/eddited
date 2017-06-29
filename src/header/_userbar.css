@@ -2,4 +2,8 @@
 /* eventually, I'll use custom sprites and make this pretty. */
 /* until then, this css file just marks my shame at not having done so */
 
-#header-bottom-right { bottom: 2px; }
+#header-bottom-right {
+  bottom: 3px!important;
+  top: initial!important;
+  background: transparent;
+}

@@ -16,8 +16,9 @@
 
 .side .create { display: none; }
 
+.sidecontentbox { margin-bottom: var(--double-pad); }
+
 .sidecontentbox .title { margin-bottom: var(--pad); }
-#moderation_tools { margin-bottom: var(--double-pad); }
 #moderation_tools .title h1 { font-size: 0; }
 #moderation_tools .title h1::before {
   font-size: 0.75rem;

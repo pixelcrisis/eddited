@@ -1,0 +1,25 @@
+/* RES compatibility */
+
+/* header */
+.res-navTop #header-bottom-right { margin-bottom: -3px; }
+
+#RESShortcutsEditContainer,
+#RESShortcutsSort, #RESShortcutsRight, #RESShortcutsLeft, #RESShortcutsAdd {
+  background: transparent;
+  color: var(--color-bg);
+}
+
+/* sidebar */
+.titlebox .toggle.res-sr-style-toggle { margin-bottom: -5px; }
+
+.res-fancy-toggle-button {
+  border-radius: 0;
+  padding: 6px 24px;
+  margin: 0 0 15px 0;
+  background: transparent;
+  color: var(--color-font);
+  border-color: var(--color-border);
+}
+.res-fancy-toggle-button:hover { background: var(--color-border); }
+
+.RESDashboardToggle { float: right; }

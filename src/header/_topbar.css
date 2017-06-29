@@ -4,10 +4,10 @@
 #header:not(:hover) #sr-header-area { margin-top: -19px; }
 #sr-header-area:not(:hover) { margin-top: -13px; }
 
+#sr-header-area { position: relative; }
 #sr-more-link,
 #sr-header-area {
   @apply --ease-in;
-  font-size: 0;
   color: var(--color-bg);
   background: var(--color-accent);
 }
@@ -16,6 +16,7 @@
   color: var(--color-bg);
   margin-right: var(--half-pad);
 }
+#sr-header-area .separator { display: none; }
 #sr-more-link { margin-right: 0!important; }
 
 #sr-header-area .dropdown.srdrop { font-size: 0; }
