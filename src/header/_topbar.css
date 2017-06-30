@@ -1,10 +1,14 @@
 /* topbar */
 
 /* collapse topbar by default */
-#header:not(:hover) #sr-header-area { margin-top: -19px; }
-#sr-header-area:not(:hover) { margin-top: -13px; }
+#header:not(:hover) #sr-header-area { margin-top: -24px; }
+#sr-header-area:not(:hover) { margin-top: -16px; }
 
-#sr-header-area { position: relative; }
+#sr-header-area {
+  position: relative;
+  padding: var(--quarter-pad);
+}
+
 #sr-more-link,
 #sr-header-area {
   @apply --ease-in;

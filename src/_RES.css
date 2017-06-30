@@ -3,6 +3,8 @@
 /* header */
 .res-navTop #header-bottom-right { margin-bottom: -3px; }
 
+#RESShortcutsEditContainer { margin-top: 3px; }
+
 #RESShortcutsEditContainer,
 #RESShortcutsSort, #RESShortcutsRight, #RESShortcutsLeft, #RESShortcutsAdd {
   background: transparent;
@@ -23,7 +25,7 @@
 .res-fancy-toggle-button:hover,
 .res-fancy-toggle-button.remove {
   background-image: none;
-  background: var(--color-border); 
+  background: var(--color-border);
 }
 
 .RESDashboardToggle { float: right; }
