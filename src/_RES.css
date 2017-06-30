@@ -20,6 +20,10 @@
   color: var(--color-font);
   border-color: var(--color-border);
 }
-.res-fancy-toggle-button:hover { background: var(--color-border); }
+.res-fancy-toggle-button:hover,
+.res-fancy-toggle-button.remove {
+  background-image: none;
+  background: var(--color-border); 
+}
 
 .RESDashboardToggle { float: right; }
