@@ -3,13 +3,21 @@
 /* header */
 .res-navTop #header-bottom-right { margin-bottom: -3px; }
 
-#RESShortcutsEditContainer { margin-top: 3px; }
-
 #RESShortcutsEditContainer,
-#RESShortcutsSort, #RESShortcutsRight, #RESShortcutsLeft, #RESShortcutsAdd {
+#RESShortcutsSort,
+#RESShortcutsRight,
+#RESShortcutsLeft,
+#RESShortcutsAdd {
   background: transparent;
   color: var(--color-bg);
 }
+
+/* todo: jesus, clean this up self */
+#header:hover #RESShortcutsEditContainer,
+#header:hover #RESShortcutsSort,
+#header:hover #RESShortcutsRight,
+#header:hover #RESShortcutsLeft,
+#header:hover #RESShortcutsAdd { color: var(--color-mute); }
 
 /* sidebar */
 .titlebox .toggle.res-sr-style-toggle { margin-bottom: -5px; }
