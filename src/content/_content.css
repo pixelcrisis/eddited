@@ -3,8 +3,8 @@
 .content {
   order: 1;
   margin: 55px 0 0 var(--pad);
-  border-right-color: var(--color-bg);
-  flex: 0 1 calc(100% - (var(--width-sidebar) + var(--pad) + 2px));
+  border-right-color: var(--c-bg);
+  flex: 0 1 calc(100% - (var(--w-sidebar) + var(--pad) + 2px));
 }
 
 #subreddit_stylesheet > div,

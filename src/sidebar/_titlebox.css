@@ -2,7 +2,7 @@
 
 .titlebox .bottom {
   padding-bottom: var(--pad);
-  border-top-color: var(--color-border);
+  border-top-color: var(--c-border);
 }
 
 #search input[type='text'] { width: 100%; }
@@ -42,13 +42,13 @@
 .submit-text .morelink a::before { content: var(--submit-text); }
 .submit-link .morelink a::before { content: var(--submit-link); }
 
-.morelink:hover a { color: var(--color-accent); }
+.morelink:hover a { color: var(--c-main); }
 
 .titlebox .redditname { margin-bottom: -4px; }
 .titlebox .redditname a {
   margin-top: 8px;
   display: inline-block;
-  color: var(--color-accent);
+  color: var(--c-main);
 }
 
 .fancy-toggle-button {
@@ -66,13 +66,13 @@
 }
 
 .fancy-toggle-button .remove {
-  color: var(--color-font);
-  background: var(--color-border);
-  border-color: var(--color-border)!important;
+  color: var(--c-text);
+  background: var(--c-border);
+  border-color: var(--c-border)!important;
 }
 
 .fancy-toggle-button .add {
-  color: var(--color-bg);
-  background: var(--color-accent);
-  border-color: var(--color-accent);
+  color: var(--c-bg);
+  background: var(--c-main);
+  border-color: var(--c-main);
 }

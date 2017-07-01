@@ -4,8 +4,8 @@
   order: 0;
   position: fixed;
   top: 0; left: 0; right: 0;
-  background-color: var(--color-bg);
-  border-bottom-color: var(--color-border);
+  background-color: var(--c-bg);
+  border-bottom-color: var(--c-border);
 }
 
 #sr-more-link,
@@ -14,8 +14,8 @@
 #header-bottom-right { border: none; }
 #header-bottom-left,
 #header-bottom-right {
-  color: var(--color-font);
-  background: var(--color-bg);
+  color: var(--c-text);
+  background: var(--c-bg);
 }
 
 #header-bottom-left,
@@ -46,4 +46,4 @@
   letter-spacing: 0;
   font-variant: normal;
 }
-.pagename a { color: var(--color-accent); }
+.pagename a { color: var(--c-main); }

@@ -3,19 +3,22 @@
   :root {
 
     /* colors */
-    --color-bg: #fff;
-    --color-font: #222;
-    --color-mute: #aaa;
-    --color-border: #eaeaea;
-    --color-shadow: #f7f7f7;
+    --c-bg: #fff;
+    --c-text: #191a23;
 
-    --color-accent: #0071c5;
+    --c-main: #0071c5;
 
-    --color-upvote: #e89d25;
-    --color-downvote: #0071c5;
+    --c-upvote: #f44336;
+    --c-downvote: #0071c5;
+
+    --c-stickied: #399b76;
+
+    --c-shadow: #f7f7f7;
+    --c-border: #eaeaea;
+    --c-muted: #aaa;
 
     /* sizes */
-    --width-sidebar: 300px;
+    --w-sidebar: 300px;
 
     /* text */
     --submit-link: 'Show';
@@ -23,13 +26,12 @@
     --subscribers: 'Users';
     --here-now: 'Browsing';
 
-
     /* padding */
     --pad: 12px;
-    --half-pad: 6px;
-    --third-pad: 4px;
-    --double-pad: 24px;
-    --quarter-pad: 3px;
+    --half-pad: calc(var(--pad) / 2);
+    --third-pad: calc(var(--pad) / 3);
+    --double-pad: calc(var(--pad) * 2);
+    --quarter-pad: calc(var(--pad) / 4);
 
     /* styles */
     --ease-in: { transition: all 0.15s ease; };
@@ -40,14 +42,14 @@
       font-size: 0.75em;
       letter-spacing: 0.1em;
       text-transform: uppercase;
-      border: 1px solid var(--color-accent);
+      border: 1px solid var(--c-main);
     }
     --button-main: {
-      color: var(--color-bg);
-      background: var(--color-accent);
+      color: var(--c-bg);
+      background: var(--c-main);
     }
     --button-outline: {
       background: transparent;
-      color: var(--color-accent);
+      color: var(--c-main);
     }
   }

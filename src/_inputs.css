@@ -1,21 +1,21 @@
 /* input elements */
 
-a { color: var(--color-accent); }
+a { color: var(--c-main); }
 
 
 textarea,
 input[type='text'] {
   box-sizing: border-box;
-  color: var(--color-font)!important;
-  background: var(--color-bg)!important;
+  color: var(--c-text)!important;
+  background: var(--c-bg)!important;
   padding: var(--half-pad) var(--pad)!important;
-  border: 1px solid var(--color-border)!important;
+  border: 1px solid var(--c-border)!important;
 }
 
 textarea:focus,
 input[type='text']:focus {
   outline: none;
-  border-color: var(--color-accent)!important;
+  border-color: var(--c-main)!important;
 }
 
 /* buttons */

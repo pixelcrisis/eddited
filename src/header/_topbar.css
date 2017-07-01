@@ -19,12 +19,12 @@
 #sr-more-link,
 #sr-header-area {
   @apply --ease-in;
-  color: var(--color-bg);
-  background: var(--color-bg);
+  color: var(--c-bg);
+  background: var(--c-bg);
 }
 #sr-header-area a {
   font-size: 0.5rem;
-  color: var(--color-bg);
+  color: var(--c-bg);
   margin-right: var(--half-pad);
 }
 #sr-header-area .separator { display: none; }
@@ -33,6 +33,6 @@
 #sr-header-area .dropdown.srdrop { font-size: 0; }
 
 #header:hover #sr-header-area,
-#header:hover #sr-header-area a { color: var(--color-mute); }
+#header:hover #sr-header-area a { color: var(--c-muted); }
 
-#sr-header-area a:hover { color: var(--color-accent)!important; }
+#sr-header-area a:hover { color: var(--c-main)!important; }

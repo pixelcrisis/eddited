@@ -4,19 +4,20 @@ html, body { margin: 0; }
 body {
   display: flex;
   flex-flow: row wrap;
-  background: var(--color-shadow);
+  color: var(--c-text);
+  background: var(--c-shadow);
 }
 
 .side,
 .content {
   padding: var(--pad);
   box-sizing: border-box;
-  background: var(--color-bg);
-  border: 1px solid var(--color-border);
+  background: var(--c-bg);
+  border: 1px solid var(--c-border);
 }
 
 .md hr {
   height: 1px;
   margin: var(--pad) 0;
-  background-color: var(--color-border);
+  background-color: var(--c-border);
 }

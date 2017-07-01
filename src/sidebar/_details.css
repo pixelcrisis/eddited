@@ -5,7 +5,7 @@
   font-weight: 700;
   font-size: .65rem;
   text-transform: uppercase;
-  color: var(--color-accent);
+  color: var(--c-main);
 }
 
 .subscribers .word,
