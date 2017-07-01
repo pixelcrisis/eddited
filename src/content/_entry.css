@@ -86,6 +86,9 @@
 .link .score.dislikes { color: var(--color-downvote); }
 
 /* link */
+.link.last-clicked {
+  border-color: transparent var(--color-accent) transparent transparent;
+}
 .link .usertext-body .md {
   border-radius: 0;
   background-color: var(--color-bg)!important;
