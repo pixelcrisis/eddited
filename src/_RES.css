@@ -52,3 +52,9 @@
 .entry.RES-keyNav-activeElement {
   border-right: 1px solid var(--c-main);
 }
+
+/* page nav */
+.res-show-link {
+  bottom: 0px;
+  top: initial!important;
+}
