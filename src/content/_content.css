@@ -9,3 +9,14 @@
 
 #subreddit_stylesheet > div,
 #preview-table table { width: 100%; }
+
+.thing.stickied.link a.title,
+.tagline .stickied-tagline, .search-result-meta .stickied-tagline {
+  color: var(--c-stickied);
+}
+
+.gold-accent {
+  border-radius: 3px;
+  border-color: var(--c-locked);
+  background-color: color(var(--c-locked) lightness(90%));
+}

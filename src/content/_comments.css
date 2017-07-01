@@ -7,3 +7,8 @@
   border-color: var(--c-border);
 }
 .panestack-title { margin-top: var(--pad); }
+
+.gold-accent.comment-visits-box {
+  margin: var(--pad) 10px var(--double-pad);
+  color: color(var(--c-locked) blackness(90%));
+}
