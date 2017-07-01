@@ -19,6 +19,7 @@
 
     /* sizes */
     --w-sidebar: 300px;
+    --w-thumbnail: 45px;
 
     /* text */
     --submit-link: 'Show';

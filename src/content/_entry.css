@@ -12,22 +12,22 @@
 
 /* thumbnail */
 .thing .thumbnail {
-  width: 45px;
-  border-radius: 45px;
-  height: 45px!important;
+  width: var(--w-thumbnail);
+  border-radius: 10px;
+  height: var(--w-thumbnail)!important;
   margin: 0 var(--pad) 0 0;
   background: var(--c-border);
 }
 .thing .thumbnail img {
   width: auto!important;
-  height: 45px!important;
+  height: var(--w-thumbnail)!important;
 }
 
 .thumbnail::before {
-  width: 44px;
-  height: 45px;
+  width: calc(var(--w-thumbnail) - 1);
+  height: var(--w-thumbnail);
   display: block;
-  line-height: 45px;
+  line-height: var(--w-thumbnail);
   position: absolute;
   font-size: 0.65rem;
   text-align: center;
