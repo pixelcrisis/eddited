@@ -19,6 +19,10 @@
 #header:hover #RESShortcutsLeft,
 #header:hover #RESShortcutsAdd { color: var(--c-muted); }
 
+#header:not(:hover) #sr-header-area a.RESShortcutsCurrentSub {
+  color: var(--c-bg)!important;
+}
+
 /* sidebar */
 .titlebox .toggle.res-sr-style-toggle { margin-bottom: -5px; }
 
