@@ -37,3 +37,31 @@
 }
 
 .RESDashboardToggle { float: right; }
+
+/* entry */
+.res .RES-keyNav-activeElement,
+.res .commentarea .RES-keyNav-activeElement .md,
+.res .RES-keyNav-activeElement .md-container,
+.res .commentarea .RES-keyNav-activeElement.entry .noncollapsed {
+  position: relative;
+  background-color: transparent!important;
+}
+.listing-page .RES-keyNav-activeElement:after {
+  top: 0!important;
+  left: 0!important;
+}
+.res .RES-keyNav-activeElement:after,
+.res .commentarea .RES-keyNav-activeElement.entry .noncollapsed:after {
+  content: '';
+  width: 7px;
+  height: 7px;
+  display: block;
+  top: var(--pad);
+  right: var(--pad);
+  position: absolute;
+  border-radius: 10px;
+  background-color: var(--color-accent);
+}
+.res .commentarea .RES-keyNav-activeThing {
+  border: 1px solid var(--color-accent)!important;
+}

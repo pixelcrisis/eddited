@@ -84,3 +84,10 @@
 .link .score.likes { color: var(--color-upvote); }
 .arrow.downmod,
 .link .score.dislikes { color: var(--color-downvote); }
+
+/* link */
+.link .usertext-body .md {
+  border-radius: 0;
+  background-color: var(--color-bg)!important;
+  border-color: transparent transparent transparent var(--color-accent);
+}

@@ -6,12 +6,6 @@
   width: calc(var(--width-sidebar) - var(--pad));
 }
 
-.side hr {
-  height: 1px;
-  margin: var(--pad) 0;
-  background-color: var(--color-border);
-}
-
 .linkinfo { border-radius: 0; }
 
 .side .create { display: none; }

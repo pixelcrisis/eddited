@@ -14,3 +14,9 @@ body {
   background: var(--color-bg);
   border: 1px solid var(--color-border);
 }
+
+.md hr {
+  height: 1px;
+  margin: var(--pad) 0;
+  background-color: var(--color-border);
+}
