@@ -1,1 +1,9 @@
 /* comments page */
+
+.panestack-title,
+.commentarea .menuarea {
+  margin: 0;
+  padding: var(--pad);
+  border-color: var(--c-border);
+}
+.panestack-title { margin-top: var(--pad); }
