@@ -15,7 +15,7 @@
 .entry .buttons li a:hover { color: var(--c-text); }
 
 /* locked post / infobars */
-.reddit-infobar {
+.reddit-infobar, .infobar {
   border: none;
   background-color: transparent;
 }

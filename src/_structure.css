@@ -16,6 +16,11 @@ body {
   border: 1px solid var(--c-border);
 }
 
+.content .content {
+  padding: 0px;
+  border: none;
+}
+
 .md hr {
   height: 1px;
   margin: var(--pad) 0;
