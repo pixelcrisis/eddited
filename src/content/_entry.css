@@ -6,6 +6,13 @@
   border-bottom: 1px solid var(--c-shadow);
 }
 
+/* better subtle color */
+.domain, .domain a,
+.tagline, .search-result-meta,
+.entry .buttons li a,
+.redditSingleClick::after { color: var(--c-muted); }
+
+
 /* accent the comments link */
 .entry .buttons li a:not(.comments) { font-weight: 400; }
 .entry .buttons li .comments { color: var(--c-main); }
