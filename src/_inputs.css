@@ -21,6 +21,7 @@ input[type='text']:focus {
 /* buttons */
 .btn { padding: var(--half-pad) var(--pad); }
 .btn,
+button,
 .morelink a,
 [href="#btn"] + a,
 [href="#obtn"] + a,
@@ -38,5 +39,6 @@ input[type='text']:focus {
 [href="#btn"] + a { @apply --button-main; }
 
 .btn,
+button,
 .morelink a,
 [href="#obtn"] { @apply --button-outline; }
