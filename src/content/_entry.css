@@ -12,6 +12,26 @@
 .entry .buttons li a,
 .redditSingleClick::after { color: var(--c-muted); }
 
+/* locked post / infobars */
+.reddit-infobar {
+  border: none;
+  background-color: transparent;
+}
+.reddit-infobar.with-icon:before {
+  width: 41px;
+  height: 41px;
+  border-radius: 100%;
+  background-color: var(--c-locked);
+}
+.reddit-infobar .md p {
+  margin-top: -3px;
+  font-weight: 700;
+  font-size: 0.75rem;
+  padding-bottom: 5px;
+  border-bottom: 2px solid;
+  color: var(--c-locked-t);
+  text-transform: uppercase;
+}
 
 /* accent the comments link */
 .entry .buttons li a:not(.comments) { font-weight: 400; }
@@ -42,7 +62,7 @@
 }
 
 .thing.self .thumbnail::before { content: 'self'; }
-.thing.lockeed .thumbnail::before { content: 'locked'; }
+.thing.locked .thumbnail::before { content: 'locked'; }
 
 .thing .expando-button {
   width: 16px;

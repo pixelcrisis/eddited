@@ -9,6 +9,6 @@
 .panestack-title { margin-top: var(--pad); }
 
 .gold-accent.comment-visits-box {
+  color: var(--c-locked-t);
   margin: var(--pad) 10px var(--double-pad);
-  color: color(var(--c-locked) blackness(90%));
 }

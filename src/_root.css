@@ -12,6 +12,7 @@
     --c-downvote: #0071c5;
 
     --c-locked: #ead340;
+    --c-locked-t: color(var(--c-locked) blackness(60%));
     --c-stickied: #399b76;
 
     --c-shadow: #f7f7f7;
