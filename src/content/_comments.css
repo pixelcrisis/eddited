@@ -7,8 +7,18 @@
   border-color: var(--c-border);
 }
 .panestack-title { margin-top: var(--pad); }
-
+.commentarea .menuarea .toggle a { color: var(--c-muted); }
 .gold-accent.comment-visits-box {
   color: var(--c-locked-t);
   margin: var(--pad) 10px var(--double-pad);
+}
+
+.new-comment .usertext-body {
+  border-color: transparent;
+  background-color: transparent;
+}
+.new-comment .tagline:after {
+  content: 'new comment';
+  display: inline-block;
+  color: var(--c-main);
 }

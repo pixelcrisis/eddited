@@ -11,6 +11,8 @@
 .tagline, .search-result-meta,
 .entry .buttons li a,
 .redditSingleClick::after { color: var(--c-muted); }
+.domain a:hover,
+.entry .buttons li a:hover { color: var(--c-text); }
 
 /* locked post / infobars */
 .reddit-infobar {
@@ -25,12 +27,11 @@
 }
 .reddit-infobar .md p {
   margin-top: -3px;
-  font-weight: 700;
   font-size: 0.75rem;
   padding-bottom: 5px;
-  border-bottom: 2px solid;
   color: var(--c-locked-t);
   text-transform: uppercase;
+  border-bottom: 2px solid var(--c-locked);
 }
 
 /* accent the comments link */
