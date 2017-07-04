@@ -5,6 +5,12 @@
   margin: 55px var(--pad) 0 0;
   width: calc(var(--w-sidebar) - var(--pad));
 }
+.side::after {
+  display: block;
+  text-align: center;
+  color: var(--c-muted);
+  content: 'theme @ r/eddited';
+}
 
 .linkinfo { border-radius: 0; }
 

@@ -1,20 +1,27 @@
 /* topbar */
 
 /* collapse topbar by default */
-#header:not(:hover) #sr-header-area { margin-top: -8px; }
+/*#header:not(:hover) #sr-header-area { margin-top: -8px; }
 #sr-header-area:not(:hover) {
   margin-top: -5px;
   margin-bottom: -5px;
 }
+#header:active #sr-header-area { margin-top: 0px!important; }*/
 
 #sr-header-area {
   height: 1em;
   line-height: 1em;
   padding-top: 3px;
+  margin-top: -13px;
   position: relative;
   padding-left: var(--half-pad);
   padding-right: var(--half-pad);
 }
+#header:hover #sr-header-area {
+  margin-top: 0px;
+  margin-bottom: -5px;
+}
+#header #sr-header-area:hover { margin-bottom: 0px; }
 
 #sr-more-link,
 #sr-header-area {
