@@ -43,8 +43,8 @@
   border: 2px solid;
   position: absolute;
   border-radius: 100%;
-  margin: 4px 0 0 -24px;
-  background: transparent;
+  margin: 11px 0 0 -24px;
+  background: var(--c-bg);
   color: var(--c-muted);
   background-image: none!important;
 }
@@ -58,7 +58,6 @@
   position: absolute;
   font-size: 0.75rem;
   text-align: center;
-  content: '+'!important;
   background-image: none!important;
 }
 
@@ -67,7 +66,9 @@
   color: var(--c-main);
   background: var(--c-bg);
 }
-.thing .expando-button.expanded::before { content: '-'; }
+
+.thing .expando-button.expanded::before { content: '-'!important; }
+.thing .expando-button:not(.expanded)::before { content: '+'!important; }
 
 /* voting */
 .arrow {
