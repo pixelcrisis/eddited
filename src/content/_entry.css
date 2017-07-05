@@ -1,26 +1,19 @@
-/* an actual post */
-
 .thing {
-  padding: var(--half-pad) 0;
   margin-bottom: var(--half-pad);
+  padding: var(--half-pad) 0;
+
   border-bottom: 1px solid var(--c-shadow);
 }
 
-
-/* better subtle color */
-
-.domain, .domain a, .tagline, .search-result-meta, .entry .buttons li a, .redditSingleClick::after {
+.domain,.domain a,.entry .buttons li a,.redditSingleClick:after,.search-result-meta,.tagline {
   color: var(--c-muted);
 }
 
-.domain a:hover, .entry .buttons li a:hover {
+.domain a:hover,.entry .buttons li a:hover {
   color: var(--c-text);
 }
 
-
-/* locked post / infobars */
-
-.reddit-infobar, .infobar {
+.infobar,.reddit-infobar {
   border: none;
   background-color: transparent;
 }
@@ -28,21 +21,22 @@
 .reddit-infobar.with-icon:before {
   width: 41px;
   height: 41px;
+
   border-radius: 100%;
   background-color: var(--c-locked);
 }
 
 .reddit-infobar .md p {
   margin-top: -3px;
-  font-size: 0.75rem;
   padding-bottom: 5px;
-  color: var(--c-locked-t);
+
   text-transform: uppercase;
+
+  color: var(--c-locked-t);
   border-bottom: 2px solid var(--c-locked);
+
+  font-size: .75rem;
 }
-
-
-/* title */
 
 .thing .title {
   color: var(--c-main);
@@ -56,9 +50,6 @@
   color: var(--c-main);
 }
 
-
-/* accent the comments link */
-
 .entry .buttons li a:not(.comments) {
   font-weight: 400;
 }
@@ -67,14 +58,12 @@
   color: var(--c-main);
 }
 
-
-/* thumbnail */
-
 .thing .thumbnail {
   width: var(--w-thumbnail);
-  border-radius: 10px;
   height: var(--w-thumbnail)!important;
   margin: 0 var(--pad) 0 0;
+
+  border-radius: 10px;
   background: var(--c-border);
 }
 
@@ -83,98 +72,107 @@
   height: var(--w-thumbnail)!important;
 }
 
-.thumbnail::before {
+.thumbnail:before {
+  position: absolute;
+
+  display: block;
+
   width: calc(var(--w-thumbnail) - 1);
   height: var(--w-thumbnail);
-  display: block;
-  line-height: var(--w-thumbnail);
-  position: absolute;
-  font-size: 0.65rem;
+
   text-align: center;
+
   color: var(--c-text);
+
+  font-size: .65rem;
+  line-height: var(--w-thumbnail);
 }
 
-.thing.self .thumbnail::before {
-  content: 'self';
+.thing.self .thumbnail:before {
+  content: "self";
 }
 
-.thing.locked .thumbnail::before {
-  content: 'locked';
+.thing.locked .thumbnail:before {
+  content: "locked";
 }
 
 .thing .expando-button {
+  position: absolute;
+
   width: 16px;
   height: 16px;
-  border: 2px solid;
-  position: absolute;
-  border-radius: 100%;
   margin: 11px 0 0 -24px;
-  background: var(--c-bg);
+
   color: var(--c-muted);
+  border: 2px solid;
+  border-radius: 100%;
+  background: var(--c-bg);
   background-image: none!important;
 }
 
-.thing .expando-button::before {
+.thing .expando-button:before {
+  position: absolute;
+
+  display: block;
+
   width: 16px;
   height: 16px;
-  display: block;
+
+  text-align: center;
+
+  background-image: none!important;
+
+  font-size: .75rem;
   font-weight: 700;
   line-height: 15px;
-  position: absolute;
-  font-size: 0.75rem;
-  text-align: center;
-  background-image: none!important;
 }
 
-.thing .expando-button:hover, .thing .expando-button.expanded {
+.thing .expando-button.expanded,.thing .expando-button:hover {
   color: var(--c-main);
   background: var(--c-bg);
 }
 
-.thing .expando-button.expanded::before {
-  content: '-'!important;
+.thing .expando-button.expanded:before {
+  content: "-"!important;
 }
 
-.thing .expando-button:not(.expanded)::before {
-  content: '+'!important;
+.thing .expando-button:not(.expanded):before {
+  content: "+"!important;
 }
-
-
-/* voting */
 
 .arrow {
   margin: 0 auto;
-  line-height: 1.2;
+
   text-align: center;
+
   color: var(--c-muted);
   background-image: none!important;
+
+  line-height: 1.2;
 }
 
-.arrow.up::before, .arrow.upmod::before {
-  content: '▲';
+.arrow.up:before,.arrow.upmod:before {
+  content: "▲";
 }
 
-.arrow.down::before, .arrow.downmod::before {
-  content: '▼';
+.arrow.down:before,.arrow.downmod:before {
+  content: "▼";
 }
 
-.arrow.upmod, .link .score.likes {
+.arrow.upmod,.link .score.likes {
   color: var(--c-upvote);
 }
 
-.arrow.downmod, .link .score.dislikes {
+.arrow.downmod,.link .score.dislikes {
   color: var(--c-downvote);
 }
-
-
-/* link */
 
 .link.last-clicked {
   border-color: transparent var(--c-main) transparent transparent;
 }
 
 .link .usertext-body .md {
+  border-color: transparent transparent transparent var(--c-main);
   border-radius: 0;
   background-color: var(--c-bg)!important;
-  border-color: transparent transparent transparent var(--c-main);
 }

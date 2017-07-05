@@ -1,44 +1,41 @@
-/* input elements */
+a {
+  color: var(--c-main);
+}
 
-a { color: var(--c-main); }
-
-
-textarea,
-input[type='text'] {
+input[type=text],textarea {
   box-sizing: border-box;
-  color: var(--c-text)!important;
-  background: var(--c-bg)!important;
   padding: var(--half-pad) var(--pad)!important;
+
+  color: var(--c-text)!important;
   border: 1px solid var(--c-border)!important;
+  background: var(--c-bg)!important;
 }
 
-textarea:focus,
-input[type='text']:focus {
-  outline: none;
+input[type=text]:focus,textarea:focus {
   border-color: var(--c-main)!important;
+  outline: none;
 }
 
-/* buttons */
-.btn { padding: var(--half-pad) var(--pad); }
-.btn,
-button,
-.morelink a,
-[href="#btn"] + a,
-[href="#obtn"] + a,
-.fancy-toggle-button .option.active,
-.fancy-toggle-button .option,
-.res-fancy-toggle-button { @apply --button; }
-
-[href="#btn"] + a,
-[href="#obtn"] + a {
-  font-size: 0.65rem;
-  display: inline-block;
+.btn {
   padding: var(--half-pad) var(--pad);
 }
 
-[href="#btn"] + a { @apply --button-main; }
+.btn,.fancy-toggle-button .option,.fancy-toggle-button .option.active,.morelink a,.res-fancy-toggle-button,[href="#btn"]+a,[href="#obtn"]+a,button {
+  @apply --button;
+}
 
-.btn,
-button,
-.morelink a,
-[href="#obtn"] { @apply --button-outline; }
+[href="#btn"]+a,[href="#obtn"]+a {
+  display: inline-block;
+
+  padding: var(--half-pad) var(--pad);
+
+  font-size: .65rem;
+}
+
+[href="#btn"]+a {
+  @apply --button-main;
+}
+
+.btn,.morelink a,[href="#obtn"],button {
+  @apply --button-outline;
+}

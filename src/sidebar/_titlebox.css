@@ -1,17 +1,16 @@
-/* titlebox */
-
 .titlebox .bottom {
   padding-bottom: var(--pad);
+
   border-top-color: var(--c-border);
 }
 
-#search input[type='text'] {
+#search input[type=text] {
   width: 100%;
 }
 
-.submit-link, .submit-text {
-  width: 47.5%;
+.submit-link,.submit-text {
   box-sizing: border-box;
+  width: 47.5%;
 }
 
 .submit-link {
@@ -20,34 +19,39 @@
 
 .submit-text {
   float: right;
+
   margin-right: 4px;
 }
 
-.side .nub, .side .nub {
+.side .nub {
   display: none;
 }
 
-.submit-link .morelink, .submit-text .morelink {
-  border: none;
-  font-size: 0;
-  background: transparent;
+.submit-link .morelink,.submit-text .morelink {
   margin-bottom: var(--half-pad);
+
+  border: none;
+  background: transparent;
+
+  font-size: 0;
 }
 
 .morelink:not(:hover) {
-  opacity: 0.8;
+  opacity: .8;
 }
 
-.submit-text .morelink a::before, .submit-link .morelink a::before {
+.submit-link .morelink a:before,.submit-text .morelink a:before {
   display: inline;
-  font-size: 0.75rem;
+
+  font-size: 12px;
+  font-size: .75rem;
 }
 
-.submit-text .morelink a::before {
+.submit-text .morelink a:before {
   content: var(--submit-text);
 }
 
-.submit-link .morelink a::before {
+.submit-link .morelink a:before {
   content: var(--submit-link);
 }
 
@@ -60,33 +64,41 @@
 }
 
 .titlebox .redditname a {
-  margin-top: 8px;
   display: inline-block;
+
+  margin-top: 8px;
+
   color: var(--c-main);
 }
 
 .fancy-toggle-button {
   width: 100%;
+  padding: 8px 0;
   padding: .5rem 0;
+
   text-align: center;
 }
 
 .fancy-toggle-button .option.active {
-  width: 100%;
-  font-size: 0.65rem;
-  border-radius: 0;
   display: inline-block;
+
   box-sizing: border-box;
+  width: 100%;
+
+  border-radius: 0;
+
+  font-size: 10.4px;
+  font-size: .65rem;
 }
 
 .fancy-toggle-button .remove {
   color: var(--c-text);
-  background: var(--c-border);
   border-color: var(--c-border)!important;
+  background: var(--c-border);
 }
 
 .fancy-toggle-button .add {
   color: var(--c-bg);
-  background: var(--c-main);
   border-color: var(--c-main);
+  background: var(--c-main);
 }

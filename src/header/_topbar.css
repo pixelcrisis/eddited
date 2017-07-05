@@ -1,45 +1,36 @@
-/* topbar */
-
-
-/* collapse topbar by default */
-
-
-/*#header:not(:hover) #sr-header-area { margin-top: -8px; }
-#sr-header-area:not(:hover) {
-  margin-top: -5px;
-  margin-bottom: -5px;
-}
-#header:active #sr-header-area { margin-top: 0px!important; }*/
-
 #sr-header-area {
-  height: 1em;
-  line-height: 1em;
-  padding-top: 3px;
-  margin-top: -13px;
   position: relative;
-  padding-left: var(--half-pad);
+
+  height: 1em;
+  margin-top: -13px;
+  padding-top: 3px;
   padding-right: var(--half-pad);
+  padding-left: var(--half-pad);
+
+  line-height: 1em;
 }
 
 #header:hover #sr-header-area {
-  margin-top: 0px;
+  margin-top: 0;
   margin-bottom: -5px;
 }
 
 #header #sr-header-area:hover {
-  margin-bottom: 0px;
+  margin-bottom: 0;
 }
 
-#sr-more-link, #sr-header-area {
-  @apply --ease-in;
+#sr-header-area,#sr-more-link {
   color: var(--c-bg);
   background: var(--c-bg);
+  @apply --ease-in;
 }
 
 #sr-header-area a {
-  font-size: 0.5rem;
-  color: var(--c-bg);
   margin-right: var(--half-pad);
+
+  color: var(--c-bg);
+
+  font-size: .5rem;
 }
 
 #sr-header-area .separator {
@@ -54,7 +45,7 @@
   font-size: 0;
 }
 
-#header:hover #sr-header-area, #header:hover #sr-header-area a {
+#header:hover #sr-header-area,#header:hover #sr-header-area a {
   color: var(--c-muted);
 }
 

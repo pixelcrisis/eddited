@@ -1,73 +1,78 @@
-/* subreddit info */
-
-.subscribers, .users-online {
-  font-weight: 700;
-  font-size: .65rem;
+.subscribers,.users-online {
   text-transform: uppercase;
+
   color: var(--c-main);
+
+  font-size: .65rem;
+  font-weight: 700;
 }
 
-.subscribers .word, .users-online .word, .users-online::before, .titlebox .leavemoderator::before, .titlebox form.leavecontributor-button:before {
+.subscribers .word,.titlebox .leavemoderator:before,.titlebox form.leavecontributor-button:before,.users-online .word,.users-online:before {
   display: none;
 }
 
-.subscribers, .leavemoderator {
+.leavemoderator,.subscribers {
   float: right;
 }
 
-.subscribers::after, .users-online::after {
+.subscribers:after,.users-online:after {
   display: inline;
 }
 
-.subscribers::after {
+.subscribers:after {
   content: var(--subscribers);
 }
 
-.users-online::after {
+.users-online:after {
   content: var(--here-now);
 }
 
-.leavemoderator, .leavecontributor-button {
+.leavecontributor-button,.leavemoderator {
   display: inline-block;
+
   margin-bottom: var(--half-pad);
 }
 
-.leavemoderator, .leavecontributor-button .option {
+.leavecontributor-button .option,.leavemoderator {
   font-size: 0;
 }
 
-.leavecontributor-button .yes, .leavecontributor-button .no {
+.leavecontributor-button .no,.leavecontributor-button .yes {
   padding-right: 2px;
 }
 
-.leavemoderator a, .leavecontributor-button .option a {
-  font-size: 0.65rem;
+.leavecontributor-button .option a,.leavemoderator a {
+  font-size: .65rem;
 }
 
-.leavemoderator a::before {
-  content: 'Mod (';
+.leavemoderator a:before {
+  content: "Mod (";
 }
 
-.leavecontributor-button .option .togglebutton::before {
-  content: 'Approved (';
+.leavecontributor-button .option .togglebutton:before {
+  content: "Approved (";
 }
 
-.leavemoderator a::after, .leavecontributor-button .option .togglebutton::after {
-  content: ')';
+.leavecontributor-button .option .togglebutton:after,.leavemoderator a:after {
+  content: ")";
 }
 
 .titlebox form.flairtoggle {
-  font-size: 0;
-  margin-bottom: -0.75rem;
   margin-top: var(--half-pad);
+  margin-bottom: -12px;
+  margin-bottom: -.75rem;
+
+  font-size: 0;
 }
 
-.titlebox form.flairtoggle label::after {
-  content: 'Flair: ';
-  font-size: 0.65rem;
+.titlebox form.flairtoggle label:after {
+  content: "Flair: ";
+
+  font-size: .65rem;
 }
 
 .flairtoggle+.tagline {
   margin: 0;
+
   text-align: right;
 }

@@ -1,13 +1,9 @@
-/* sidebar user text */
-
 .side .usertext-body {
-  padding: var(--pad) 0;
   margin-top: var(--pad);
+  padding: var(--pad) 0;
+
   border-top: 1px solid var(--c-border);
 }
-
-
-/* centered text hack */
 
 hr+hr {
   display: none;

@@ -1,16 +1,17 @@
-/* sidebar */
-
 .side {
-  order: 2;
-  margin: 55px var(--pad) 0 0;
   width: calc(var(--w-sidebar) - var(--pad));
+  margin: 55px var(--pad) 0 0;
+
+  order: 2;
 }
 
-.side::after {
+.side:after {
   display: block;
+
+  content: "theme @ r/eddited";
   text-align: center;
+
   color: var(--c-muted);
-  content: 'theme @ r/eddited';
 }
 
 .linkinfo {
@@ -33,25 +34,31 @@
   font-size: 0;
 }
 
-#moderation_tools .title h1::before {
-  font-size: 0.75rem;
-  content: 'Mod Tools';
+#moderation_tools .title h1:before {
+  content: "Mod Tools";
   text-transform: capitalize;
+
+  font-size: 12px;
+  font-size: .75rem;
 }
 
 .sidecontentbox .collapse-button {
+  border-color: transparent;
+  background: transparent;
+
   font-size: 0;
   line-height: 7px;
-  background: transparent;
-  border-color: transparent;
 }
 
-.sidecontentbox .collapse-button::before {
-  content: '[-]';
-  font-size: 0.65rem;
+.sidecontentbox .collapse-button:before {
+  content: "[-]";
+
+  font-size: 10.4px;
+  font-size: .65rem;
 }
 
 .sidecontentbox .content {
   padding: 0;
+
   border: none;
 }

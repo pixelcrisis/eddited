@@ -1,38 +1,35 @@
 'use strict';
 
-const fin = './dist/';
-const src = './src/**/*.css';
-const css = './src/theme.css';
-const min = { suffix: '.min' };
-const cln = {
-  plugins: [
-    require('postcss-csscomb')('zen')
-  ]
+const $ = {
+  cssnano: require('cssnano'),
+  import: require('postcss-import'),
+  csscomb: require('postcss-csscomb')('yandex'),
+  cssnext: require('postcss-cssnext')({ features: { fontVariant: false } })
 };
+
 const cfg = {
-  to: fin,
-  from: css,
-  map: false,
-  plugins: [
-    require('postcss-import'),
-    require('postcss-cssnext')({
-      features: {
-        fontVariant: false
-      }
-    }),
-    require('cssnano')
-  ]
+  clean: { plugins: [ $.csscomb ] },
+  build: {
+    to: './dist/', from: './src/theme.css',
+    plugins: [ $.import, $.cssnext, $.cssnano ]
+  },
+  rename: { suffix: '.min' }
 };
 
 exports.default = function * (task) {
   yield task.start('build')
-  yield task.watch(`${src}`, 'build')
+  yield task.watch('src/**/*.css', 'build')
 };
 
 exports.build = function * (task) {
-  yield task.source(`${css}`).postcss(cfg).rename(min).target(`${fin}`);
+  yield task.source('src/theme.css')
+    .postcss(cfg.build)
+    .rename(cfg.rename)
+    .target('dist');
 };
 
 exports.clean = function * (task) {
-  yield task.source('./src/_structure.css').postcss(cln);
+  yield task.source('src/**/!(_root).css')
+    .postcss(cfg.clean)
+    .target('src');
 };

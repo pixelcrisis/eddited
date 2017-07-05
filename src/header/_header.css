@@ -1,43 +1,48 @@
-/* header */
-
 #header {
-  order: 0;
   position: fixed;
   top: 0;
-  left: 0;
   right: 0;
-  background-color: var(--c-bg);
+  left: 0;
+
   border-bottom-color: var(--c-border);
+  background-color: var(--c-bg);
+
+  order: 0;
 }
 
-#sr-more-link, #sr-header-area, #header-bottom-left, #header-bottom-right {
+#header-bottom-left,#header-bottom-right,#sr-header-area,#sr-more-link {
   border: none;
 }
 
-#header-bottom-left, #header-bottom-right {
+#header-bottom-left,#header-bottom-right {
+  padding: var(--pad);
+
   color: var(--c-text);
   background: var(--c-bg);
-}
 
-#header-bottom-left, #header-bottom-right {
   line-height: 1;
-  padding: var(--pad);
 }
 
 #header-img.default-header {
   width: auto;
   height: auto;
-  font-size: 0;
-  text-indent: 0;
   margin: 0 -var(--third-pad) 0 0;
+
+  text-indent: 0;
+
   background-image: none;
+
+  font-size: 0;
 }
 
-#header-img::after {
-  content: 'r/ ';
+#header-img:after {
+  display: inline-block;
+
+  content: "r/ ";
+
+  font-size: 16px;
   font-size: 1rem;
   font-weight: 700;
-  display: inline-block;
 }
 
 .redditname {
@@ -45,8 +50,9 @@
 }
 
 .redditname a {
-  font-size: 1rem;
   letter-spacing: 0;
+
+  font-size: 1rem;
   font-variant: normal;
 }
 

@@ -1,60 +1,52 @@
-/* RES compatibility */
-
-/* header */
-.res-navTop #header-bottom-right { margin-bottom: -3px; }
-
-#RESShortcutsEditContainer,
-#RESShortcutsSort,
-#RESShortcutsRight,
-#RESShortcutsLeft,
-#RESShortcutsAdd {
-  background: transparent;
-  color: var(--c-bg);
+.res-navTop #header-bottom-right {
+  margin-bottom: -3px;
 }
 
-/* todo: jesus, clean this up self */
-#header:hover #RESShortcutsEditContainer,
-#header:hover #RESShortcutsSort,
-#header:hover #RESShortcutsRight,
-#header:hover #RESShortcutsLeft,
-#header:hover #RESShortcutsAdd { color: var(--c-muted); }
+#RESShortcutsAdd,#RESShortcutsEditContainer,#RESShortcutsLeft,#RESShortcutsRight,#RESShortcutsSort {
+  color: var(--c-bg);
+  background: transparent;
+}
+
+#header:hover #RESShortcutsAdd,#header:hover #RESShortcutsEditContainer,#header:hover #RESShortcutsLeft,#header:hover #RESShortcutsRight,#header:hover #RESShortcutsSort {
+  color: var(--c-muted);
+}
 
 #header:not(:hover) #sr-header-area a.RESShortcutsCurrentSub {
   color: var(--c-bg)!important;
 }
 
-/* sidebar */
-.titlebox .toggle.res-sr-style-toggle { margin-bottom: -5px; }
+.titlebox .toggle.res-sr-style-toggle {
+  margin-bottom: -5px;
+}
 
 .res-fancy-toggle-button {
-  border-radius: 0;
+  margin: 0 0 15px;
   padding: 6px 24px;
-  margin: 0 0 15px 0;
-  background: transparent;
+
   color: var(--c-text);
   border-color: var(--c-border);
+  border-radius: 0;
+  background: transparent;
 }
-.res-fancy-toggle-button:hover,
-.res-fancy-toggle-button.remove {
-  background-image: none;
+
+.res-fancy-toggle-button.remove,.res-fancy-toggle-button:hover {
   background: var(--c-border);
+  background-image: none;
 }
 
-.RESDashboardToggle { float: right; }
+.RESDashboardToggle {
+  float: right;
+}
 
-/* entry */
-.res .RES-keyNav-activeElement,
-.res .commentarea .RES-keyNav-activeElement .md,
-.res .RES-keyNav-activeElement .md-container,
-.res .commentarea .RES-keyNav-activeElement.entry .noncollapsed {
+.res .commentarea .RES-keyNav-activeElement.entry .noncollapsed,.res .commentarea .RES-keyNav-activeElement .md,.res .RES-keyNav-activeElement,.res .RES-keyNav-activeElement .md-container {
   background-color: transparent!important;
 }
+
 .entry.RES-keyNav-activeElement {
   border-right: 1px solid var(--c-main);
 }
 
-/* page nav */
 .res-show-link {
-  bottom: 0px;
-  top: initial!important;
+  top: auto!important;
+  bottom: 0;
 }

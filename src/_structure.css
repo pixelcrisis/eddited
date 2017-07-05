@@ -1,28 +1,33 @@
-/* structure */
-html, body { margin: 0; }
+body,html {
+  margin: 0;
+}
 
 body {
   display: flex;
-  flex-flow: row wrap;
+
   color: var(--c-text);
   background: var(--c-shadow);
+
+  flex-flow: row wrap;
 }
 
-.side,
-.content {
-  padding: var(--pad);
+.content,.side {
   box-sizing: border-box;
-  background: var(--c-bg);
+  padding: var(--pad);
+
   border: 1px solid var(--c-border);
+  background: var(--c-bg);
 }
 
 .content .content {
-  padding: 0px;
+  padding: 0;
+
   border: none;
 }
 
 .md hr {
   height: 1px;
   margin: var(--pad) 0;
+
   background-color: var(--c-border);
 }

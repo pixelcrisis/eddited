@@ -1,8 +1,7 @@
-/* footer */
-
 .footer-parent {
-  order: 3;
   width: 100%;
+
+  order: 3;
 }
 
 .footer-parent .bottommenu:first-of-type {
@@ -13,6 +12,6 @@
   margin-bottom: var(--double-pad);
 }
 
-.debuginfo, #hsts_pixel {
+#hsts_pixel,.debuginfo {
   order: 4;
 }
