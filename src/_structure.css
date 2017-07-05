@@ -12,6 +12,13 @@ body {
   flex-flow: row wrap;
 }
 
+/* fix for r/all */
+body.with-listing-chooser #header .pagename {
+  bottom: initial;
+  position: relative;
+  margin-right: var(--half-pad);
+}
+
 .content,.side {
   box-sizing: border-box;
   padding: var(--pad);

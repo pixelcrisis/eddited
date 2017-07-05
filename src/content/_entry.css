@@ -48,7 +48,9 @@
   color: var(--c-main);
 }
 
-.thing .title:visited {
+.thing .title:visited,
+.thing.visited .title,
+.thing.visited .source-url {
   color: var(--c-visited);
 }
 
@@ -57,7 +59,7 @@
 }
 
 /* accent just comments link */
-.entry .buttons li a:not(.comments) {
+.entry .buttons li a {
   font-weight: 400;
 }
 
