@@ -2,7 +2,7 @@
 
 .side {
   margin: 55px var(--pad) 0 0;
-  width: calc(var(--w-sidebar) - var(--pad));
+  width: calc(var(--w-sidebar) - var(--pad) - 3px);
 
   order: 2;
 }
