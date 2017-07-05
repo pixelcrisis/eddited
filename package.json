@@ -22,5 +22,9 @@
   },
   "browserslist": [
     "last 2 versions"
-  ]
+  ],
+  "scripts": {
+    "build": "taskr",
+    "clean": "taskr clean"
+  }
 }
