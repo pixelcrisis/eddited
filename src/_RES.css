@@ -1,13 +1,23 @@
+/* RES tweaks */
+
 .res-navTop #header-bottom-right {
   margin-bottom: -3px;
 }
 
-#RESShortcutsAdd,#RESShortcutsEditContainer,#RESShortcutsLeft,#RESShortcutsRight,#RESShortcutsSort {
-  color: var(--c-bg);
+#RESShortcutsAdd,
+#RESShortcutsEditContainer,
+#RESShortcutsLeft,
+#RESShortcutsRight,
+#RESShortcutsSort {
   background: transparent;
+  color: var(--c-bg);
 }
 
-#header:hover #RESShortcutsAdd,#header:hover #RESShortcutsEditContainer,#header:hover #RESShortcutsLeft,#header:hover #RESShortcutsRight,#header:hover #RESShortcutsSort {
+#header:hover #RESShortcutsAdd,
+#header:hover #RESShortcutsEditContainer,
+#header:hover #RESShortcutsLeft,
+#header:hover #RESShortcutsRight,
+#header:hover #RESShortcutsSort {
   color: var(--c-muted);
 }
 
@@ -22,14 +32,14 @@
 .res-fancy-toggle-button {
   margin: 0 0 15px;
   padding: 6px 24px;
-
-  color: var(--c-text);
   border-color: var(--c-border);
   border-radius: 0;
   background: transparent;
+  color: var(--c-text);
 }
 
-.res-fancy-toggle-button.remove,.res-fancy-toggle-button:hover {
+.res-fancy-toggle-button.remove,
+.res-fancy-toggle-button:hover {
   background: var(--c-border);
   background-image: none;
 }
@@ -38,7 +48,10 @@
   float: right;
 }
 
-.res .commentarea .RES-keyNav-activeElement.entry .noncollapsed,.res .commentarea .RES-keyNav-activeElement .md,.res .RES-keyNav-activeElement,.res .RES-keyNav-activeElement .md-container {
+.res .commentarea .RES-keyNav-activeElement.entry .noncollapsed,
+.res .commentarea .RES-keyNav-activeElement .md,
+.res .RES-keyNav-activeElement,
+.res .RES-keyNav-activeElement .md-container {
   background-color: transparent!important;
 }
 

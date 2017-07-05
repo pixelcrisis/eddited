@@ -3,7 +3,7 @@
 const $ = {
   cssnano: require('cssnano'),
   import: require('postcss-import'),
-  csscomb: require('postcss-csscomb')('yandex'),
+  csscomb: require('postcss-csscomb')('zen'),
   cssnext: require('postcss-cssnext')({ features: { fontVariant: false } })
 };
 

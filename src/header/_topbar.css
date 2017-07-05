@@ -1,12 +1,12 @@
+/* top bar (subreddits) */
+
 #sr-header-area {
   position: relative;
-
-  height: 1em;
   margin-top: -13px;
   padding-top: 3px;
   padding-right: var(--half-pad);
   padding-left: var(--half-pad);
-
+  height: 1em;
   line-height: 1em;
 }
 
@@ -20,16 +20,14 @@
 }
 
 #sr-header-area,#sr-more-link {
-  color: var(--c-bg);
   background: var(--c-bg);
+  color: var(--c-bg);
   @apply --ease-in;
 }
 
 #sr-header-area a {
   margin-right: var(--half-pad);
-
   color: var(--c-bg);
-
   font-size: .5rem;
 }
 

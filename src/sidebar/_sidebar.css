@@ -1,17 +1,17 @@
+/* sidebar general */
+
 .side {
-  width: calc(var(--w-sidebar) - var(--pad));
   margin: 55px var(--pad) 0 0;
+  width: calc(var(--w-sidebar) - var(--pad));
 
   order: 2;
 }
 
 .side:after {
   display: block;
-
+  color: var(--c-muted);
   content: "theme @ r/eddited";
   text-align: center;
-
-  color: var(--c-muted);
 }
 
 .linkinfo {
@@ -37,7 +37,6 @@
 #moderation_tools .title h1:before {
   content: "Mod Tools";
   text-transform: capitalize;
-
   font-size: 12px;
   font-size: .75rem;
 }
@@ -45,20 +44,17 @@
 .sidecontentbox .collapse-button {
   border-color: transparent;
   background: transparent;
-
   font-size: 0;
   line-height: 7px;
 }
 
 .sidecontentbox .collapse-button:before {
   content: "[-]";
-
   font-size: 10.4px;
   font-size: .65rem;
 }
 
 .sidecontentbox .content {
   padding: 0;
-
   border: none;
 }

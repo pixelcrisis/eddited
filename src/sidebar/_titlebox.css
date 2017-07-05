@@ -1,6 +1,7 @@
+/* titlebox */
+
 .titlebox .bottom {
   padding-bottom: var(--pad);
-
   border-top-color: var(--c-border);
 }
 
@@ -8,7 +9,8 @@
   width: 100%;
 }
 
-.submit-link,.submit-text {
+.submit-link,
+.submit-text {
   box-sizing: border-box;
   width: 47.5%;
 }
@@ -19,7 +21,6 @@
 
 .submit-text {
   float: right;
-
   margin-right: 4px;
 }
 
@@ -27,12 +28,11 @@
   display: none;
 }
 
-.submit-link .morelink,.submit-text .morelink {
+.submit-link .morelink,
+.submit-text .morelink {
   margin-bottom: var(--half-pad);
-
   border: none;
   background: transparent;
-
   font-size: 0;
 }
 
@@ -40,9 +40,9 @@
   opacity: .8;
 }
 
-.submit-link .morelink a:before,.submit-text .morelink a:before {
+.submit-link .morelink a:before,
+.submit-text .morelink a:before {
   display: inline;
-
   font-size: 12px;
   font-size: .75rem;
 }
@@ -65,40 +65,34 @@
 
 .titlebox .redditname a {
   display: inline-block;
-
   margin-top: 8px;
-
   color: var(--c-main);
 }
 
 .fancy-toggle-button {
-  width: 100%;
   padding: 8px 0;
   padding: .5rem 0;
-
+  width: 100%;
   text-align: center;
 }
 
 .fancy-toggle-button .option.active {
   display: inline-block;
-
   box-sizing: border-box;
   width: 100%;
-
   border-radius: 0;
-
   font-size: 10.4px;
   font-size: .65rem;
 }
 
 .fancy-toggle-button .remove {
-  color: var(--c-text);
   border-color: var(--c-border)!important;
   background: var(--c-border);
+  color: var(--c-text);
 }
 
 .fancy-toggle-button .add {
-  color: var(--c-bg);
   border-color: var(--c-main);
   background: var(--c-main);
+  color: var(--c-bg);
 }

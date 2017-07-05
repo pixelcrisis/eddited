@@ -1,7 +1,6 @@
 .side .usertext-body {
   margin-top: var(--pad);
   padding: var(--pad) 0;
-
   border-top: 1px solid var(--c-border);
 }
 

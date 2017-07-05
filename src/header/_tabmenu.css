@@ -1,14 +1,14 @@
-.tabmenu,.tabmenu a,.tabmenu li {
+/* tabmenu */
+.tabmenu,.tabmenu a,
+.tabmenu li {
   box-sizing: border-box;
 }
 
 .tabmenu {
   position: absolute;
-
   margin: -5px 0 0 var(--pad);
-
-  color: var(--c-text);
   border: 1px solid transparent;
+  color: var(--c-text);
 }
 
 .tabmenu:hover {
@@ -21,29 +21,26 @@
 }
 
 .tabmenu:not(:hover) .selected a {
-  color: var(--c-main);
   border-color: var(--c-border);
+  color: var(--c-main);
 }
 
 .tabmenu a,.tabmenu li {
   display: block;
-
   margin: 0;
 }
 
-.tabmenu li.selected a,.tabmenu li a {
-  width: 100%;
+.tabmenu li.selected a,
+.tabmenu li a {
   padding: var(--half-pad) var(--pad);
-
-  letter-spacing: 1px;
-  text-transform: uppercase;
-
+  width: 100%;
   border: 1px solid transparent;
   border-bottom-color: var(--c-shadow);
   background: transparent;
-
-  font-size: .65rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
   font-weight: 400;
+  font-size: .65rem;
 }
 
 .tabmenu li a:hover {

@@ -1,18 +1,27 @@
+/* post entry */
+
 .thing {
   margin-bottom: var(--half-pad);
   padding: var(--half-pad) 0;
-
   border-bottom: 1px solid var(--c-shadow);
 }
 
-.domain,.domain a,.entry .buttons li a,.redditSingleClick:after,.search-result-meta,.tagline {
+/* soften colors */
+.domain,.domain a,
+.entry .buttons li a,
+.redditSingleClick:after,
+.search-result-meta,
+.tagline {
   color: var(--c-muted);
 }
 
-.domain a:hover,.entry .buttons li a:hover {
+/* not softened when hover */
+.domain a:hover,
+.entry .buttons li a:hover {
   color: var(--c-text);
 }
 
+/* redesign infobar */
 .infobar,.reddit-infobar {
   border: none;
   background-color: transparent;
@@ -21,7 +30,6 @@
 .reddit-infobar.with-icon:before {
   width: 41px;
   height: 41px;
-
   border-radius: 100%;
   background-color: var(--c-locked);
 }
@@ -29,15 +37,13 @@
 .reddit-infobar .md p {
   margin-top: -3px;
   padding-bottom: 5px;
-
-  text-transform: uppercase;
-
-  color: var(--c-locked-t);
   border-bottom: 2px solid var(--c-locked);
-
+  color: var(--c-locked-t);
+  text-transform: uppercase;
   font-size: .75rem;
 }
 
+/* title */
 .thing .title {
   color: var(--c-main);
 }
@@ -50,6 +56,7 @@
   color: var(--c-main);
 }
 
+/* accent just comments link */
 .entry .buttons li a:not(.comments) {
   font-weight: 400;
 }
@@ -58,11 +65,11 @@
   color: var(--c-main);
 }
 
+/* thumbnail */
 .thing .thumbnail {
+  margin: 0 var(--pad) 0 0;
   width: var(--w-thumbnail);
   height: var(--w-thumbnail)!important;
-  margin: 0 var(--pad) 0 0;
-
   border-radius: 10px;
   background: var(--c-border);
 }
@@ -74,20 +81,16 @@
 
 .thumbnail:before {
   position: absolute;
-
   display: block;
-
   width: calc(var(--w-thumbnail) - 1);
   height: var(--w-thumbnail);
-
-  text-align: center;
-
   color: var(--c-text);
-
+  text-align: center;
   font-size: .65rem;
   line-height: var(--w-thumbnail);
 }
 
+/* post types */
 .thing.self .thumbnail:before {
   content: "self";
 }
@@ -96,40 +99,34 @@
   content: "locked";
 }
 
+/* expand button */
 .thing .expando-button {
   position: absolute;
-
+  margin: 11px 0 0 -24px;
   width: 16px;
   height: 16px;
-  margin: 11px 0 0 -24px;
-
-  color: var(--c-muted);
   border: 2px solid;
   border-radius: 100%;
   background: var(--c-bg);
   background-image: none!important;
+  color: var(--c-muted);
 }
 
 .thing .expando-button:before {
   position: absolute;
-
   display: block;
-
   width: 16px;
   height: 16px;
-
-  text-align: center;
-
   background-image: none!important;
-
-  font-size: .75rem;
+  text-align: center;
   font-weight: 700;
+  font-size: .75rem;
   line-height: 15px;
 }
 
 .thing .expando-button.expanded,.thing .expando-button:hover {
-  color: var(--c-main);
   background: var(--c-bg);
+  color: var(--c-main);
 }
 
 .thing .expando-button.expanded:before {
@@ -140,14 +137,12 @@
   content: "+"!important;
 }
 
+/* voting */
 .arrow {
   margin: 0 auto;
-
-  text-align: center;
-
-  color: var(--c-muted);
   background-image: none!important;
-
+  color: var(--c-muted);
+  text-align: center;
   line-height: 1.2;
 }
 
@@ -167,6 +162,7 @@
   color: var(--c-downvote);
 }
 
+/* style mods */
 .link.last-clicked {
   border-color: transparent var(--c-main) transparent transparent;
 }

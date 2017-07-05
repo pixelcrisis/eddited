@@ -1,7 +1,8 @@
+/* comments */
+
 .commentarea .menuarea,.panestack-title {
   margin: 0;
   padding: var(--pad);
-
   border-color: var(--c-border);
 }
 
@@ -15,7 +16,6 @@
 
 .gold-accent.comment-visits-box {
   margin: var(--pad) 10px var(--double-pad);
-
   color: var(--c-locked-t);
 }
 
@@ -26,8 +26,6 @@
 
 .new-comment .tagline:after {
   display: inline-block;
-
-  content: "new comment";
-
   color: var(--c-main);
+  content: "new comment";
 }

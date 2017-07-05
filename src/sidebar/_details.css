@@ -1,21 +1,29 @@
-.subscribers,.users-online {
-  text-transform: uppercase;
+/* sidebar details */
 
+/* users */
+.subscribers,
+.users-online {
   color: var(--c-main);
-
-  font-size: .65rem;
+  text-transform: uppercase;
   font-weight: 700;
+  font-size: .65rem;
 }
 
-.subscribers .word,.titlebox .leavemoderator:before,.titlebox form.leavecontributor-button:before,.users-online .word,.users-online:before {
+.subscribers .word,
+.titlebox .leavemoderator:before,
+.titlebox form.leavecontributor-button:before,
+.users-online .word,
+.users-online:before {
   display: none;
 }
 
-.leavemoderator,.subscribers {
+.leavemoderator,
+.subscribers {
   float: right;
 }
 
-.subscribers:after,.users-online:after {
+.subscribers:after,
+.users-online:after {
   display: inline;
 }
 
@@ -27,21 +35,25 @@
   content: var(--here-now);
 }
 
-.leavecontributor-button,.leavemoderator {
+/* user status */
+.leavecontributor-button,
+.leavemoderator {
   display: inline-block;
-
   margin-bottom: var(--half-pad);
 }
 
-.leavecontributor-button .option,.leavemoderator {
+.leavecontributor-button .option,
+.leavemoderator {
   font-size: 0;
 }
 
-.leavecontributor-button .no,.leavecontributor-button .yes {
+.leavecontributor-button .no,
+.leavecontributor-button .yes {
   padding-right: 2px;
 }
 
-.leavecontributor-button .option a,.leavemoderator a {
+.leavecontributor-button .option a,
+.leavemoderator a {
   font-size: .65rem;
 }
 
@@ -53,26 +65,25 @@
   content: "Approved (";
 }
 
-.leavecontributor-button .option .togglebutton:after,.leavemoderator a:after {
+.leavecontributor-button .option .togglebutton:after,
+.leavemoderator a:after {
   content: ")";
 }
 
+/* flair */
 .titlebox form.flairtoggle {
   margin-top: var(--half-pad);
   margin-bottom: -12px;
   margin-bottom: -.75rem;
-
   font-size: 0;
 }
 
 .titlebox form.flairtoggle label:after {
   content: "Flair: ";
-
   font-size: .65rem;
 }
 
 .flairtoggle+.tagline {
   margin: 0;
-
   text-align: right;
 }

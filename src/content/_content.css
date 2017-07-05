@@ -2,7 +2,6 @@
 
 body>.content {
   margin: 55px 0 0 var(--pad);
-
   border-right-color: var(--c-bg);
 
   order: 1;
@@ -26,23 +25,17 @@ body>.content {
   background-color: color(var(--c-locked) lightness(90%));
 }
 
-
-
 /* submit page */
-
 .formtabs-content {
   border-color: var(--c-main);
 }
 
 ul.tabmenu.formtab {
   position: relative;
-
   margin: 0;
   padding: 0;
-
-  list-style: initial;
-
   border: none;
+  list-style: initial;
 }
 
 ul.tabmenu.formtab:hover {
@@ -56,7 +49,6 @@ ul.formtab li {
 
 ul.formtab li a {
   padding: var(--pad)!important;
-
   border: none!important;
   background: transparent!important;
 }
@@ -71,7 +63,6 @@ ul.formtab li a:hover {
 
 .roundfield {
   padding: var(--pad);
-
   border: 1px solid var(--c-border);
   border-radius: 0px;
   background-color: var(--c-shadow);

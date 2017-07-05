@@ -1,34 +1,43 @@
+/* user inputs */
+
 a {
   color: var(--c-main);
 }
 
-input[type=text],textarea {
+input[type=text],
+textarea {
   box-sizing: border-box;
   padding: var(--half-pad) var(--pad)!important;
-
-  color: var(--c-text)!important;
   border: 1px solid var(--c-border)!important;
   background: var(--c-bg)!important;
+  color: var(--c-text)!important;
 }
 
-input[type=text]:focus,textarea:focus {
-  border-color: var(--c-main)!important;
+input[type=text]:focus,
+textarea:focus {
   outline: none;
+  border-color: var(--c-main)!important;
 }
 
 .btn {
   padding: var(--half-pad) var(--pad);
 }
 
-.btn,.fancy-toggle-button .option,.fancy-toggle-button .option.active,.morelink a,.res-fancy-toggle-button,[href="#btn"]+a,[href="#obtn"]+a,button {
+.btn,
+.fancy-toggle-button .option,
+.fancy-toggle-button .option.active,
+.morelink a,
+.res-fancy-toggle-button,
+[href="#btn"]+a,
+[href="#obtn"]+a,
+button {
   @apply --button;
 }
 
-[href="#btn"]+a,[href="#obtn"]+a {
+[href="#btn"]+a,
+[href="#obtn"]+a {
   display: inline-block;
-
   padding: var(--half-pad) var(--pad);
-
   font-size: .65rem;
 }
 
@@ -36,6 +45,9 @@ input[type=text]:focus,textarea:focus {
   @apply --button-main;
 }
 
-.btn,.morelink a,[href="#obtn"],button {
+.btn,
+.morelink a,
+[href="#obtn"],
+button {
   @apply --button-outline;
 }
