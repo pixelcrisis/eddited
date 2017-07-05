@@ -1,13 +1,19 @@
 /* comments page */
 
-.panestack-title,
-.commentarea .menuarea {
+.panestack-title, .commentarea .menuarea {
   margin: 0;
   padding: var(--pad);
   border-color: var(--c-border);
 }
-.panestack-title { margin-top: var(--pad); }
-.commentarea .menuarea .toggle a { color: var(--c-muted); }
+
+.panestack-title {
+  margin-top: var(--pad);
+}
+
+.commentarea .menuarea .toggle a {
+  color: var(--c-muted);
+}
+
 .gold-accent.comment-visits-box {
   color: var(--c-locked-t);
   margin: var(--pad) 10px var(--double-pad);
@@ -17,6 +23,7 @@
   border-color: transparent;
   background-color: transparent;
 }
+
 .new-comment .tagline:after {
   content: 'new comment';
   display: inline-block;

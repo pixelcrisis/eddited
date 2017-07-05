@@ -1,8 +1,8 @@
 /* tabmenu */
 
-.tabmenu,
-.tabmenu a,
-.tabmenu li { box-sizing: border-box; }
+.tabmenu, .tabmenu a, .tabmenu li {
+  box-sizing: border-box;
+}
 
 .tabmenu {
   position: absolute;
@@ -15,20 +15,22 @@
   background: var(--c-bg);
   border-color: var(--c-border);
 }
-.tabmenu:not(:hover) li:not(.selected) { display: none; }
+
+.tabmenu:not(:hover) li:not(.selected) {
+  display: none;
+}
+
 .tabmenu:not(:hover) .selected a {
   color: var(--c-main);
   border-color: var(--c-border);
 }
 
-.tabmenu li,
-.tabmenu a {
+.tabmenu li, .tabmenu a {
   margin: 0;
   display: block;
 }
 
-.tabmenu li a,
-.tabmenu li.selected a {
+.tabmenu li a, .tabmenu li.selected a {
   width: 100%;
   font-weight: 400;
   font-size: 0.65rem;
@@ -39,7 +41,15 @@
   padding: var(--half-pad) var(--pad);
   border-bottom-color: var(--c-shadow);
 }
-.tabmenu li a:hover { background: var(--c-shadow); }
 
-.tabmenu li a { color: var(--c-text); }
-.tabmenu li.selected a { color: var(--c-main); }
+.tabmenu li a:hover {
+  background: var(--c-shadow);
+}
+
+.tabmenu li a {
+  color: var(--c-text);
+}
+
+.tabmenu li.selected a {
+  color: var(--c-main);
+}

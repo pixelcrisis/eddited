@@ -1,56 +1,73 @@
 /* subreddit info */
 
-.subscribers,
-.users-online {
+.subscribers, .users-online {
   font-weight: 700;
   font-size: .65rem;
   text-transform: uppercase;
   color: var(--c-main);
 }
 
-.subscribers .word,
-.users-online .word,
-.users-online::before,
-.titlebox .leavemoderator::before,
-.titlebox form.leavecontributor-button:before { display: none; }
+.subscribers .word, .users-online .word, .users-online::before, .titlebox .leavemoderator::before, .titlebox form.leavecontributor-button:before {
+  display: none;
+}
 
-.subscribers,
-.leavemoderator { float: right; }
+.subscribers, .leavemoderator {
+  float: right;
+}
 
-.subscribers::after,
-.users-online::after { display: inline; }
+.subscribers::after, .users-online::after {
+  display: inline;
+}
 
-.subscribers::after { content: var(--subscribers); }
-.users-online::after { content: var(--here-now); }
+.subscribers::after {
+  content: var(--subscribers);
+}
 
-.leavemoderator,
-.leavecontributor-button {
+.users-online::after {
+  content: var(--here-now);
+}
+
+.leavemoderator, .leavecontributor-button {
   display: inline-block;
   margin-bottom: var(--half-pad);
 }
-.leavemoderator,
-.leavecontributor-button .option { font-size: 0; }
-.leavecontributor-button .yes,
-.leavecontributor-button .no { padding-right: 2px; }
 
-.leavemoderator a,
-.leavecontributor-button .option a { font-size: 0.65rem; }
-.leavemoderator a::before { content: 'Mod ('; }
-.leavecontributor-button .option .togglebutton::before { content: 'Approved ('; }
-.leavemoderator a::after,
-.leavecontributor-button .option .togglebutton::after { content: ')'; }
+.leavemoderator, .leavecontributor-button .option {
+  font-size: 0;
+}
+
+.leavecontributor-button .yes, .leavecontributor-button .no {
+  padding-right: 2px;
+}
+
+.leavemoderator a, .leavecontributor-button .option a {
+  font-size: 0.65rem;
+}
+
+.leavemoderator a::before {
+  content: 'Mod (';
+}
+
+.leavecontributor-button .option .togglebutton::before {
+  content: 'Approved (';
+}
+
+.leavemoderator a::after, .leavecontributor-button .option .togglebutton::after {
+  content: ')';
+}
 
 .titlebox form.flairtoggle {
   font-size: 0;
   margin-bottom: -0.75rem;
   margin-top: var(--half-pad);
 }
+
 .titlebox form.flairtoggle label::after {
   content: 'Flair: ';
   font-size: 0.65rem;
 }
 
-.flairtoggle + .tagline {
+.flairtoggle+.tagline {
   margin: 0;
   text-align: right;
 }

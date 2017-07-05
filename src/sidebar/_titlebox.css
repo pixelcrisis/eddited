@@ -5,46 +5,60 @@
   border-top-color: var(--c-border);
 }
 
-#search input[type='text'] { width: 100%; }
+#search input[type='text'] {
+  width: 100%;
+}
 
-.submit-link,
-.submit-text {
+.submit-link, .submit-text {
   width: 47.5%;
   box-sizing: border-box;
 }
 
-.submit-link { float: left; }
+.submit-link {
+  float: left;
+}
+
 .submit-text {
   float: right;
   margin-right: 4px;
 }
 
-.side .nub,
-.side .nub { display: none; }
+.side .nub, .side .nub {
+  display: none;
+}
 
-.submit-link .morelink,
-.submit-text .morelink {
+.submit-link .morelink, .submit-text .morelink {
   border: none;
   font-size: 0;
   background: transparent;
   margin-bottom: var(--half-pad);
 }
 
+.morelink:not(:hover) {
+  opacity: 0.8;
+}
 
-.morelink:not(:hover) { opacity: 0.8; }
-
-.submit-text .morelink a::before,
-.submit-link .morelink a::before {
+.submit-text .morelink a::before, .submit-link .morelink a::before {
   display: inline;
   font-size: 0.75rem;
 }
 
-.submit-text .morelink a::before { content: var(--submit-text); }
-.submit-link .morelink a::before { content: var(--submit-link); }
+.submit-text .morelink a::before {
+  content: var(--submit-text);
+}
 
-.morelink:hover a { color: var(--c-main); }
+.submit-link .morelink a::before {
+  content: var(--submit-link);
+}
 
-.titlebox .redditname { margin-bottom: -4px; }
+.morelink:hover a {
+  color: var(--c-main);
+}
+
+.titlebox .redditname {
+  margin-bottom: -4px;
+}
+
 .titlebox .redditname a {
   margin-top: 8px;
   display: inline-block;

@@ -1,6 +1,9 @@
 /* topbar */
 
+
 /* collapse topbar by default */
+
+
 /*#header:not(:hover) #sr-header-area { margin-top: -8px; }
 #sr-header-area:not(:hover) {
   margin-top: -5px;
@@ -17,29 +20,44 @@
   padding-left: var(--half-pad);
   padding-right: var(--half-pad);
 }
+
 #header:hover #sr-header-area {
   margin-top: 0px;
   margin-bottom: -5px;
 }
-#header #sr-header-area:hover { margin-bottom: 0px; }
 
-#sr-more-link,
-#sr-header-area {
+#header #sr-header-area:hover {
+  margin-bottom: 0px;
+}
+
+#sr-more-link, #sr-header-area {
   @apply --ease-in;
   color: var(--c-bg);
   background: var(--c-bg);
 }
+
 #sr-header-area a {
   font-size: 0.5rem;
   color: var(--c-bg);
   margin-right: var(--half-pad);
 }
-#sr-header-area .separator { display: none; }
-#sr-more-link { margin-right: 0!important; }
 
-#sr-header-area .dropdown.srdrop { font-size: 0; }
+#sr-header-area .separator {
+  display: none;
+}
 
-#header:hover #sr-header-area,
-#header:hover #sr-header-area a { color: var(--c-muted); }
+#sr-more-link {
+  margin-right: 0!important;
+}
 
-#sr-header-area a:hover { color: var(--c-main)!important; }
+#sr-header-area .dropdown.srdrop {
+  font-size: 0;
+}
+
+#header:hover #sr-header-area, #header:hover #sr-header-area a {
+  color: var(--c-muted);
+}
+
+#sr-header-area a:hover {
+  color: var(--c-main)!important;
+}

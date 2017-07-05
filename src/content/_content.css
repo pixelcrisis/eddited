@@ -1,17 +1,17 @@
 /* content */
 
-body > .content {
+body>.content {
   order: 1;
   margin: 55px 0 0 var(--pad);
   border-right-color: var(--c-bg);
   flex: 0 1 calc(100% - (var(--w-sidebar) + var(--pad) + 2px));
 }
 
-#subreddit_stylesheet > div,
-#preview-table table { width: 100%; }
+#subreddit_stylesheet>div, #preview-table table {
+  width: 100%;
+}
 
-.thing.stickied.link a.title,
-.tagline .stickied-tagline, .search-result-meta .stickied-tagline {
+.thing.stickied.link a.title, .tagline .stickied-tagline, .search-result-meta .stickied-tagline {
   color: var(--c-stickied);
 }
 
@@ -21,8 +21,13 @@ body > .content {
   background-color: color(var(--c-locked) lightness(90%));
 }
 
+
 /* submit page */
-.formtabs-content { border-color: var(--c-main); }
+
+.formtabs-content {
+  border-color: var(--c-main);
+}
+
 ul.tabmenu.formtab {
   margin: 0;
   padding: 0;
@@ -36,16 +41,24 @@ ul.tabmenu.formtab:hover {
   background: transparent;
 }
 
-ul.formtab li { display: inline-block!important; }
+ul.formtab li {
+  display: inline-block!important;
+}
+
 ul.formtab li a {
   border: none!important;
   padding: var(--pad)!important;
   background: transparent!important;
 }
+
 ul.formtab li a:hover {
   color: var(--c-main)!important;
 }
-.tabmenu.formtab .selected a { color: var(--c-main)!important; }
+
+.tabmenu.formtab .selected a {
+  color: var(--c-main)!important;
+}
+
 .roundfield {
   border-radius: 0px;
   padding: var(--pad);
