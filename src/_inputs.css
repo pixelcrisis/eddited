@@ -23,6 +23,10 @@ textarea:focus {
   padding: 6px 12px;
 }
 
+.morelink {
+  background-image: none;
+}
+
 .btn,
 .fancy-toggle-button .option,
 .fancy-toggle-button .option.active,
