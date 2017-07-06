@@ -56,3 +56,34 @@
 .pagename a {
   color: var(--c-main);
 }
+
+@if $header-box {
+  body > .content::before {
+    display: block;
+    left: 13px;
+    right: 18px;
+    font-weight: 700;
+    text-align: center;
+    font-size: 1.25rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    line-height: var(--hbox-height);
+    margin-top: calc(-25px - var(--hbox-height));
+    height: var(--hbox-height);
+    content: var(--hbox-content);
+    position: absolute;
+
+    @if $header-box-background {
+      background: url(%%header%%);
+      background-size: cover;
+      background-position: center top;
+    }
+
+    @if $header-box-light-text {
+      color: var(--c-bg);
+    }
+    @else {
+      color: var(--c-text);
+    }
+  }
+}

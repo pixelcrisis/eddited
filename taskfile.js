@@ -4,7 +4,7 @@ const version = require('./package.json').version;
 const csscond = require('postcss-conditionals');
 const cssvars = require('postcss-simple-vars');
 const csscomb = require('postcss-csscomb');
-const cssnext = require('postcss-cssnext');
+const cssnext = require('postcss-cssnext')({ features: { fontVariant: false } });
 const imports = require('postcss-import');
 const cssnano = require('cssnano');
 

@@ -10,6 +10,9 @@ body {
   color: var(--c-text);
 
   flex-flow: row wrap;
+
+  @if $image-bg { background: url(%%bg%%) fixed center top/cover; }
+  @if $header-box { padding-top: calc(var(--hbox-height) + 12px); }
 }
 
 /* fix for r/all */
