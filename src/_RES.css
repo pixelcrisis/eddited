@@ -63,3 +63,9 @@
   top: auto!important;
   bottom: 0;
 }
+
+.RESHoverTitle .fancy-toggle-button {
+  width: auto;
+  margin: 0;
+  padding: 0;
+}
