@@ -36,7 +36,7 @@
   font-size: 0;
 }
 
-.morelink:not(:hover) {
+.morelink:hover {
   opacity: .8;
 }
 
