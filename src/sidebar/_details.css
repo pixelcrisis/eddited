@@ -39,7 +39,7 @@
 .leavecontributor-button,
 .leavemoderator {
   display: inline-block;
-  margin-bottom: var(--half-pad);
+  margin-bottom: 6px;
 }
 
 .leavecontributor-button .option,
@@ -72,7 +72,7 @@
 
 /* flair */
 .titlebox form.flairtoggle {
-  margin-top: var(--half-pad);
+  margin-top: 6px;
   margin-bottom: -12px;
   margin-bottom: -.75rem;
   font-size: 0;

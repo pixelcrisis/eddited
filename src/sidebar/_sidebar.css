@@ -1,8 +1,8 @@
 /* sidebar general */
 
 .side {
-  margin: 55px var(--pad) 0 0;
-  width: calc(var(--w-sidebar) - var(--pad) - 3px);
+  margin: 55px 12px 0 0;
+  width: calc(var(--w-sidebar) - 12px - 3px);
 
   order: 2;
 }
@@ -23,11 +23,11 @@
 }
 
 .sidecontentbox {
-  margin-bottom: var(--double-pad);
+  margin-bottom: 24px;
 }
 
 .sidecontentbox .title {
-  margin-bottom: var(--pad);
+  margin-bottom: 12px;
 }
 
 #moderation_tools .title h1 {

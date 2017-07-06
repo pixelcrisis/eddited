@@ -16,12 +16,12 @@ body {
 body.with-listing-chooser #header .pagename {
   bottom: initial;
   position: relative;
-  margin-right: var(--half-pad);
+  margin-right: 6px;
 }
 
 .content,.side {
   box-sizing: border-box;
-  padding: var(--pad);
+  padding: 12px;
   border: 1px solid var(--c-border);
   background: var(--c-bg);
 }
@@ -32,7 +32,7 @@ body.with-listing-chooser #header .pagename {
 }
 
 .md hr {
-  margin: var(--pad) 0;
+  margin: 12px 0;
   height: 1px;
   background-color: var(--c-border);
 }

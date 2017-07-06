@@ -6,7 +6,7 @@
 
 .tabmenu {
   position: absolute;
-  margin: -5px 0 0 var(--pad);
+  margin: -5px 0 0 12px;
   border: 1px solid transparent;
   color: var(--c-text);
 }
@@ -32,7 +32,7 @@
 
 .tabmenu li.selected a,
 .tabmenu li a {
-  padding: var(--half-pad) var(--pad);
+  padding: 6px 12px;
   width: 100%;
   border: 1px solid transparent;
   border-bottom-color: var(--c-shadow);

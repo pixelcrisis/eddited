@@ -1,7 +1,7 @@
 /* titlebox */
 
 .titlebox .bottom {
-  padding-bottom: var(--pad);
+  padding-bottom: 12px;
   border-top-color: var(--c-border);
 }
 
@@ -30,7 +30,7 @@
 
 .submit-link .morelink,
 .submit-text .morelink {
-  margin-bottom: var(--half-pad);
+  margin-bottom: 6px;
   border: none;
   background: transparent;
   font-size: 0;

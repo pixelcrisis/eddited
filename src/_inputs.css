@@ -7,7 +7,7 @@ a {
 input[type=text],
 textarea {
   box-sizing: border-box;
-  padding: var(--half-pad) var(--pad)!important;
+  padding: 6px 12px!important;
   border: 1px solid var(--c-border)!important;
   background: var(--c-bg)!important;
   color: var(--c-text)!important;
@@ -20,7 +20,7 @@ textarea:focus {
 }
 
 .btn {
-  padding: var(--half-pad) var(--pad);
+  padding: 6px 12px;
 }
 
 .btn,
@@ -31,7 +31,11 @@ textarea:focus {
 [href="#btn"]+a,
 [href="#obtn"]+a,
 button {
-  @apply --button;
+  font-weight: 400;
+  font-size: 0.75em;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border: 1px solid var(--c-main);
 }
 
 .btn:hover,
@@ -48,17 +52,19 @@ button:hover {
 [href="#btn"]+a,
 [href="#obtn"]+a {
   display: inline-block;
-  padding: var(--half-pad) var(--pad);
+  padding: 6px 12px;
   font-size: .65rem;
 }
 
 [href="#btn"]+a {
-  @apply --button-main;
+  color: var(--c-bg);
+  background: var(--c-main);
 }
 
 .btn,
 .morelink a,
 [href="#obtn"],
 button {
-  @apply --button-outline;
+  background: transparent;
+  color: var(--c-main);
 }

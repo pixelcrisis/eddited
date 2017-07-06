@@ -7,11 +7,11 @@
 }
 
 .footer-parent .bottommenu:first-of-type {
-  margin-top: var(--double-pad);
+  margin-top: 24px;
 }
 
 .footer-parent .bottommenu:last-of-type {
-  margin-bottom: var(--double-pad);
+  margin-bottom: 24px;
 }
 
 #hsts_pixel,.debuginfo {

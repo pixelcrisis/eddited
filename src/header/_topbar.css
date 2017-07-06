@@ -4,8 +4,8 @@
   position: relative;
   margin-top: -13px;
   padding-top: 3px;
-  padding-right: var(--half-pad);
-  padding-left: var(--half-pad);
+  padding-right: 6px;
+  padding-left: 6px;
   height: 1em;
   line-height: 1em;
 }
@@ -22,11 +22,11 @@
 #sr-header-area,#sr-more-link {
   background: var(--c-bg);
   color: var(--c-bg);
-  @apply --ease-in;
+  transition: all 0.15s ease;
 }
 
 #sr-header-area a {
-  margin-right: var(--half-pad);
+  margin-right: 6px;
   color: var(--c-bg);
   font-size: .5rem;
 }

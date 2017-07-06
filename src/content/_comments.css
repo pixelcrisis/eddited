@@ -2,12 +2,12 @@
 
 .commentarea .menuarea,.panestack-title {
   margin: 0;
-  padding: var(--pad);
+  padding: 12px;
   border-color: var(--c-border);
 }
 
 .panestack-title {
-  margin-top: var(--pad);
+  margin-top: 12px;
 }
 
 .commentarea .menuarea .toggle a {
@@ -15,7 +15,7 @@
 }
 
 .gold-accent.comment-visits-box {
-  margin: var(--pad) 10px var(--double-pad);
+  margin: 12px 10px 24px;
   color: var(--c-locked-t);
 }
 

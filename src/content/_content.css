@@ -1,11 +1,11 @@
 /* content */
 
 body>.content {
-  margin: 55px 0 0 var(--pad);
+  margin: 55px 0 0 12px;
   border-right-color: var(--c-bg);
 
   order: 1;
-  flex: 0 1 calc(100% - (var(--w-sidebar) + var(--pad) + 2px));
+  flex: 0 1 calc(100% - (var(--w-sidebar) + 12px + 2px));
 }
 
 #subreddit_stylesheet>div,
@@ -54,7 +54,7 @@ ul.formtab li {
 }
 
 ul.formtab li a {
-  padding: var(--pad)!important;
+  padding: 12px!important;
   border: none!important;
   background: transparent!important;
 }
@@ -68,7 +68,7 @@ ul.formtab li a:hover {
 }
 
 .roundfield {
-  padding: var(--pad);
+  padding: 12px;
   border: 1px solid var(--c-border);
   border-radius: 0px;
   background-color: var(--c-shadow);
