@@ -1,4 +1,4 @@
-/* link flairs */
+/* begin conditional plugin */ @if $link-flairs {
 
 .flair, .linkflairlabel {
   padding: 2px 4px;
@@ -7,3 +7,5 @@
   color: var(--c-bg);
   vertical-align: bottom;
 }
+
+/* end conditional plugin */ }

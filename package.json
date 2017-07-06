@@ -15,9 +15,11 @@
     "cssnano": "^3.10.0",
     "fly-rename": "^0.1.1",
     "postcss": "^6.0.2",
+    "postcss-conditionals": "^2.1.0",
     "postcss-csscomb": "^1.0.2",
     "postcss-cssnext": "^2.11.0",
     "postcss-import": "^10.0.0",
+    "postcss-simple-vars": "^4.0.0",
     "taskr": "^1.0.6"
   },
   "browserslist": [

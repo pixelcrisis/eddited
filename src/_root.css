@@ -2,7 +2,7 @@
 
 :root {
 
-    /* colors */
+  /* colors */
   --c-bg: #fff;
   --c-text: #191a23;
   --c-main: #0071c5;
@@ -16,14 +16,17 @@
   --c-border: #eaeaea;
   --c-muted: #aaa;
 
-    /* sizes */
+  /* sizes */
   --w-sidebar: 300px;
   --w-thumbnail: 45px;
 
-    /* text */
+  /* text */
   --submit-link: 'Show';
   --submit-text: 'Tell';
   --subscribers: 'Users';
   --here-now: 'Browsing';
-  
+
+  /* options */
+  $link-flairs: true;
+
 }
