@@ -28,13 +28,14 @@
 
   /* options */
   $link-flairs: true;
+  $user-flairs: false;
   $image-bg: false;
-  $header-box: true;
+  $header-box: false;
   $header-box-background: true;
   $header-box-light-text: true;
 
   /* header box */
   --hbox-height: 150px;
-  --hbox-content: "pokemon go mpls"
+  --hbox-content: "r/eddited"
 
 }

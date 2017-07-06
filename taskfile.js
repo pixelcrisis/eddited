@@ -17,8 +17,9 @@ const cfg = {
 
 /* version prefix plugin */
 const prefix = function * (file) {
+  let prefix = `eddited v${version}`;
   let data = file[0].data.toString();
-  file[0].data = new Buffer(`/* v${version} */\n${data}`);
+  file[0].data = new Buffer(`/* ${prefix} */\n${data}`);
 };
 
 exports.default = function * (task) {

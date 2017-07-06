@@ -12,6 +12,7 @@
 
 @import './content/_content.css';
 @import './content/_entry.css';
+@import './content/_flairs.css';
 @import './content/_comments.css';
 
 @import './sidebar/_sidebar.css';

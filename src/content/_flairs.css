@@ -9,3 +9,11 @@
 }
 
 /* end conditional plugin */ }
+/* begin conditional plugin */ @if $user-flairs {
+
+.tagline .flair {
+  margin-bottom: -3px;
+  vertical-align: bottom;
+}
+
+/* end conditional plugin */ }
