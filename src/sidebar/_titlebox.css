@@ -36,10 +36,6 @@
   font-size: 0;
 }
 
-.morelink:hover {
-  opacity: .8;
-}
-
 .submit-link .morelink a:before,
 .submit-text .morelink a:before {
   display: inline;

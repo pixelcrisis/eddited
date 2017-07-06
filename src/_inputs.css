@@ -34,6 +34,17 @@ button {
   @apply --button;
 }
 
+.btn:hover,
+.fancy-toggle-button .option:hover,
+.fancy-toggle-button .option.active:hover,
+.morelink a:hover,
+.res-fancy-toggle-button:hover,
+[href="#btn"]+a:hover,
+[href="#obtn"]+a:hover,
+button:hover {
+  opacity: 0.8;
+}
+
 [href="#btn"]+a,
 [href="#obtn"]+a {
   display: inline-block;
