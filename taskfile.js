@@ -1,6 +1,7 @@
 'use strict';
 
 const $ = {
+  v: require('./package.json').version,
   cssnano: require('cssnano'),
   import: require('postcss-import'),
   csscomb: require('postcss-csscomb')('zen'),
@@ -25,6 +26,7 @@ exports.build = function * (task) {
   yield task.source('src/theme.css')
     .postcss(cfg.build)
     .rename(cfg.rename)
+    .header(`v${$.v}`)
     .target('dist');
 };
 

@@ -26,5 +26,10 @@
   "scripts": {
     "build": "taskr",
     "clean": "taskr clean"
+  },
+  "taskr": {
+    "requires": [
+      "./taskr-header.js"
+    ]
   }
 }
