@@ -27,8 +27,8 @@ body>.content {
 
 /* inline expand buttons */
 .thing .md .expando-button {
-  margin: 0 4px;
   position: relative;
+  margin: 0 4px;
 }
 
 /* submit page */

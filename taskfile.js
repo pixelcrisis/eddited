@@ -18,7 +18,7 @@ const cfg = {
 };
 
 exports.default = function * (task) {
-  yield task.start('build')
+  yield task.serial(['clean', 'build'])
   yield task.watch('src/**/*.css', 'build')
 };
 
@@ -26,7 +26,12 @@ exports.build = function * (task) {
   yield task.source('src/theme.css')
     .postcss(cfg.build)
     .rename(cfg.rename)
-    .header(`v${$.v}`)
+    .run({ every: false },
+      function * (file) {
+        let data = file[0].data.toString();
+        let contents = `/* v${$.v} */ \n${data}`;
+        file[0].data = new Buffer(contents);
+      })
     .target('dist');
 };
 

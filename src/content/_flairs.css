@@ -2,8 +2,8 @@
 
 .flair, .linkflairlabel {
   padding: 2px 4px;
-  color: var(--c-bg);
-  vertical-align: bottom;
   border-color: var(--c-bg);
   background: var(--c-main);
+  color: var(--c-bg);
+  vertical-align: bottom;
 }

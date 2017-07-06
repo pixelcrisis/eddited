@@ -24,12 +24,8 @@
     "last 2 versions"
   ],
   "scripts": {
-    "build": "taskr",
+    "start": "taskr",
+    "build": "taskr build",
     "clean": "taskr clean"
-  },
-  "taskr": {
-    "requires": [
-      "./taskr-header.js"
-    ]
   }
 }

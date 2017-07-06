@@ -31,11 +31,11 @@ textarea:focus {
 [href="#btn"]+a,
 [href="#obtn"]+a,
 button {
+  border: 1px solid var(--c-main);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
   font-weight: 400;
   font-size: 0.75em;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  border: 1px solid var(--c-main);
 }
 
 .btn:hover,
@@ -57,8 +57,8 @@ button:hover {
 }
 
 [href="#btn"]+a {
-  color: var(--c-bg);
   background: var(--c-main);
+  color: var(--c-bg);
 }
 
 .btn,

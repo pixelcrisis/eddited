@@ -14,8 +14,8 @@ body {
 
 /* fix for r/all */
 body.with-listing-chooser #header .pagename {
-  bottom: initial;
   position: relative;
+  bottom: initial;
   margin-right: 6px;
 }
 
