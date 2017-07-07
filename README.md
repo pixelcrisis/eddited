@@ -12,7 +12,7 @@ a back-to-basics subreddit theme.
 * Then feel free to make changes wherever else!
 
 #### Build
-* Now that you've changed things
+* Now that you've modified the theme to your liking
 * `npm run build` will build the new `dist/theme.min.css`
 * If you use `npm run start`, it will auto-build on save
 * `npm run clean` formats css
