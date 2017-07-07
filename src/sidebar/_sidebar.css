@@ -1,7 +1,7 @@
 /* sidebar general */
 
 .side {
-  margin: 55px 12px 0 0;
+  margin: 55px 0 0 0;
   width: calc(var(--w-sidebar) - 12px - 3px);
 
   order: 2;

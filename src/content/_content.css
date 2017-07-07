@@ -73,3 +73,11 @@ ul.formtab li a:hover {
   border-radius: 0px;
   background-color: var(--c-shadow);
 }
+
+/* misc pages */
+.usertable {
+  margin: 0;
+}
+.flaircell, .flairlist .header {
+  margin-right: 0;
+}

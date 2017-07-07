@@ -8,6 +8,14 @@
   vertical-align: bottom;
 }
 
+.linkflair-red .linkflairlabel {
+  background: var(--c-red-flair);
+}
+
+.linkflair-green .linkflairlabel {
+  background: var(--c-green-flair);
+}
+
 /* end conditional plugin */ }
 /* begin conditional plugin */ @if $user-flairs {
 

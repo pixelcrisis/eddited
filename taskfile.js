@@ -6,7 +6,7 @@ const cssvars = require('postcss-simple-vars');
 const csscomb = require('postcss-csscomb');
 const cssnext = require('postcss-cssnext')({ features: { fontVariant: false } });
 const imports = require('postcss-import');
-const cssnano = require('cssnano');
+const cssnano = require('cssnano')({ zindex: false });
 
 const cfg = {
   rename: { suffix: '.min' },
