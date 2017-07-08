@@ -24,7 +24,6 @@ const prefix = function * (file) {
 
 exports.default = function * (task) {
   yield task.serial( ['clean', 'build'] )
-  yield task.watch('config.css', 'build')
   yield task.watch('src/**/*.css', 'build')
 };
 

@@ -1,7 +1,7 @@
 /* r/eddited
     A back-to-basics subreddit theme */
 
-@import '../config.css';
+@import 'config.css';
 @import '_structure.css';
 @import '_inputs.css';
 

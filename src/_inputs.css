@@ -23,8 +23,17 @@ textarea:focus {
   padding: 6px 12px;
 }
 
+.sidebox.create {
+  clear: both;
+}
+
+.sidebox.create .spacer {
+  display: none;
+}
+
 .morelink {
-  background-image: none;
+  border: none;
+  background-image: none!important;
 }
 
 .btn,
