@@ -28,7 +28,7 @@
 
   /* options */
   $link-flairs: true;
-  $user-flairs: false;
+  $user-flairs: true;
   $image-bg: false;
   $header-box: true;
   $header-box-background: true;

@@ -58,7 +58,7 @@
 }
 
 @if $header-box {
-  body > .content::before {
+  body:not(.with-listing-chooser) > .content::before {
     display: block;
     left: 0;
     right: 0;
