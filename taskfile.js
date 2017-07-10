@@ -14,10 +14,8 @@ const version = require('./package.json').version;
 const extract = function * (file) { pretty = file[0].data.toString(); };
 
 const format = function * (file) {
-  let template = [
-    `/* eddited v${version} */\n`, pretty,
-    `\n/* core theme (upgrade below this line) */`, file[0].data.toString()
-  ];
+  let template = [ `/* r/eddited */\n`, `${pretty}\n`,
+    `/* eddited core v${version} */\n`, file[0].data.toString() ];
   file[0].data = new Buffer(template.join('\n'))
 };
 
@@ -47,7 +45,7 @@ module.exports = {
   * build (task) { task.serial(['builder', 'formatter']) },
   * publish (task) { task.serial(['cleaner', 'build']) },
   * develop (task) {
-      yield task.start('cleaner');
+      yield task.serial(['cleaner', 'build']);
       yield task.watch('src/**/*.css', 'build')
   }
 
