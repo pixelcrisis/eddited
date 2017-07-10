@@ -70,7 +70,6 @@
     line-height: var(--hbox-height);
     margin-top: calc(-13px - var(--hbox-height));
     height: var(--hbox-height);
-    content: var(--hbox-content);
     position: absolute;
     border-bottom: 2px solid var(--c-main);
 

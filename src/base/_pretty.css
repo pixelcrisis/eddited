@@ -1,0 +1,13 @@
+@import 'config.css';
+
+/* everything in this file
+  gets pretty printed at the top of the css file
+  for easy editing for the end-user. content should
+  be things like CSS-based text items.
+*/
+
+@if $header-box {
+  body.listing-page:not(.with-listing-chooser) > .content::before {
+    content: var(--hbox-content);
+  }
+}

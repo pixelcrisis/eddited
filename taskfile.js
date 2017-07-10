@@ -1,40 +1,54 @@
 'use strict';
 
+const plugins = [
+  require('postcss-import'),
+  require('postcss-simple-vars'),
+  require('postcss-conditionals'),
+  require('postcss-cssnext')({ features: { fontVariant: false } }),
+  require('cssnano')({ zindex: false })
+];
+
+let pretty;
+const csscomb = [ require('postcss-csscomb') ];
 const version = require('./package.json').version;
-const csscond = require('postcss-conditionals');
-const cssvars = require('postcss-simple-vars');
-const csscomb = require('postcss-csscomb');
-const cssnext = require('postcss-cssnext')({ features: { fontVariant: false } });
-const imports = require('postcss-import');
-const cssnano = require('cssnano')({ zindex: false });
+const extract = function * (file) { pretty = file[0].data.toString(); };
 
-const cfg = {
-  rename: { suffix: '.min' },
-  clean: { plugins: [ csscomb ] },
-  build: { from: './src/theme.css', to: './dist',
-    plugins: [ imports, cssvars, csscond, cssnext, cssnano ] }
+const format = function * (file) {
+  let template = [
+    `/* eddited v${version} */\n`, pretty,
+    `\n/* core theme (upgrade below this line) */`, file[0].data.toString()
+  ];
+  file[0].data = new Buffer(template.join('\n'))
 };
 
-/* version prefix plugin */
-const prefix = function * (file) {
-  let prefix = `eddited v${version}`;
-  let data = file[0].data.toString();
-  file[0].data = new Buffer(`/* ${prefix} */\n${data}`);
-};
+module.exports = {
 
-exports.default = function * (task) {
-  yield task.serial( ['clean', 'build'] )
-  yield task.watch('src/**/*.css', 'build')
-};
+  * cleaner (task) {
+    yield task.source('src/**/*.css')
+          .postcss({ plugins: csscomb }).target('src');
+  },
 
-exports.clean = function * (task) {
-  yield task.source('src/**/*.css').postcss(cfg.clean).target('src');
-};
+  * formatter (task) {
+    yield task.source('dist/theme.min.css')
+          .run({ every: false }, format).target('dist');
+  },
 
-exports.build = function * (task) {
-  yield task.source('src/theme.css')
-    .postcss(cfg.build)
-    .rename(cfg.rename)
-    .run({ every: false }, prefix)
-    .target('dist')
+  * builder (task) {
+    yield task.source('src/theme.css')
+          .postcss({ from: './src/theme.css', plugins: plugins })
+          .rename({ suffix: '.min' }).target('dist');
+
+    yield task.source('src/base/_pretty.css')
+          .postcss({ from: './src/base/', plugins: plugins })
+          .run({ every: false }, extract);
+  },
+
+  // CLI / npm script tools
+  * build (task) { task.serial(['builder', 'formatter']) },
+  * publish (task) { task.serial(['cleaner', 'build']) },
+  * develop (task) {
+      yield task.start('cleaner');
+      yield task.watch('src/**/*.css', 'build')
+  }
+
 };

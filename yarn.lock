@@ -10,6 +10,13 @@
     flatten "^1.0.2"
     read-pkg-up "^2.0.0"
 
+"@taskr/clear@^1.0.6":
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/@taskr/clear/-/clear-1.0.6.tgz#0a68bf1336952765c8ef482bc6902c9bf41175d3"
+  dependencies:
+    bluebird "^3.5.0"
+    rimraf "^2.5.4"
+
 "@taskr/esnext@^1.0.0":
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/@taskr/esnext/-/esnext-1.0.0.tgz#04fdb594da231891b9ee4e589cabdb9e259e769c"
@@ -2033,7 +2040,7 @@ rgb@~0.1.0:
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/rgb/-/rgb-0.1.0.tgz#be27b291e8feffeac1bd99729721bfa40fc037b5"
 
-rimraf@2, rimraf@^2.5.1, rimraf@^2.6.1:
+rimraf@2, rimraf@^2.5.1, rimraf@^2.5.4, rimraf@^2.6.1:
   version "2.6.1"
   resolved "https://registry.yarnpkg.com/rimraf/-/rimraf-2.6.1.tgz#c2338ec643df7a1b7fe5c54fa86f57428a55f33d"
   dependencies:

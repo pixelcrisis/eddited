@@ -8,6 +8,7 @@
   "license": "MIT",
   "devDependencies": {
     "@taskr/babel": "^1.0.6",
+    "@taskr/clear": "^1.0.6",
     "@taskr/esnext": "^1.0.0",
     "@taskr/postcss": "^1.0.6",
     "@taskr/watch": "^1.0.6",
@@ -26,8 +27,8 @@
     "last 2 versions"
   ],
   "scripts": {
-    "start": "taskr",
+    "develop": "taskr develop",
     "build": "taskr build",
-    "clean": "taskr clean"
+    "publish": "taskr publish"
   }
 }
