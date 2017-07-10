@@ -1,10 +1,15 @@
 /* sidebar general */
 
 .side {
-  margin: 55px 0 0 0;
-  width: calc(var(--w-sidebar) - 12px - 3px);
+  margin: 33px 0 0;
+  width: var(--w-sidebar);
+  border-left: 1px solid var(--c-border);
 
   order: 2;
+}
+
+.with-listing-chooser .side {
+  margin-right: 0px;
 }
 
 .side:after {

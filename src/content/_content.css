@@ -1,11 +1,11 @@
 /* content */
 
 body>.content {
-  margin: 55px 0 0 12px;
+  margin: 33px 0 0!important;
   border-right-color: var(--c-bg);
 
   order: 1;
-  flex: 0 1 calc(100% - (var(--w-sidebar) + 12px + 2px));
+  flex: 0 1 calc(100% - var(--w-sidebar));
 }
 
 #subreddit_stylesheet>div,

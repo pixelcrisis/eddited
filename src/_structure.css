@@ -12,10 +12,16 @@ body {
   flex-flow: row wrap;
 
   @if $image-bg { background: url(%%bg%%) fixed center top/cover; }
-  @if $header-box { padding-top: calc(var(--hbox-height) + 6px); }
+  @if $header-box { padding-top: calc(var(--hbox-height) + 8px); }
+
 }
 
 /* fix for r/all */
+body.with-listing-chooser.listing-chooser-collapsed .listing-chooser,
+body.with-listing-chooser .listing-chooser {
+  top: 40px;
+  z-index: 5;
+}
 body.with-listing-chooser #header .pagename {
   position: relative;
   bottom: initial;
@@ -25,7 +31,6 @@ body.with-listing-chooser #header .pagename {
 .content,.side {
   box-sizing: border-box;
   padding: 12px;
-  border: 1px solid var(--c-border);
   background: var(--c-bg);
 }
 

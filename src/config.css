@@ -30,7 +30,7 @@
   $link-flairs: true;
   $user-flairs: false;
   $image-bg: false;
-  $header-box: false;
+  $header-box: true;
   $header-box-background: true;
   $header-box-light-text: true;
 
@@ -39,7 +39,7 @@
   --c-green-flair: #399b76; /* matches stickied */
 
   /* header box */
-  --hbox-height: 150px;
-  --hbox-content: "r/eddited"
+  --hbox-height: 175px;
+  --hbox-content: "r/eddited - clean. simple."
 
 }
