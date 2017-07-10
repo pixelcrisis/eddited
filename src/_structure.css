@@ -17,7 +17,7 @@ body {
 }
 
 @if $header-box {
-  body:not(.with-listing-chooser) {
+  body.listing-page:not(.with-listing-chooser) {
     padding-top: calc(var(--hbox-height) + 8px);
   }
 }
