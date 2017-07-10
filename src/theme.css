@@ -2,24 +2,25 @@
     A back-to-basics subreddit theme */
 
 @import 'config.css';
-@import '_structure.css';
-@import '_inputs.css';
 
-@import './header/_header.css';
-@import './header/_topbar.css';
-@import './header/_userbar.css';
-@import './header/_tabmenu.css';
+@import 'base/_structure.css';
+@import 'base/_inputs.css';
 
-@import './content/_content.css';
-@import './content/_entry.css';
-@import './content/_flairs.css';
-@import './content/_comments.css';
+@import 'header/_header.css';
+@import 'header/_topbar.css';
+@import 'header/_userbar.css';
+@import 'header/_tabmenu.css';
 
-@import './sidebar/_sidebar.css';
-@import './sidebar/_titlebox.css';
-@import './sidebar/_usertext.css';
-@import './sidebar/_details.css';
+@import 'content/_content.css';
+@import 'content/_entry.css';
+@import 'content/_flairs.css';
+@import 'content/_comments.css';
 
-@import './content/_footer.css';
+@import 'sidebar/_sidebar.css';
+@import 'sidebar/_titlebox.css';
+@import 'sidebar/_usertext.css';
+@import 'sidebar/_details.css';
 
-@import './_RES.css';
+@import 'content/_footer.css';
+
+@import 'base/_RES.css';
