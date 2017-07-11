@@ -103,3 +103,7 @@ ul.formtab li a:hover {
 .content > .menuarea .dropdown.lightdrop .selected {
   color: var(--c-bg);
 }
+.content > .menuarea .flat-list a,
+.content > .menuarea .flat-list .selected a {
+  color: var(--c-bg);
+}
