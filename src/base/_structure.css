@@ -41,6 +41,7 @@ body.with-listing-chooser #header .pagename {
 }
 
 .content .content {
+  margin: 0;
   padding: 0;
   border: none;
 }

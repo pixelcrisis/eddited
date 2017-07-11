@@ -32,10 +32,14 @@ body>.content {
 }
 
 /* submit page */
+.content > .tabpane-content,
 .formtabs-content {
-  border-color: var(--c-main);
+  padding-top: 12px;
+  border: 3px solid transparent;
+  border-top-color: var(--c-main);
 }
 
+.content > .tabmenu,
 ul.tabmenu.formtab {
   position: relative;
   margin: 0;
@@ -44,40 +48,58 @@ ul.tabmenu.formtab {
   list-style: initial;
 }
 
+.content > .tabmenu:hover,
 ul.tabmenu.formtab:hover {
   border: none;
   background: transparent;
 }
 
+.content > .tabmenu li,
 ul.formtab li {
   display: inline-block!important;
 }
 
+.content > .tabmenu li a,
 ul.formtab li a {
   padding: 12px!important;
   border: none!important;
   background: transparent!important;
 }
 
+.content > .tabmenu li a:hover,
 ul.formtab li a:hover {
   color: var(--c-main)!important;
 }
 
+.content > .tabmenu .selected a,
 .tabmenu.formtab .selected a {
   color: var(--c-main)!important;
 }
 
-.roundfield {
-  padding: 12px;
+.roundfield, .linefield {
+  padding: 10px;
   border: 1px solid var(--c-border);
   border-radius: 0px;
   background-color: var(--c-shadow);
 }
 
 /* misc pages */
+.fancy-settings h1 {
+  margin: 12px 0;
+}
 .usertable {
   margin: 0;
 }
 .flaircell, .flairlist .header {
   margin-right: 0;
+}
+.content > .menuarea {
+  border: none;
+  background: var(--c-main);
+  color: var(--c-bg);
+  display: inline-block;
+  border-radius: 3px;
+}
+.content > .menuarea .dropdown.lightdrop .selected {
+  color: var(--c-bg);
 }
