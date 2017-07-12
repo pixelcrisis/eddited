@@ -26,6 +26,12 @@
   line-height: 1;
 }
 
+img#header-img {
+  height: 25px;
+  width: auto;
+  margin: -12px 0 -6px;
+}
+
 #header-img.default-header {
   margin: 0 -4px 0 0;
   width: auto;
