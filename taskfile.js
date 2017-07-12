@@ -14,8 +14,9 @@ const version = require('./package.json').version;
 const extract = function * (file) { pretty = file[0].data.toString(); };
 
 const format = function * (file) {
-  let template = [ `/* r/eddited */\n`, `${pretty}\n`,
-    `/* eddited core v${version} */\n`, file[0].data.toString() ];
+  let code = file[0].data.toString();
+  let template = [ `/* eddited options */\n`, `${pretty}\n`,
+    `/* eddited theme core v${version} - r/eddited */\n`, `${code}\n` ];
   file[0].data = new Buffer(template.join('\n'))
 };
 
