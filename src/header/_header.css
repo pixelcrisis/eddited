@@ -62,34 +62,3 @@ img#header-img {
 .pagename a {
   color: var(--c-main);
 }
-
-@if $header-box {
-  body.listing-page:not(.with-listing-chooser) > .content::before {
-    display: block;
-    left: 0;
-    right: 0;
-    font-weight: 700;
-    text-align: center;
-    font-size: 1.25rem;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    line-height: var(--hbox-height);
-    margin-top: calc(-13px - var(--hbox-height));
-    height: var(--hbox-height);
-    position: absolute;
-    border-bottom: 2px solid var(--c-main);
-
-    @if $header-box-background {
-      background: url(%%header%%);
-      background-size: cover;
-      background-position: center top;
-    }
-
-    @if $header-box-light-text {
-      color: var(--c-bg);
-    }
-    @else {
-      color: var(--c-text);
-    }
-  }
-}

@@ -10,16 +10,6 @@ body {
   color: var(--c-text);
 
   flex-flow: row wrap;
-
-  @if $image-bg { background: url(%%bg%%) fixed center top/cover; }
-  @if $header-box {  }
-
-}
-
-@if $header-box {
-  body.listing-page:not(.with-listing-chooser) {
-    padding-top: calc(var(--hbox-height) + 8px);
-  }
 }
 
 /* fix for r/all */

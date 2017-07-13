@@ -1,11 +1,22 @@
 {
   "name": "eddited",
-  "version": "0.7.3",
+  "version": "0.8.0",
   "description": "A Subreddit Theme",
   "main": "dist/theme.css",
   "repository": "git://github.com/12px/eddited.git",
   "author": "12px, dalton@12px.io",
   "license": "MIT",
+  "scripts": {
+    "develop": "taskr develop",
+    "build": "taskr build",
+    "publish": "taskr publish"
+  },
+  "taskr": {
+    "requires": [ "./taskr-format.js" ]
+  },
+  "browserslist": [
+    "last 2 versions"
+  ],
   "devDependencies": {
     "@taskr/babel": "^1.0.6",
     "@taskr/clear": "^1.0.6",
@@ -22,13 +33,5 @@
     "postcss-import": "^10.0.0",
     "postcss-simple-vars": "^4.0.0",
     "taskr": "^1.0.6"
-  },
-  "browserslist": [
-    "last 2 versions"
-  ],
-  "scripts": {
-    "develop": "taskr develop",
-    "build": "taskr build",
-    "publish": "taskr publish"
   }
 }

@@ -1,5 +1,11 @@
 'use strict';
 
+let theme = {
+  pretty: null,
+  extras: null,
+  version: require('./package.json').version
+};
+
 const plugins = [
   require('postcss-import'),
   require('postcss-simple-vars'),
@@ -8,28 +14,20 @@ const plugins = [
   require('cssnano')({ zindex: false })
 ];
 
-let pretty;
-const csscomb = [ require('postcss-csscomb') ];
-const version = require('./package.json').version;
-const extract = function * (file) { pretty = file[0].data.toString(); };
-
-const format = function * (file) {
-  let code = file[0].data.toString();
-  let template = [ `/* eddited options */\n`, `${pretty}\n`,
-    `/* eddited theme core v${version} - r/eddited */\n`, `${code}\n` ];
-  file[0].data = new Buffer(template.join('\n'))
-};
+const get = function (files) { return files[0].data.toString(); };
+const getPretty = function * (file) { theme.pretty = get(file); };
+const getExtras = function * (file) { theme.extras = get(file); };
 
 module.exports = {
 
   * cleaner (task) {
     yield task.source('src/**/*.css')
-          .postcss({ plugins: csscomb }).target('src');
+          .postcss({ plugins: require('postcss-csscomb') }).target('src');
   },
 
   * formatter (task) {
     yield task.source('dist/theme.min.css')
-          .run({ every: false }, format).target('dist');
+          .format(theme).target('dist');
   },
 
   * builder (task) {
@@ -37,17 +35,20 @@ module.exports = {
           .postcss({ from: './src/theme.css', plugins: plugins })
           .rename({ suffix: '.min' }).target('dist');
 
-    yield task.source('src/base/_pretty.css')
-          .postcss({ from: './src/base/', plugins: plugins })
-          .run({ every: false }, extract);
+    yield task.source('src/build/_pretty.css')
+          .postcss({ from: './src/build/', plugins: plugins })
+          .run({ every: false }, getPretty);
+
+    yield task.source('src/build/_extras.css')
+          .postcss({ from: './src/build/', plugins: plugins })
+          .run({ every: false }, getExtras);
   },
 
   // CLI / npm script tools
   * build (task) { task.serial(['builder', 'formatter']) },
   * publish (task) { task.serial(['cleaner', 'build']) },
-  * develop (task) {
-      yield task.serial(['cleaner', 'build']);
-      yield task.watch('src/**/*.css', 'build')
+  * develop (task) { yield task.serial(['cleaner', 'build']);
+    yield task.watch('src/**/*.css', 'build')
   }
 
 };
