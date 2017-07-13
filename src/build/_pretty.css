@@ -7,7 +7,7 @@
 */
 
 @if $header-box {
-  body.listing-page:not(.with-listing-chooser) > .content::before {
+  body > .content::before {
     content: var(--hbox-content);
   }
 }

@@ -6,11 +6,11 @@
 */
 
 @if $header-box {
-  body.listing-page:not(.with-listing-chooser) {
+  body {
     padding-top: calc(var(--hbox-height) + 8px);
   }
 
-  body.listing-page:not(.with-listing-chooser) > .content::before {
+  body > .content::before {
     display: block;
     left: 0;
     right: 0;
