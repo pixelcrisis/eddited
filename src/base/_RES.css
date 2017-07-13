@@ -69,3 +69,9 @@
   padding: 0;
   width: auto;
 }
+
+.res-userHighlight .entry .tagline .author.moderator {
+  padding: 0 2px;
+  color: var(--c-bg)!important;
+  background-color: var(--c-stickied)!important;
+}
