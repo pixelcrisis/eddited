@@ -11,3 +11,13 @@
     content: var(--hbox-content);
   }
 }
+
+
+
+.submit-text .morelink a:before {
+  content: var(--submit-text);
+}
+
+.submit-link .morelink a:before {
+  content: var(--submit-link);
+}

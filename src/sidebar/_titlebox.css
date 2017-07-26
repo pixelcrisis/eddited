@@ -42,14 +42,6 @@
   font-size: .75rem;
 }
 
-.submit-text .morelink a:before {
-  content: var(--submit-text);
-}
-
-.submit-link .morelink a:before {
-  content: var(--submit-link);
-}
-
 .morelink:hover a {
   color: var(--c-main);
 }

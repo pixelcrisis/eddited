@@ -15,6 +15,7 @@
   --c-shadow: #f7f7f7;
   --c-border: #eaeaea;
   --c-muted: #aaa;
+  --c-nsfw: #d86a62;
 
   /* sizes */
   --w-sidebar: 300px;
@@ -34,7 +35,7 @@
   $header-box-light-text: true;
 
   /* flairs */
-  --c-red-flair: #d86a62;
+  --c-red-flair: #d86a62; /* matches nsfw */
   --c-green-flair: #399b76; /* matches stickied */
 
   /* header box */

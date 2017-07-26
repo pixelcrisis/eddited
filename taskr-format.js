@@ -5,7 +5,7 @@ module.exports = function (task, utils) {
     * func (files, opts) {
 
       let core = files[0].data.toString();
-      let cfg = opts.pretty.split('{').join(' {\n  ').split('}').join('\n}');
+      let cfg = opts.pretty.split('{').join(' {\n  ').split('}').join('\n}\n');
 
       let template = [
         `/* eddited options */`, cfg,
