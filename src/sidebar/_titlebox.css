@@ -79,7 +79,7 @@
 }
 
 .fancy-toggle-button .add {
-  border-color: var(--c-main);
-  background: var(--c-main);
+  border-color: var(--c-button);
+  background: var(--c-button);
   color: var(--c-bg);
 }

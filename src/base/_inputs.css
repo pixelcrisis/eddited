@@ -44,7 +44,7 @@ textarea:focus {
 [href="#btn"]+a,
 [href="#obtn"]+a,
 button {
-  border: 1px solid var(--c-main);
+  border: 1px solid var(--c-button);
   text-transform: uppercase;
   letter-spacing: 0.1em;
   font-weight: 400;
@@ -70,7 +70,7 @@ button:hover {
 }
 
 [href="#btn"]+a {
-  background: var(--c-main);
+  background: var(--c-button);
   color: var(--c-bg);
 }
 
@@ -79,5 +79,5 @@ button:hover {
 [href="#obtn"],
 button {
   background: transparent;
-  color: var(--c-main);
+  color: var(--c-button);
 }
