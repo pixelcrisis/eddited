@@ -14,6 +14,10 @@
   margin-bottom: 24px;
 }
 
+.footer, .footer .col {
+  border: 0;
+}
+
 #hsts_pixel,.debuginfo {
   order: 4;
 }
