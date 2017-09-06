@@ -39,3 +39,18 @@
     }
   }
 }
+
+@if $hide-nsfw {
+  .thing.over18 .thumbnail {
+    color: var(--c-bg);
+    background: var(--c-nsfw);
+  }
+
+  .thing.over18 .thumbnail img {
+    display: none;
+  }
+
+  .thing.over18 .thumbnail:before {
+    content: "nsfw";
+  }
+}
