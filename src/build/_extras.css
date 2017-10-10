@@ -17,7 +17,6 @@
     font-weight: 700;
     text-align: center;
     font-size: 1.25rem;
-    text-transform: uppercase;
     letter-spacing: 2px;
     line-height: var(--hbox-height);
     margin-top: calc(-13px - var(--hbox-height));
@@ -50,7 +49,7 @@
     display: none;
   }
 
-  .thing.over18 .thumbnail:before {
+  .thing.over18 .thumbnail:after {
     content: "nsfw";
   }
 }

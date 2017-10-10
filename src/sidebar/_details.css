@@ -72,15 +72,15 @@
 
 /* flair */
 .titlebox form.flairtoggle {
-  margin-top: 6px;
-  margin-bottom: -12px;
-  margin-bottom: -.75rem;
+  margin-top: 10px;
+  margin-bottom: -16px;
   font-size: 0;
 }
 
 .titlebox form.flairtoggle label:after {
   content: "Flair: ";
   font-size: .65rem;
+  vertical-align: bottom;
 }
 
 .flairtoggle+.tagline {

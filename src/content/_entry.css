@@ -71,17 +71,17 @@
 .thing .thumbnail {
   margin: 0 12px 0 0;
   width: var(--w-thumbnail);
-  height: var(--w-thumbnail)!important;
-  border-radius: 10px;
+  height: var(--h-thumbnail)!important;
+  border-radius: 3px;
   background: var(--c-border);
 }
 
 .thing .thumbnail img {
   width: auto!important;
-  height: var(--w-thumbnail)!important;
+  height: var(--h-thumbnail)!important;
 }
 
-.thumbnail:before {
+.thumbnail:after {
   position: absolute;
   display: block;
   width: calc(var(--w-thumbnail) - 1);
@@ -94,7 +94,7 @@
 
 /* post types */
 
-.thing.self .thumbnail:before {
+.thing.self .thumbnail:after {
   content: "self";
 }
 
@@ -102,7 +102,7 @@
   opacity: 0.5;
 }
 
-.thing.locked .thumbnail:before {
+.thing.locked .thumbnail:after {
   content: "locked";
 }
 

@@ -6,16 +6,12 @@
   padding-top: 3px;
   padding-right: 6px;
   padding-left: 6px;
-  height: 1em;
-  line-height: 1em;
+  height: 10px;
+  line-height: 10px;
 }
 
 #header:hover #sr-header-area {
   margin-top: 0;
-  margin-bottom: -5px;
-}
-
-#header #sr-header-area:hover {
   margin-bottom: 0;
 }
 

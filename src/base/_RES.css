@@ -9,6 +9,8 @@
 #RESShortcutsLeft,
 #RESShortcutsRight,
 #RESShortcutsSort {
+  font-size: 10px;
+  text-align: center;
   background: transparent;
   color: var(--c-bg);
 }
@@ -23,6 +25,10 @@
 
 #header:not(:hover) #sr-header-area a.RESShortcutsCurrentSub {
   color: var(--c-bg)!important;
+}
+
+#RESShortcutsEditContainer .res-icon {
+  font-size: 10px;
 }
 
 .titlebox .toggle.res-sr-style-toggle {

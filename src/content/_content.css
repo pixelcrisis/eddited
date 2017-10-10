@@ -84,6 +84,13 @@ ul.formtab li a:hover {
 }
 
 /* misc pages */
+.submit-page #reddit-field,
+.submit-page #suggest-title {
+  display: none;
+}
+.submit-page #items-required {
+  font-size: 0;
+}
 .fancy-settings h1 {
   margin: 12px 0;
 }

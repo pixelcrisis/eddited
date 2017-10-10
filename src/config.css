@@ -25,6 +25,7 @@
   /* sizes */
   --w-sidebar: 300px;
   --w-thumbnail: 45px;
+  --h-thumbnail: 45px;
 
   /* text */
   --submit-link: 'Show';
@@ -46,6 +47,6 @@
 
   /* header box */
   --hbox-height: 150px;
-  --hbox-content: "r/eddited - clean. simple."
+  --hbox-content: "r/EDDITED - CLEAN. SIMPLE."
 
 }
