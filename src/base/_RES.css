@@ -81,3 +81,23 @@
   color: var(--c-bg)!important;
   background-color: var(--c-stickied)!important;
 }
+
+/* Night Mode */
+.res-nightmode #header-bottom-left {
+  background: #333!important;
+}
+.res-nightmode #header-bottom-left a {
+  color: #fff!important;
+}
+.res-nightmode .tabmenu a {
+  border-color: transparent!important;
+}
+.res-nightmode .tabmenu li a:hover {
+  background: #000!important;
+}
+.res-nightmode .thing,
+.res-nightmode #header,
+.res-nightmode .titlebox .bottom,
+.res-nightmode .side .usertext-body {
+  border-color: #3c3c3c!important;
+}
