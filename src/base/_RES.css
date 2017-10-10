@@ -83,7 +83,10 @@
 }
 
 /* Night Mode */
-.res-nightmode #header-bottom-left {
+.res-nightmode #sr-header-area,
+.res-nightmode #RESShortcutsEditContainer *,
+.res-nightmode #header-bottom-left,
+.res-nightmode .fancy-toggle-button .remove {
   background: #333!important;
 }
 .res-nightmode #header-bottom-left a {

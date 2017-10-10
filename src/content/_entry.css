@@ -184,3 +184,6 @@
   border-radius: 0;
   background-color: var(--c-bg)!important;
 }
+.res-nightmode .link .usertext-body .md {
+  background-color: transparent!important;
+}
