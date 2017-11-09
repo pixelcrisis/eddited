@@ -13,6 +13,10 @@ body>.content {
   width: 100%;
 }
 
+.md a {
+  color: var(--c-main);
+}
+
 .thing.stickied.link a.title,
 .tagline .stickied-tagline,
 .search-result-meta .stickied-tagline {

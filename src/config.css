@@ -38,6 +38,7 @@
   $user-flairs: true;
   $header-box: true;
   $hide-nsfw: true;
+  $split-submit: true;
   $header-box-background: true;
   $header-box-light-text: true;
 
@@ -47,6 +48,6 @@
 
   /* header box */
   --hbox-height: 150px;
-  --hbox-content: "r/EDDITED - CLEAN. SIMPLE."
+  --hbox-content: "r/eddited - clean. simple."
 
 }

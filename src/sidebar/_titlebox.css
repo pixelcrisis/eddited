@@ -9,18 +9,20 @@
   width: 100%;
 }
 
-.submit-link,
-.submit-text {
-  box-sizing: border-box;
-  width: 47.5%;
-}
+@if $split-submit {
+  .submit-link,
+  .submit-text {
+    box-sizing: border-box;
+    width: 47.5%;
+  }
 
-.submit-link {
-  float: left;
-}
+  .submit-link {
+    float: left;
+  }
 
-.submit-text {
-  float: right;
+  .submit-text {
+    float: right;
+  }
 }
 
 .side .nub {
