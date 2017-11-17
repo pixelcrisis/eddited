@@ -70,26 +70,37 @@
 /* thumbnail */
 .thing .thumbnail {
   margin: 0 12px 0 0;
-  width: var(--w-thumbnail);
-  height: var(--h-thumbnail)!important;
+  width: $w-thumbnail;
+  height: $h-thumbnail!important;
   border-radius: 3px;
   background: var(--c-border);
 }
 
-.thing .thumbnail img {
-  width: auto!important;
-  height: var(--h-thumbnail)!important;
+@if $w-thumbnail > $h-thumbnail {
+
+  .thing .thumbnail img {
+    height: auto!important;
+    width: $w-thumbnail!important;
+  }
+
+} @else {
+
+  .thing .thumbnail img {
+    width: auto!important;
+    height: $h-thumbnail!important;
+  }
+
 }
 
 .thumbnail:after {
   position: absolute;
   display: block;
-  width: calc(var(--w-thumbnail) - 1);
-  height: var(--w-thumbnail);
+  width: calc($w-thumbnail - 1);
+  height: $h-thumbnail;
   color: var(--c-text);
   text-align: center;
   font-size: .65rem;
-  line-height: var(--w-thumbnail);
+  line-height: $h-thumbnail;
 }
 
 /* post types */
