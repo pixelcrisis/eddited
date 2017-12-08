@@ -7,7 +7,7 @@
 */
 
 @if $header-box {
-  body > .content::before {
+  .titlebox .redditname a::after {
     content: var(--hbox-content);
   }
 }

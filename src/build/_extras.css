@@ -10,10 +10,11 @@
     padding-top: calc(var(--hbox-height) + 8px);
   }
 
-  body > .content::before {
+  .titlebox .redditname a::after {
     display: block;
     left: 0;
     right: 0;
+    top: calc(50px + var(--hbox-height));
     font-weight: 700;
     text-align: center;
     font-size: 1.25rem;
