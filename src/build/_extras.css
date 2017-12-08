@@ -14,10 +14,10 @@
     display: block;
     left: 0;
     right: 0;
-    top: calc(50px + var(--hbox-height));
+    top: calc(54px + var(--hbox-height));
     font-weight: 700;
     text-align: center;
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     letter-spacing: 2px;
     line-height: var(--hbox-height);
     margin-top: calc(-13px - var(--hbox-height));
