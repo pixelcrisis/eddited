@@ -128,9 +128,9 @@
   margin: 11px 0 0 -24px;
   width: 16px;
   height: 16px;
-  border: 2px solid;
+  border: 2px solid var(--c-bg);
   border-radius: 100%;
-  background: var(--c-bg);
+  background: var(--c-border);
   background-image: none!important;
   color: var(--c-muted);
 }
@@ -150,6 +150,7 @@
 .thing .expando-button.expanded,.thing .expando-button:hover {
   background: var(--c-bg);
   color: var(--c-main);
+  border-color: var(--c-main);
 }
 
 .thing .expando-button.expanded:before {
