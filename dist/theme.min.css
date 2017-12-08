@@ -13,7 +13,7 @@
 
 /* eddited extras */
 
-body{padding-top:158px}.titlebox .redditname a:after{display:block;left:0;right:0;top:204px;font-weight:700;text-align:center;font-size:24px;font-size:1.5rem;letter-spacing:2px;line-height:150px;margin-top:-163px;height:150px;position:absolute;border-bottom:2px solid #0071c5;background:url(%%header%%);background-size:cover;background-position:top;color:#fff}.thing.over18 .thumbnail{color:#fff;background:#d86a62}.thing.over18 .thumbnail img{display:none}.thing.over18 .thumbnail:after{content:"nsfw"}
+body{padding-top:158px}.titlebox .redditname a:after{display:block;left:0;right:0;top:38px;font-weight:700;text-align:center;font-size:24px;font-size:1.5rem;letter-spacing:2px;line-height:150px;height:150px;position:absolute;border-bottom:2px solid #0071c5;background:url(%%header%%);background-size:cover;background-position:top;color:#fff}.thing.over18 .thumbnail{color:#fff;background:#d86a62}.thing.over18 .thumbnail img{display:none}.thing.over18 .thumbnail:after{content:"nsfw"}
 
 /* eddited core v0.9.4 */
 
