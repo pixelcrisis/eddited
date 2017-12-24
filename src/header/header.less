@@ -1,0 +1,65 @@
+/* eddited
+   Header styles
+/*============================*/
+
+#header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  border-bottom-color: @color-border;
+  background-color: @color-background;
+
+  order: 0;
+}
+
+#sr-more-link,
+#sr-header-area,
+#header-bottom-left,
+#header-bottom-right {
+   border: none;
+}
+
+#header-bottom-left,
+#header-bottom-right {
+  padding: 12px;
+  background: @color-background;
+  color: @color-text;
+  line-height: 1;
+}
+
+#header-img {
+  height: 25px;
+  width: auto;
+  margin: -12px 0 -6px;
+
+  &.default-header {
+    margin: 0 -4px 0 0;
+    width: auto;
+    height: auto;
+    background-image: none;
+    text-indent: 0;
+    font-size: 0;
+  }
+
+  &:after {
+    display: inline-block;
+    content: @text-sub-prefix + " ";
+    font-weight: 700;
+    font-size: 1rem;
+  }
+}
+
+.redditname {
+  font-size: 0;
+
+  a {
+    letter-spacing: 0;
+    font-variant: normal;
+    font-size: 1rem;
+  }
+}
+
+.pagename a {
+  color: @color-link;
+}

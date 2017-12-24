@@ -1,0 +1,64 @@
+/* eddited
+   Sidebar core styles
+/*============================*/
+
+.side {
+  margin: 33px 0 0;
+  width: @width-sidebar;
+  border-left: 1px solid @color-border;
+
+  order: 2;
+
+  // this is the credit
+  // for the theme in the sidebar
+  // feel free to change or
+  // take this out if you like,
+  // otherwise I appreciate the support!
+  &:after {
+    display: block;
+    text-align: center;
+    color: @color-text-subtle;
+    content: "theme @ r/eddited";
+  }
+}
+
+.linkinfo {
+  border-radius: 0;
+}
+
+.sidecontentbox {
+  margin-bottom: 24px;
+
+  .title {
+    margin-bottom: 12px;
+  }
+
+  .collapse-button {
+    border-color: transparent;
+    background: transparent;
+    font-size: 0;
+    line-height: 7px;
+
+    &:before {
+      content: "[-]";
+      font-size: 10.4px;
+      font-size: 0.65rem;
+    }
+  }
+
+  .content {
+    padding: 0;
+    border: none;
+  }
+}
+
+#moderation_tools .title h1 {
+  font-size: 0;
+
+  &:before {
+    content: "Mod Tools";
+    text-transform: capitalize;
+    font-size: 12px;
+    font-size: 0.75rem;
+  }
+}

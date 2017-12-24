@@ -1,0 +1,57 @@
+/* eddited
+   Structural changes, tweaks
+/*============================*/
+
+html,
+body {
+  margin: 0;
+}
+
+body {
+  display: flex;
+  background: @color-shadow;
+  color: @color-text;
+
+  flex-flow: row wrap;
+}
+
+.side,
+.content {
+  box-sizing: border-box;
+  padding: 12px;
+  background: @color-background;
+}
+
+.content .content {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+.md hr {
+  margin: 12px 0;
+  height: 1px;
+  background-color: @color-border;
+}
+
+// fixes for use on r/all
+
+body.with-listing-chooser {
+
+  .listing-chooser,
+  &.listing-chooser-collapsed.listing-chooser {
+    top: 40px;
+    z-index: 5;
+  }
+
+  #header .pagename {
+    position: relative;
+    bottom: initial;
+    margin-right: 6px;
+  }
+
+  .side {
+    margin-right: 0 !important;
+  }
+
+}
