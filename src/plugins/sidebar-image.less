@@ -1,0 +1,25 @@
+/* eddited plugin
+   Sidebar Image
+/*============================*/
+
+
+/*---- Define Plugin ----*/
+
+.sidebar-image(@enabled) when (@enabled) {
+
+  .titlebox:before {
+    content: '';
+    display: block;
+    background-image: url(%%sidebar%%);
+    background-size: contain;
+    width: 100%;
+    margin-top: 55px;
+    height: @sidebar-image-height;
+  }
+
+
+}
+
+/*---- Use Plugin if Enabled ----*/
+
+.sidebar-image(@enable-sidebar-image);
