@@ -8,8 +8,33 @@
   border-top-color: @color-border;
 }
 
-#search input[type=text] {
-  width: 100%;
+#search {
+  margin-top: -6px;
+
+  input[type=text] {
+    width: 100%;
+    border-color: transparent transparent @color-border !important;
+
+    &::placeholder {
+      color: @color-border;
+      text-transform: capitalize;
+    }
+
+    &:hover::placeholder,
+    &:focus::placeholder {
+      color: @color-text-subtle;
+    }
+  }
+
+  input[type=submit] {
+    opacity: 0.6;
+  }
+
+  &:not(:hover) {
+    input[type=submit] {
+      opacity: 0.2;
+    }
+  }
 }
 
 .side .nub,
