@@ -6,7 +6,7 @@ body {
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header,
-.marketing,
+.config,
 .footer {
   padding-right: 1rem;
   padding-left: 1rem;
@@ -33,16 +33,16 @@ body {
 }
 
 /* Customize container */
-@media (min-width: 48em) {
+@media (min-width: 58em) {
   .container {
-    max-width: 46rem;
+    max-width: 56rem;
   }
 }
 .container-narrow > hr {
   margin: 2rem 0;
 }
 
-/* Main marketing message and sign up button */
+/* Main config message and sign up button */
 .jumbotron {
   text-align: center;
   border-bottom: .05rem solid #e5e5e5;
@@ -52,19 +52,30 @@ body {
   font-size: 1.5rem;
 }
 
-/* Supporting marketing content */
-.marketing {
+/* Supporting config content */
+.config {
   margin: 3rem 0;
 }
-.marketing p + h4 {
+.config p + h4 {
   margin-top: 1.5rem;
+}
+
+.conf {
+  margin: 1px 0;
+  padding-top: 16px;
+  background: #f7f7f7;
+  border-left: 2px solid #fff;
+}
+
+.form-check input {
+  margin-right: 15px;
 }
 
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 48em) {
   /* Remove the padding we set earlier */
   .header,
-  .marketing,
+  .config,
   .footer {
     padding-right: 0;
     padding-left: 0;

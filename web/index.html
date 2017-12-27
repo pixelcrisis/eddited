@@ -9,57 +9,89 @@
   <title>eddited web compiler</title>
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-
   <link rel="stylesheet" href="styles.css">
-
 </head>
 
 <body>
 
-  <div class="container">
+  <div class="container" id="eddit">
       <header class="header clearfix">
         <h3 class="text-muted">eddited web compiler</h3>
       </header>
 
       <main role="main">
 
-        <div class="jumbotron">
-          <h1 class="display-3">Jumbotron heading</h1>
-          <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-          <p><a class="btn btn-lg btn-success" href="#" role="button">Sign up today</a></p>
-        </div>
+        <div class="row align-items-center config">
 
-        <div class="row marketing">
-          <div class="col-lg-6">
-            <h4>Subheading</h4>
-            <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p>
+          <!-- Loop through config options -->
+          <div class="col-lg-6 conf" v-for="conf in config">
 
-            <h4>Subheading</h4>
-            <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.</p>
+            <!-- If color -->
+            <div class="form-group row" v-if="isColor(conf)">
 
-            <h4>Subheading</h4>
-            <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
-          </div>
+              <div class="col-sm-6">
+                <div class="input-group">
+                  <input type="text" class="form-control" v-model="conf.data">
+                  <span class="input-group-addon">
+                    <input type="color" v-model="conf.data">
+                  </span>
+                </div>
+              </div>
 
-          <div class="col-lg-6">
-            <h4>Subheading</h4>
-            <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p>
+              <label class="col-sm-6 col-form-label text-capitalize">
+                {{ labelMaker(conf.name) }}
+              </label>
 
-            <h4>Subheading</h4>
-            <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.</p>
+            </div>
 
-            <h4>Subheading</h4>
-            <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
+            <!-- If text -->
+            <div class="form-group" v-if="isText(conf)">
+              <label class="text-capitalize"> {{ labelMaker(conf.name) }} </label>
+              <input type="text" class="form-control" v-model="conf.data">
+            </div>
+
+            <!-- If size -->
+            <div class="form-group row" v-if="isPx(conf)">
+              <div class="col-sm-6">
+                <input type="text" class="form-control" v-model="conf.data">
+              </div>
+              <label class="col-sm-6 col-form-label text-capitalize">
+                {{ labelMaker(conf.name) }}
+              </label>
+            </div>
+
+            <!-- If toggle -->
+            <div class="form-group row" v-if="isToggle(conf)">
+
+              <div class="col-sm-12">
+                <div class="input-group">
+                  <span class="input-group-addon">
+                    <input type="checkbox" v-model="conf.data">
+                  </span>
+                  <span class="input-group-addon">{{ labelMaker(conf.name) }}</span>
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
 
       </main>
 
-      <footer class="footer">
-        <p>&copy; Company 2017</p>
+      <footer class="footer text-center">
+        <p>
+          <a target="_blank" href="http://reddit.com/r/eddited">r/eddited</a> -
+          <a target="_blank" href="http://github.com/12px/eddited">Github</a> -
+          by <a target="_blank" href="http://12px.io">12px</a>
+        </p>
       </footer>
 
     </div> <!-- /container -->
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/vue"></script>
+    <script src="config.js"></script>
+    <script src="scripts.js"></script>
 
 </body>
 

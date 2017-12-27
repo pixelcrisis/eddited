@@ -28,7 +28,6 @@ module.exports = {
     yield task.source($._out).run(_, join).target('./dist');
   },
 
-
   // CLI Commands (Entry Points)
   * build (task) { task.serial(['builder', 'joiner']); },
   * develop (task) {

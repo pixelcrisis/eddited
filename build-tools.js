@@ -67,16 +67,24 @@ buildTools.prototype = {
 
     // if less, get and organize the variables
     if (name.indexOf('.less') > -1) {
-      this.config = ['var config = {'];
       let extracted = LessToJS(data);
+      this.config = ['var config = ['];
+
       for (var ex in extracted) {
-        let varName = `"${ex}": `;
+        let varName = ex;
         let varData = extracted[ex];
-        let varType = varData.indexOf('"') < 0;
-        varData = varType ? `"${varData}"` : varData;
-        this.config.push(`  "${ex}": ${varData},`);
+
+        // if data is variable, get data
+        while (varData.indexOf('@') > -1) { varData = extracted[varData]; }
+
+        // wrap data in quotes if color or px
+        if (varData.indexOf('#') > -1) varData = `"${varData}"`;
+        if (varData.indexOf('px') > -1) varData = `"${varData}"`;
+
+        this.config.push(`  { name: "${varName}", data: ${varData} },`);
       }
-      this.config.push('};');
+
+      this.config.push('];');
     } else {
       // else export variables to file data
       file[0].data = new Buffer(this.config.join('\n'));
