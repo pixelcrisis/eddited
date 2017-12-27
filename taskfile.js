@@ -8,9 +8,8 @@ const _ = { every: false }; // for inline plugins
 
 // plugin wrappers
 const save = function * (files) { return $.saveFile(files); };
-const join = function * (files) {
-  files = $.joinFiles(files);
-};
+const join = function * (files) { files = $.joinFiles(files); };
+const vars = function * (files) { files = $.extractVars(files); };
 
 
 // the build process
@@ -18,12 +17,14 @@ module.exports = {
 
   // Methods
   * builder (task) {
+    yield task.source($._conf).run(_, vars);
     yield task.source($._theme).less($.less).target('./dist');
     yield task.source($._plugins).less($.less).run(_, save);
     yield task.source($._pretty).less().run(_, save);
   },
 
   * joiner (task) {
+    yield task.source($._web).run(_, vars).target('./web');
     yield task.source($._out).run(_, join).target('./dist');
   },
 
