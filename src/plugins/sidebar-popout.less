@@ -1,0 +1,136 @@
+/* eddited plugin
+   Sidebar Image
+/*============================*/
+
+
+/*---- Define Plugin ----*/
+
+.sidebar-popout(@enabled) when (@enabled) {
+
+  // mixin to find positioning
+  // based on sidebar-image
+  .get-top(@h) when (@enable-sidebar-image) {
+    margin-top: @h - (@sidebar-image-height - 24px);
+  }
+  .get-top(@h) when not (@enable-sidebar-image) {
+    margin-top: @h + 24px;
+  }
+
+  // dim content on hover
+  .side:hover ~ .content {
+    opacity: 0.4;
+  }
+
+  // hide popout unless hover
+  .titlebox:not(:hover) {
+    .tagline,
+    .subscribers,
+    .users-online,
+    .leavemoderator,
+    form.flairtoggle,
+    .res-fancy-toggle-button,
+    .toggle.res-sr-style-toggle,
+    form.leavecontributor-button {
+      display: none;
+    }
+  }
+
+  // popout styles
+  .titlebox {
+
+    // full width popups
+    .toggle.res-sr-style-toggle {
+      width: @width-sidebar;
+      right: @width-sidebar - 10;
+    }
+
+    // half width popups (both)
+    .subscribers,
+    .users-online,
+    .leavemoderator,
+    .res-fancy-toggle-button,
+    form.leavecontributor-button {
+      width: (@width-sidebar / 2);
+    }
+
+    // half width right
+    .tagline,
+    .subscribers,
+    .leavemoderator,
+    .res-fancy-toggle-button.RESshortcut {
+      right: @width-sidebar - 10;
+    }
+
+    // half width left
+    .users-online,
+    form.leavecontributor-button,
+    .res-fancy-toggle-button.RESDashboardToggle {
+      right: @width-sidebar + (@width-sidebar / 2) - 10;
+    }
+
+    // general styles
+    .tagline,
+    .subscribers,
+    .users-online,
+    .leavemoderator,
+    form.flairtoggle,
+    .res-fancy-toggle-button,
+    .toggle.res-sr-style-toggle,
+    form.leavecontributor-button {
+      z-index: 1000;
+      padding: 12px;
+      display: block;
+      position: absolute;
+      text-align: center !important;
+      box-sizing: border-box;
+      background: @color-background;
+      border: 1px solid @color-shadow;
+      border-right-color: transparent;
+      transition: all 0.2s ease;
+    }
+
+    // specific positioning
+    .subButtons {
+      margin-bottom: -10px;
+    }
+
+    .subscribers,
+    .users-online {
+      .get-top(0px);
+    }
+
+    .toggle.res-sr-style-toggle {
+      .get-top(-9px);
+    }
+
+    .leavemoderator,
+    form.leavecontributor-button {
+      .get-top(37px);
+    }
+
+    .tagline,
+    form.flairtoggle {
+      .get-top(74px) !important;
+    }
+
+    .tagline {
+      padding: 13px 12px;
+      width: @width-sidebar - 75px;
+    }
+
+    form.flairtoggle {
+      width: 75px;
+      right: @width-sidebar + (@width-sidebar - 75px) - 10;
+    }
+
+    .res-fancy-toggle-button {
+      .get-top(103px);
+    }
+
+  }
+
+}
+
+/*---- Use Plugin if Enabled ----*/
+
+.sidebar-popout(@enable-sidebar-popout);
