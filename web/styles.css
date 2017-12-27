@@ -71,6 +71,12 @@ body {
   margin-right: 15px;
 }
 
+.tab-pane,
+.tab-pane h5,
+.tab-pane .btn {
+  margin: 20px 0;
+}
+
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 48em) {
   /* Remove the padding we set earlier */

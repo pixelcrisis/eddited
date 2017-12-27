@@ -15,11 +15,18 @@
 <body>
 
   <div class="container" id="eddit">
-      <header class="header clearfix">
-        <h3 class="text-muted">eddited web compiler</h3>
-      </header>
+    <header class="header clearfix">
+      <h3 class="text-muted">eddited web compiler</h3>
+    </header>
 
-      <main role="main">
+    <nav class="nav nav-tabs" id="myTab" role="tablist">
+      <a class="nav-item nav-link active" id="nav-config-tab" data-toggle="tab" href="#nav-config" role="tab" aria-controls="nav-config" aria-selected="true">Config</a>
+      <a class="nav-item nav-link" id="nav-load-tab" data-toggle="tab" href="#nav-load" role="tab" aria-controls="nav-load" aria-selected="false">Load/Save</a>
+      <a class="nav-item nav-link" id="nav-build-tab" data-toggle="tab" href="#nav-build" role="tab" aria-controls="nav-build" aria-selected="false">Compile</a>
+    </nav>
+
+    <main role="main" class="tab-content" id="nav-tabContent">
+      <div class="tab-pane fade show active" id="nav-config" role="tabpanel" aria-labelledby="config-tab">
 
         <div class="row align-items-center config">
 
@@ -76,22 +83,45 @@
           </div>
         </div>
 
-      </main>
 
-      <footer class="footer text-center">
-        <p>
-          <a target="_blank" href="http://reddit.com/r/eddited">r/eddited</a> -
-          <a target="_blank" href="http://github.com/12px/eddited">Github</a> -
-          by <a target="_blank" href="http://12px.io">12px</a>
-        </p>
-      </footer>
+      </div>
 
-    </div> <!-- /container -->
+      <div class="tab-pane fade" id="nav-load" role="tabpanel" aria-labelledby="nav-profile-tab">
 
-    <!-- Scripts -->
-    <script src="https://unpkg.com/vue"></script>
-    <script src="config.js"></script>
-    <script src="scripts.js"></script>
+        <h5>Copy this and save it somewhere.</h5>
+        <textarea class="form-control" rows="10" disabled>{{ config }}</textarea>
+
+        <h5>Paste settings here to restore.</h5>
+        <textarea class="form-control" id="restore" rows="10" v-model="toRestore"></textarea>
+        <button type="button" class="btn btn-primary btn-sm" @click="restore">Compile!</button>
+
+
+      </div>
+
+      <div class="tab-pane fade" id="nav-build" role="tabpanel" aria-labelledby="nav-contact-tab">
+
+      </div>
+    </main>
+
+
+    <footer class="footer text-center">
+      <p>
+        <a target="_blank" href="http://reddit.com/r/eddited">r/eddited</a> -
+        <a target="_blank" href="http://github.com/12px/eddited">Github</a> -
+        by <a target="_blank" href="http://12px.io">12px</a>
+      </p>
+    </footer>
+
+  </div> <!-- /container -->
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/vue"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+
+  <script src="config.js"></script>
+  <script src="scripts.js"></script>
 
 </body>
 

@@ -2,6 +2,7 @@
 var start = new Vue({
   el: '#eddit',
   data: {
+    toRestore: '',
     config: config
   },
   methods: {
@@ -27,6 +28,20 @@ var start = new Vue({
     },
     labelMaker: function(label) {
       return label.split('-').join(' ').replace('@', '');
+    },
+    restore: function() {
+      if (!this.toRestore) return alert('Nothing to compile.');
+      if (this.toRestore.charAt(0) != "[") return alert('Syntax Err 1');
+      if (this.toRestore.charAt(this.toRestore.length - 1) != "]") return alert('Syntax Err 2');
+      try {
+        var processing = JSON.parse(this.toRestore);
+      } catch (e) {
+        if (e.name == 'SyntaxError') return alert('Syntax Error 3');
+        else return alert(e.message);
+      }
+
+      this.config = processing;
+      alert('Imported!');
     }
   }
 });
