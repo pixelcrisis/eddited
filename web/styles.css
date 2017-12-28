@@ -1,7 +1,8 @@
 /* Space out content a bit */
 body {
-  padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
+  padding-top: 1.5rem !important;
+  padding-bottom: 1.5rem !important;
+  background: #fff !important;
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
@@ -75,6 +76,10 @@ body {
 .tab-pane h5,
 .tab-pane .btn {
   margin: 20px 0;
+}
+
+.tab-pane .btn {
+  color: #FFF!important;
 }
 
 /* Responsive: Portrait tablets and up */
