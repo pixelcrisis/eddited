@@ -2,9 +2,9 @@
 A back-to-basics subreddit theme. Flat, minimal, with a focus on content, eddited is arguably reddit's cleanest and most customizable subreddit theme.
 
 ## Contents
-- Colors
-- Options
-- Plugins
+- [Colors](#colors)
+- [Options](#options)
+- [Plugins](#plugins)
 
 
 ### Colors
@@ -28,40 +28,40 @@ Should only be a few shades lighter/darker than *@color-background*
 Follows the same guide as *@color-shadow* but even lighter/darker.
 
 - `@color-link`  
-The color for the links on the page. Usually matches *@color-accent*
+The color for the links on the page. Most often matches *@color-accent*
 
 - `@color-button`  
-The color for the buttons on the page. Usually matches *@color-accent*
+The color for the buttons on the page. Most often matches *@color-accent*
 
 - `@color-button-text`  
-A readable color for button text, usually *@color-background*
+A readable color for button text, most often *@color-background*
 
 - `@color-thumbnail`  
-The background for thumbnails. Usually matches *@color-shadow*
+The background for thumbnails. Most often matches *@color-shadow*
 
 - `@color-upvote`  
-Usually an orange color.
+Most often an orange color.
 
 - `@color-downvote`  
-Usually a blue color.
+Most often a blue color.
 
 - `@color-nsfw`  
-The NSFW badge/thumbnail color. Usually red.
+The NSFW badge/thumbnail color. Most often red.
 
 - `@color-locked`  
-Locked badge/thumbnail color. Usually gold.
+Locked badge/thumbnail color. Most often gold.
 
 - `@color-stickied`  
-Sticked thread color, usually green.
+Sticked thread color, most often green.
 
 - `@color-visited`  
 Color for visited links, should be a subtle color like *@color-text-subtle*
 
 - `@color-red-flair`  
-The color for red flairs, usually matches *@color-nsfw*
+The color for red flairs, most often matches *@color-nsfw*
 
 - `@color-green-flair`  
-The color for green flairs, usually matches *@color-stickied*
+The color for green flairs, most often matches *@color-stickied*
 
 ### Options
 
