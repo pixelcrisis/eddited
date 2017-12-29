@@ -5,6 +5,7 @@ A back-to-basics subreddit theme. Flat, minimal, with a focus on content, eddite
 - [Colors](#colors)
 - [Options](#options)
 - [Plugins](#plugins)
+- [Web Compiler](#web-compiler)
 
 
 ## Quick Install
