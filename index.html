@@ -27,15 +27,15 @@
     </nav>
 
     <main role="main" class="tab-content" id="nav-tabContent">
-      <div class="tab-pane fade show active" id="nav-config" role="tabpanel" aria-labelledby="config-tab">
 
+      <div class="tab-pane fade show active" id="nav-config" role="tabpanel" aria-labelledby="config-tab">
         <div class="row align-items-center config">
 
           <!-- Loop through config options -->
           <div class="col-lg-6 conf" v-for="conf in config">
 
             <!-- If color -->
-            <div class="form-group row" v-if="isColor(conf)">
+            <div class="form-group row" v-if="is('color', conf)">
 
               <div class="col-sm-6">
                 <div class="input-group">
@@ -47,65 +47,58 @@
               </div>
 
               <label class="col-sm-6 col-form-label text-capitalize">
-                {{ labelMaker(conf.name) }}
+                {{ label(conf.name) }}
               </label>
 
             </div>
 
             <!-- If text -->
-            <div class="form-group" v-if="isText(conf)">
-              <label class="text-capitalize"> {{ labelMaker(conf.name) }} </label>
+            <div class="form-group" v-if="is('text', conf)">
+              <label class="text-capitalize"> {{ label(conf.name) }} </label>
               <input type="text" class="form-control" v-model="conf.data">
             </div>
 
             <!-- If size -->
-            <div class="form-group row" v-if="isPx(conf)">
+            <div class="form-group row" v-if="is('size', conf)">
               <div class="col-sm-6">
                 <input type="text" class="form-control" v-model="conf.data">
               </div>
               <label class="col-sm-6 col-form-label text-capitalize">
-                {{ labelMaker(conf.name) }}
+                {{ label(conf.name) }}
               </label>
             </div>
 
             <!-- If toggle -->
-            <div class="form-group row" v-if="isToggle(conf)">
+            <div class="form-group row" v-if="is('toggle', conf)">
 
               <div class="col-sm-12">
                 <div class="input-group">
                   <span class="input-group-addon">
                     <input type="checkbox" v-model="conf.data">
                   </span>
-                  <span class="input-group-addon">{{ labelMaker(conf.name) }}</span>
+                  <span class="input-group-addon">{{ label(conf.name) }}</span>
                 </div>
               </div>
             </div>
 
           </div>
         </div>
-
-
       </div>
 
       <div class="tab-pane fade" id="nav-load" role="tabpanel" aria-labelledby="nav-profile-tab">
-
         <h5>Copy this and save it somewhere.</h5>
         <textarea class="form-control" rows="10" disabled>{{ config }}</textarea>
 
         <h5>Paste settings here to restore.</h5>
-        <textarea class="form-control" id="restore" rows="10" v-model="toRestore"></textarea>
+        <textarea class="form-control" id="restore" rows="10" v-model="imported"></textarea>
         <span class="btn btn-primary btn-sm" @click="restore">Restore!</span>
-
-
       </div>
 
       <div class="tab-pane fade" id="nav-build" role="tabpanel" aria-labelledby="nav-contact-tab">
+        <span class="btn btn-primary btn-sm" @click="compile">Compile!</span>
 
-          <span class="btn btn-primary btn-sm" @click="compile">Compile!</span>
-
-          <h5>Your custom eddited theme.</h5>
-          <textarea class="form-control" rows="10" v-model="compiled"></textarea>
-
+        <h5>Your custom eddited theme.</h5>
+        <textarea class="form-control" rows="10" v-model="compiled"></textarea>
       </div>
     </main>
 
