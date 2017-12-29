@@ -1,0 +1,215 @@
+/* eddited
+   Post entry
+   (a submitted post, link)
+/*============================*/
+
+.thing {
+  margin-bottom: 6px;
+  padding: 6px 0;
+  border-bottom: 1px solid @color-shadow;
+}
+
+// soften colors
+.domain,
+.tagline,
+.domain a,
+.search-result-meta,
+.entry .buttons li a,
+.redditSingleClick:after {
+  font-weight: 400;
+  color: @color-text-subtle;
+}
+
+// un-soften on hover
+.domain a:hover,
+.entry .buttons li a:hover {
+  color: @color-text;
+}
+
+// accent comments link
+.entry .buttons li .comments {
+  color: @color-link;
+}
+
+// redesign infobar
+// that "this is locked, archived" bar
+
+.infobar,
+.reddit-infobar {
+  border: none;
+  background-color: transparent;
+}
+
+.reddit-infobar {
+  .md p {
+    margin-top: -3px;
+    padding-bottom: 5px;
+    border-bottom: 2px solid @color-locked;
+    color: darken(@color-locked, 60%);
+    text-transform: uppercase;
+    font-size: .75rem;
+  }
+
+  &.with-icon:before {
+    width: 41px;
+    height: 41px;
+    border-radius: 100%;
+    background-color: @color-locked;
+  }
+}
+
+// title
+
+.thing .title,
+.thing .title:hover {
+  color: @color-link;
+}
+
+.thing.visited .title,
+.thing .title:visited,
+.thing.visited .source-url {
+  color: @color-visited;
+}
+
+// thumbnail
+
+// determine how we size the thumbnail by
+// the thumbnail dimensions we have set
+.thumb-size(@h, @w) when (@w >= @h) {
+  height: auto !important;
+  width: @w !important;
+}
+.thumb-size(@h, @w) when (@h > @w) {
+  height: @h !important;
+  width: auto !important;
+}
+.thing .thumbnail img {
+  .thumb-size(@height-thumbnail, @width-thumbnail);
+}
+
+// general thumbnail styles
+.thing .thumbnail {
+  margin: 0 12px 0 0;
+  width: @width-thumbnail;
+  height: @height-thumbnail !important;
+  border-radius: 3px;
+  background: @color-thumbnail;
+
+  &:after {
+    position: absolute;
+    display: block;
+    width: @width-thumbnail - 1;
+    height: @height-thumbnail;
+    color: @color-text;
+    text-align: center;
+    font-size: 0.65rem;
+    line-height: @height-thumbnail;
+  }
+}
+
+
+// post types
+.thing.over18 .thumbnail {
+  color: @color-background;
+  background: @color-nsfw;
+}
+
+.thing.self .thumbnail:after {
+  content: "self";
+}
+
+.thing.locked .thumbnail:after {
+  content: "locked";
+}
+
+.thing.over18 .thumbnail:after {
+  content: "nsfw";
+}
+
+.thing.locked .thumbnail img {
+  opacity: 0.5;
+}
+
+.thing.over18 .thumbnail img {
+  display: none;
+}
+
+.nsfw-stamp {
+  color: @color-nsfw;
+  margin: 3px -3px 0 0;
+}
+
+// expand buttons
+
+.thing .expando-button {
+  position: absolute;
+  margin: 11px 0 0 -24px;
+  width: 16px;
+  height: 16px;
+  border: 2px solid @color-background;
+  border-radius: 16px;
+  color: @color-text-subtle;
+  background: @color-thumbnail;
+  background-image: none !important;
+  text-align: center;
+  font-weight: 700;
+  font-size: 0.75rem;
+  line-height: 15px;
+
+  &:hover,
+  &.expanded {
+    color: @color-accent;
+    background: @color-background;
+    border-color: @color-accent;
+  }
+
+  &.expanded:before {
+    content: "-" !important;
+  }
+
+  &:not(.expanded):before {
+    content: "+" !important;
+  }
+}
+
+// voting
+
+.arrow {
+  margin: 0 auto;
+  background-image: none !important;
+  color: @color-text-subtle;
+  text-align: center;
+  line-height: 1.2;
+
+  &.up:before,
+  &.upmod:before {
+    content: "▲";
+  }
+
+  &.down:before,
+  &.downmod:before {
+    content: "▼";
+  }
+}
+
+.arrow.upmod,
+.link .score.likes {
+  color: @color-upvote;
+}
+
+.arrow.downmod,
+.link .score.dislikes {
+  color: @color-downvote;
+}
+
+// style mods
+
+.link.last-clicked {
+  border-color: transparent @color-accent transparent transparent;
+}
+
+.link .usertext-body .md {
+  border-color: transparent transparent transparent @color-accent;
+  border-radius: 0;
+  background-color: @color-background !important;
+}

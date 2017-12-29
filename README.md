@@ -1,18 +1,136 @@
-## r/eddited
-a back-to-basics subreddit theme.
+# r/eddited
+A back-to-basics subreddit theme. Flat, minimal, with a focus on content, eddited is arguably reddit's cleanest and most customizable subreddit theme.
 
-#### Development
-* Clone or download this repo
-* `yarn install` *(npm install)* dependencies
-* Now you're ready to build.
+## Contents
+- [Colors](#colors)
+- [Options](#options)
+- [Plugins](#plugins)
 
-#### Config
-* `config.css` is full of options and variables
-* Make any and all changes you want to there first
-* Then feel free to make changes wherever else!
 
-#### Build
-* Now that you've modified the theme to your liking
-* `npm run build` will build the new `dist/theme.min.css`
-* If you use `npm run start`, it will auto-build on save
-* `npm run clean` formats css
+### Colors
+
+- `@color-accent`  
+Blue by default; The main accent color of the site.  
+
+- `@color-background`  
+White by default; Background color.  
+
+- `@color-text`  
+Black by default; Main font color.  
+
+- `@color-text-subtle`  
+A lighter/darker version of the main font color, to blend in easier with the background.
+
+- `@color-shadow`  
+Should only be a few shades lighter/darker than *@color-background*
+
+- `@color-border`  
+Follows the same guide as *@color-shadow* but even lighter/darker.
+
+- `@color-link`  
+The color for the links on the page. Most often matches *@color-accent*
+
+- `@color-button`  
+The color for the buttons on the page. Most often matches *@color-accent*
+
+- `@color-button-text`  
+A readable color for button text, most often *@color-background*
+
+- `@color-thumbnail`  
+The background for thumbnails. Most often matches *@color-shadow*
+
+- `@color-upvote`  
+Most often an orange color.
+
+- `@color-downvote`  
+Most often a blue color.
+
+- `@color-nsfw`  
+The NSFW badge/thumbnail color. Most often red.
+
+- `@color-locked`  
+Locked badge/thumbnail color. Most often gold.
+
+- `@color-stickied`  
+Sticked thread color, most often green.
+
+- `@color-visited`  
+Color for visited links, should be a subtle color like *@color-text-subtle*
+
+- `@color-red-flair`  
+The color for red flairs, most often matches *@color-nsfw*
+
+- `@color-green-flair`  
+The color for green flairs, most often matches *@color-stickied*
+
+### Options
+
+- `@width-sidebar`  
+The width of the sidebar.
+
+- `@width-thumbnail / @height-thumbnail`  
+Change the size/aspect ratio of the thumbnail
+
+- `@text-submit-link`  
+Submit Link button text; "Show" by default
+
+- `@text-submit-text`  
+Submit Text button text; "Tell" by default
+
+- `@text-subscribers`  
+Subscribers text; "Users" by default
+
+- `@text-here-now`  
+Here Now text; "Browsing" by default
+
+- `@text-sub-prefix`
+The prefix for subreddit name.
+
+
+### Plugins
+
+#### Header box
+- `@enable-header-box`  
+This enables/disabled the header image area above the main reddit page.  
+
+- `@header-box-height`  
+
+- `@header-box-bg-color`  
+
+- `@header-box-text-color`  
+
+- `@header-box-bg-image`  
+Use a background image in the header box. Filename 'header'
+
+- `@text-header-box`  
+The splash text. "r/eddited - clean. simple."
+
+
+#### Sidebar Image
+- `@enable-sidebar-image`  
+Enable an image in the sidebar. Filename 'sidebar'
+
+- `@sidebar-image-height`
+
+
+#### Sidebar Popout
+- `@enable-sidebar-popout`  
+Only show certain information on sidebar hover.
+
+#### Headline
+Text is the first H1 element in the sidebar.  
+`# This will show up as a headline`
+
+- `@enable-headline-box`  
+Enables the box below the header.
+
+- `@headline-box-bg-color`  
+
+- `@headline-box-text-color`  
+
+#### Split Submit Buttons
+- `@enable-split-submit-buttons`
+
+
+#### NSFW thumbnails
+- `@enable-nsfw-thumbnails`

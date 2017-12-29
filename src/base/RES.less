@@ -1,0 +1,120 @@
+/* eddited
+   RES Tweaks
+/*============================*/
+
+
+.res-navTop #header-bottom-right {
+  margin-bottom: -3px;
+}
+
+#RESShortcutsAdd,
+#RESShortcutsEditContainer,
+#RESShortcutsLeft,
+#RESShortcutsRight,
+#RESShortcutsSort {
+  font-size: 10px;
+  text-align: center;
+  background: transparent;
+  color: @color-background;
+}
+
+#header:hover {
+  #RESShortcutsAdd,
+  #RESShortcutsEditContainer,
+  #RESShortcutsLeft,
+  #RESShortcutsRight,
+  #RESShortcutsSort {
+    color: @color-text-subtle;
+  }
+}
+
+#header:not(:hover) #sr-header-area a.RESShortcutsCurrentSub {
+  color: @color-background !important;
+}
+
+#RESShortcutsEditContainer .res-icon {
+  font-size: 10px;
+}
+
+.titlebox .toggle.res-sr-style-toggle {
+  margin-bottom: -5px;
+}
+
+.res-fancy-toggle-button {
+  margin: 0 0 15px;
+  padding: 6px 24px;
+  border-color: @color-border;
+  border-radius: 0;
+  background: transparent;
+  color: @color-text;
+
+  &.remove, &:hover {
+    background: @color-border;
+    background-image: none;
+  }
+}
+
+.RESDashboardToggle {
+  float: right;
+}
+
+.res .commentarea .RES-keyNav-activeElement.entry .noncollapsed,
+.res .commentarea .RES-keyNav-activeElement .md,
+.res .RES-keyNav-activeElement,
+.res .RES-keyNav-activeElement .md-container {
+  background-color: transparent !important;
+}
+
+.entry.RES-keyNav-activeElement {
+  border-right: 1px solid @color-accent;
+}
+
+.res-show-link {
+  top: auto !important;
+  bottom: 0;
+}
+
+.RESHoverTitle .fancy-toggle-button {
+  margin: 0;
+  padding: 0;
+  width: auto;
+}
+
+.res-userHighlight .entry .tagline .author.moderator {
+  padding: 0 2px;
+  color: @color-background !important;
+  background-color: @color-stickied !important;
+}
+
+/* Night Mode */
+.res-nightmode {
+  #sr-header-area,
+  #RESShortcutsEditContainer *,
+  #header-bottom-left,
+  .fancy-toggle-button .remove {
+    background: #333 !important;
+  }
+
+  #header-bottom-left a {
+    color: #fff !important;
+  }
+
+  .tabmenu a {
+    border-color: transparent !important;
+  }
+
+  .tabmenu li a:hover {
+    background: #000 !important;
+  }
+
+  .thing,
+  #header,
+  .titlebox .bottom,
+  .side .usertext-body {
+    border-color: #3c3c3c !important;
+  }
+
+  .link .usertext-body .md {
+    background-color: transparent!important;
+  }
+}

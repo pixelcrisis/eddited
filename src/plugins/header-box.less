@@ -1,0 +1,44 @@
+/* eddited plugin
+   Header Box and Title
+/*============================*/
+
+
+/*---- Define Plugin ----*/
+
+.header-box(@enabled) when (@enabled) {
+
+  body {
+    padding-top: @header-box-height + 8px;
+  }
+
+  .titlebox .redditname a:after {
+    display: block;
+    left: 0;
+    right: 0;
+    top: 38px;
+    font-weight: 700;
+    text-align: center;
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+    line-height: @header-box-height;
+    height: @header-box-height;
+    position: absolute;
+    color: @header-box-text-color;
+    border-bottom: 2px solid @color-accent;
+    background-color: @header-box-bg-color;
+
+    & when (@header-box-bg-image) {
+      background-image: url(%%header%%);
+      background-size: cover;
+      background-position: center top;
+    }
+
+    /* Header Box Text is located in base/pretty */
+
+  }
+
+}
+
+/*---- Use Plugin if Enabled ----*/
+
+.header-box(@enable-header-box);

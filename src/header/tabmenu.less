@@ -1,0 +1,61 @@
+/* eddited
+   Tabmenu styles
+   (hot, new, top, etc)
+/*============================*/
+
+.tabmenu {
+  position: absolute;
+  margin: -5px 0 0 12px;
+  border: 1px solid transparent;
+  color: @color-text;
+
+  &, a, li {
+    box-sizing: border-box;
+  }
+
+  &:hover {
+    border-color: @color-border;
+    background: @color-background;
+  }
+
+  &:not(:hover) {
+    li:not(.selected) {
+      display: none;
+    }
+
+    .selected a {
+      border-color: @color-border;
+      color: @color-link;
+    }
+  }
+
+  a, li {
+    display: block;
+    margin: 0;
+  }
+
+  li a,
+  li.selected a {
+    padding: 6px 12px;
+    width: 100%;
+    border: 1px solid transparent;
+    border-bottom-color: @color-shadow;
+    background: transparent;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 400;
+    font-size: .65rem;
+  }
+
+  li a {
+    color: @color-text;
+
+    &:hover {
+      background: @color-shadow;
+    }
+  }
+
+  li.selected a {
+    color: @color-link;
+  }
+}

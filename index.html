@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>eddited web compiler</title>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./web/styles.css">
+
+</head>
+
+<body>
+
+  <div class="container" id="eddit">
+    <header class="header clearfix">
+      <h3 class="text-muted">eddited web compiler</h3>
+    </header>
+
+    <nav class="nav nav-tabs" id="myTab" role="tablist">
+      <a class="nav-item nav-link active" id="nav-config-tab" data-toggle="tab" href="#nav-config" role="tab" aria-controls="nav-config" aria-selected="true">Config</a>
+      <a class="nav-item nav-link" id="nav-load-tab" data-toggle="tab" href="#nav-load" role="tab" aria-controls="nav-load" aria-selected="false">Load/Save</a>
+      <a class="nav-item nav-link" id="nav-build-tab" data-toggle="tab" href="#nav-build" role="tab" aria-controls="nav-build" aria-selected="false">Compile</a>
+    </nav>
+
+    <main role="main" class="tab-content" id="nav-tabContent">
+
+      <div class="tab-pane fade show active" id="nav-config" role="tabpanel" aria-labelledby="config-tab">
+        <div class="row align-items-center config">
+
+          <!-- Loop through config options -->
+          <div class="col-lg-6 conf" v-for="conf in config">
+
+            <!-- If color -->
+            <div class="form-group row" v-if="is('color', conf)">
+
+              <div class="col-sm-6">
+                <div class="input-group">
+                  <input type="text" class="form-control" v-model="conf.data">
+                  <span class="input-group-addon">
+                    <input type="color" v-model="conf.data">
+                  </span>
+                </div>
+              </div>
+
+              <label class="col-sm-6 col-form-label text-capitalize">
+                {{ label(conf.name) }}
+              </label>
+
+            </div>
+
+            <!-- If text -->
+            <div class="form-group" v-if="is('text', conf)">
+              <label class="text-capitalize"> {{ label(conf.name) }} </label>
+              <input type="text" class="form-control" v-model="conf.data">
+            </div>
+
+            <!-- If size -->
+            <div class="form-group row" v-if="is('size', conf)">
+              <div class="col-sm-6">
+                <input type="text" class="form-control" v-model="conf.data">
+              </div>
+              <label class="col-sm-6 col-form-label text-capitalize">
+                {{ label(conf.name) }}
+              </label>
+            </div>
+
+            <!-- If toggle -->
+            <div class="form-group row" v-if="is('toggle', conf)">
+
+              <div class="col-sm-12">
+                <div class="input-group">
+                  <span class="input-group-addon">
+                    <input type="checkbox" v-model="conf.data">
+                  </span>
+                  <span class="input-group-addon">{{ label(conf.name) }}</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="tab-pane fade" id="nav-load" role="tabpanel" aria-labelledby="nav-profile-tab">
+        <h5>Copy this and save it somewhere.</h5>
+        <textarea class="form-control" rows="10" disabled>{{ config }}</textarea>
+
+        <h5>Paste settings here to restore.</h5>
+        <textarea class="form-control" id="restore" rows="10" v-model="imported"></textarea>
+        <span class="btn btn-primary btn-sm" @click="restore">Restore!</span>
+      </div>
+
+      <div class="tab-pane fade" id="nav-build" role="tabpanel" aria-labelledby="nav-contact-tab">
+        <span class="btn btn-primary btn-sm" @click="compile">Compile!</span>
+
+        <h5>Your custom eddited theme.</h5>
+        <textarea class="form-control" rows="10" v-model="compiled"></textarea>
+      </div>
+    </main>
+
+
+    <footer class="footer text-center">
+      <p>
+        <a target="_blank" href="http://reddit.com/r/eddited">r/eddited</a> -
+        <a target="_blank" href="http://github.com/12px/eddited">Github</a> -
+        by <a target="_blank" href="http://12px.io">12px</a>
+      </p>
+    </footer>
+
+  </div> <!-- /container -->
+
+  <!-- Scripts -->
+  <script src="./web/config.js"></script>
+  <script src="https://unpkg.com/vue"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+  <script src="./web/clean-css-v4.1.9.js"></script>
+  <script src="./node_modules/less/dist/less.min.js"></script>
+  <script src="./web/scripts.js"></script>
+
+</body>
+
+</html>

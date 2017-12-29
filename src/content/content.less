@@ -1,0 +1,118 @@
+/* eddited
+   Content styles
+   (the main body of the page)
+/*============================*/
+
+body > .content {
+  margin: 33px 0 0 !important;
+  border-right-color: @color-background;
+
+  order: 1;
+  flex: 0 1 calc(~"100% - " @width-sidebar);
+}
+
+#preview-table table,
+#subreddit_stylesheet > div {
+  width: 100%;
+}
+
+.md a {
+  color: @color-link;
+}
+
+// stickied
+.tagline .stickied-tagline,
+.thing.stickied.link a.title,
+.search-result-meta .stickied-tagline {
+  color: @color-stickied;
+}
+
+// locked
+.gold-accent {
+  border-color: @color-locked;
+  border-radius: 3px;
+  background-color: lighten(@color-locked, 90%);
+}
+
+// inline expand buttons
+.thing .md .expando-button {
+  position: relative;
+  margin: 0 4px;
+}
+
+// submit page
+.formtabs-content,
+.content > .tabpane-content {
+  padding-top: 12px;
+  border: 2px solid transparent;
+  border-top-color: @color-accent;
+}
+
+ul.tabmenu.formtab,
+.content > .tabmenu {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  border: none;
+  list-style: initial;
+
+  &:hover {
+    border: none;
+    background: transparent;
+  }
+}
+
+ul.formtab li a:hover,
+.tabmenu.formtab .selected a,
+.content > .tabmenu li a:hover
+.content > .tabmenu .selected a {
+  color: @color-link !important;
+}
+
+.linefield,
+.roundfield {
+  padding: 10px;
+  border: 1px solid @color-border;
+  border-radius: 0px;
+  background-color: @color-shadow;
+}
+
+// misc pages
+
+.submit-page {
+
+  #reddit-field, #suggest-title {
+    display: none;
+  }
+
+  #items-required {
+    font-size: 0;
+  }
+}
+
+.fancy-settings h1 {
+  margin: 12px 0;
+}
+
+.usertable {
+  margin: 0;
+}
+
+.flaircell,
+.flairlist .header {
+  margin-right: 0;
+}
+
+.content > .menuarea {
+  border: none;
+  background: @color-accent;
+  color: @color-background;
+  display: inline-block;
+  border-radius: 3px;
+
+  .flat-list a,
+  .flat-list .selected a,
+  .dropdown.lightdrop .selected {
+    color: @color-background;
+  }
+}

@@ -1,54 +1,38 @@
 'use strict';
 
-let theme = {
-  pretty: null,
-  extras: null,
-  version: require('./package.json').version
-};
+// import eddited utilities
+const buildTools = require('./build-tools.js');
+const version = require('./package.json').version;
+const $ = new buildTools(version);
+const _ = { every: false }; // for inline plugins
 
-const plugins = [
-  require('postcss-import'),
-  require('postcss-simple-vars'),
-  require('postcss-conditionals'),
-  require('postcss-cssnext')({ features: { fontVariant: false } }),
-  require('cssnano')({ zindex: false })
-];
+// plugin wrappers
+const save = function * (files) { return $.saveFile(files); };
+const join = function * (files) { files = $.joinFiles(files); };
+const vars = function * (files) { files = $.extractVars(files); };
 
-const get = function (files) { return files[0].data.toString(); };
-const getPretty = function * (file) { theme.pretty = get(file); };
-const getExtras = function * (file) { theme.extras = get(file); };
 
+// the build process
 module.exports = {
 
-  * cleaner (task) {
-    yield task.source('src/**/*.css')
-          .postcss({ plugins: require('postcss-csscomb') }).target('src');
-  },
-
-  * formatter (task) {
-    yield task.source('dist/theme.min.css')
-          .format(theme).target('dist');
-  },
-
+  // Methods
   * builder (task) {
-    yield task.source('src/theme.css')
-          .postcss({ from: './src/theme.css', plugins: plugins })
-          .rename({ suffix: '.min' }).target('dist');
-
-    yield task.source('src/build/_pretty.css')
-          .postcss({ from: './src/build/', plugins: plugins })
-          .run({ every: false }, getPretty);
-
-    yield task.source('src/build/_extras.css')
-          .postcss({ from: './src/build/', plugins: plugins })
-          .run({ every: false }, getExtras);
+    yield task.source($._conf).run(_, vars);
+    yield task.source($._theme).less($.less).target('./dist');
+    yield task.source($._plugins).less($.less).run(_, save);
+    yield task.source($._pretty).less().run(_, save);
   },
 
-  // CLI / npm script tools
-  * build (task) { task.serial(['builder', 'formatter']) },
-  * publish (task) { task.serial(['cleaner', 'build']) },
-  * develop (task) { yield task.serial(['cleaner', 'build']);
-    yield task.watch('src/**/*.css', 'build')
+  * joiner (task) {
+    yield task.source($._web).run(_, vars).target('./web');
+    yield task.source($._out).run(_, join).target('./dist');
+  },
+
+  // CLI Commands (Entry Points)
+  * build (task) { task.serial(['builder', 'joiner']); },
+  * develop (task) {
+    yield task.start('build');
+    yield task.watch('src/**/*.less', 'build');
   }
 
-};
+}

@@ -1,0 +1,25 @@
+/* eddited plugin
+   Sidebar Image
+/*============================*/
+
+
+/*---- Define Plugin ----*/
+
+.sidebar-image(@enabled) when (@enabled) {
+
+  .titlebox .redditname:after {
+    content: '';
+    width: 100%;
+    display: block;
+    background-image: url(%%sidebar%%);
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: @sidebar-image-height;
+  }
+
+
+}
+
+/*---- Use Plugin if Enabled ----*/
+
+.sidebar-image(@enable-sidebar-image);
