@@ -2,10 +2,11 @@
 A back-to-basics subreddit theme. Flat, minimal, with a focus on content, eddited is arguably reddit's cleanest and most customizable subreddit theme.
 
 #### Contents
+- [Quick Install](#quick-install)
+- [Web Compiler](#web-compiler)
 - [Colors](#colors)
 - [Options](#options)
 - [Plugins](#plugins)
-- [Web Compiler](#web-compiler)
 
 
 ## Quick Install
@@ -29,7 +30,7 @@ Black by default; Main font color.
 A lighter/darker version of the main font color, to blend in easier with the background.
 
 - `@color-shadow`  
-Should only be a few shades lighter/darker than *@color-background*
+Should be marginally lighter/darker than *@color-background*
 
 - `@color-border`  
 Follows the same guide as *@color-shadow* but even lighter/darker.
@@ -122,7 +123,7 @@ Enable an image in the sidebar. Filename 'sidebar'
 
 #### Sidebar Popout
 - `@enable-sidebar-popout`  
-Only show certain information on sidebar hover.
+Hide certain information until sidebar hover.
 
 #### Headline
 Text is the first H1 element in the sidebar.  
@@ -143,13 +144,13 @@ Enables the box below the header.
 - `@enable-nsfw-thumbnails`
 
 ## Web Compiler
-If you want to utilize the config file but don't want to learn how to compile LESS, there is a handy web compiler located at [eddited.12px.io](http://eddited.12px.io)  
+If you want to build a custom version, but don't want to learn how to compile LESS, there is a handy web compiler located at [eddited.12px.io](http://eddited.12px.io)  
 
 #### Config
 Changing any values here will update the them on compile.
 
 #### Load/Save
-The text in the first box is your current setup, save that to a text file to backup your theme settings. When it is time to restore, copy the contents of your file into the second box and hit *Restore*.
+The text in the first box is your current setup, save that to a text file to backup your theme settings. To restore, copy the contents of your file into the second box and hit *Restore*.
 
 #### Compile
 Once you're done modifying the config to your liking, hit *compile* to build your custom theme. Paste the contents of the text box into your stylesheet.
