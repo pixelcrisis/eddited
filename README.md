@@ -4,9 +4,10 @@ A back-to-basics subreddit theme. Flat, minimal, with a focus on content, eddite
 #### Contents
 - [Quick Install](#quick-install)
 - [Web Compiler](#web-compiler)
-- [Colors](#colors)
-- [Options](#options)
-- [Plugins](#plugins)
+- [Customize](#customize)
+  - [Colors](#colors)
+  - [Options](#options)
+  - [Plugins](#plugins)
 
 
 ## Quick Install
@@ -14,7 +15,19 @@ A back-to-basics subreddit theme. Flat, minimal, with a focus on content, eddite
 - Upload **header.jpg** and **sidebar.jpg** to your subreddit.
 - Paste the contents of **theme.css** into your stylesheet settings.
 
+## Web Compiler
+If you want to build a custom version, but don't want to learn how to compile LESS, there is a handy web compiler located at [eddited.12px.io](http://eddited.12px.io)  
 
+#### Config
+Changing any values here will update the them on compile.
+
+#### Load/Save
+The text in the first box is your current setup, save that to a text file to backup your theme settings. To restore, copy the contents of your file into the second box and hit *Restore*.
+
+#### Compile
+Once you're done modifying the config to your liking, hit *compile* to build your custom theme. Paste the contents of the text box into your stylesheet.
+
+## Customize
 ### Colors
 
 - `@color-accent`  
@@ -142,15 +155,3 @@ Enables the box below the header.
 
 #### NSFW thumbnails
 - `@enable-nsfw-thumbnails`
-
-## Web Compiler
-If you want to build a custom version, but don't want to learn how to compile LESS, there is a handy web compiler located at [eddited.12px.io](http://eddited.12px.io)  
-
-#### Config
-Changing any values here will update the them on compile.
-
-#### Load/Save
-The text in the first box is your current setup, save that to a text file to backup your theme settings. To restore, copy the contents of your file into the second box and hit *Restore*.
-
-#### Compile
-Once you're done modifying the config to your liking, hit *compile* to build your custom theme. Paste the contents of the text box into your stylesheet.
