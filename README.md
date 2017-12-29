@@ -1,7 +1,7 @@
 # r/eddited
 A back-to-basics subreddit theme. Flat, minimal, with a focus on content, eddited is arguably reddit's cleanest and most customizable subreddit theme.
 
-## Contents
+#### Contents
 - [Colors](#colors)
 - [Options](#options)
 - [Plugins](#plugins)
@@ -134,3 +134,15 @@ Enables the box below the header.
 
 #### NSFW thumbnails
 - `@enable-nsfw-thumbnails`
+
+## Web Compiler
+If you want to utilize the config file but don't want to learn how to compile LESS, there is a handy web compiler located at [eddited.12px.io](http://eddited.12px.io)  
+
+#### Config
+Changing any values here will update the them on compile.
+
+#### Load/Save
+The text in the first box is your current setup, save that to a text file to backup your theme settings. When it is time to restore, copy the contents of your file into the second box and hit *Restore*.
+
+#### Compile
+Once you're done modifying the config to your liking, hit *compile* to build your custom theme. Paste the contents of the text box into your stylesheet.
