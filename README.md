@@ -7,6 +7,12 @@ A back-to-basics subreddit theme. Flat, minimal, with a focus on content, eddite
 - [Plugins](#plugins)
 
 
+## Quick Install
+- Download the zip from **dist/** and extract.
+- Upload **header.jpg** and **sidebar.jpg** to your subreddit.
+- Paste the contents of **theme.css** into your stylesheet settings.
+
+
 ### Colors
 
 - `@color-accent`  
