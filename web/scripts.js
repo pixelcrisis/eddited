@@ -37,7 +37,19 @@ var start = new Vue({
         if (e.name == 'SyntaxError') return alert('Syntax Error!');
         else return alert(e.message);
       }
-      this.config = processing;
+
+      for (var d = 0; d < processing.length; d++) {
+        var _new = processing[d];
+        for (var c = 0; c < this.config.length; c++) {
+          var _old = this.config[c];
+
+          if (_new.name == _old.name) {
+            _old.data = _new.data;
+            console.log(`Imported ${_old.name}.`);
+          }
+        }
+      }
+
       alert('Imported!');
     },
 
@@ -59,10 +71,10 @@ var start = new Vue({
       let lessVars = {};
       that.compiled = '';
 
-      for (var i = 0;i < config.length;i++) {
-        var name = config[i].name;
-        lessVars[name] = config[i].data + "";
-        if (this.is('text', config[i])) lessVars[name] = `"${lessVars[name]}"`;
+      for (var i = 0;i < this.config.length;i++) {
+        var name = this.config[i].name;
+        lessVars[name] = this.config[i].data + "";
+        if (this.is('text', this.config[i])) lessVars[name] = `"${lessVars[name]}"`;
       }
 
       this.loadFiles(function(imports){
