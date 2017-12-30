@@ -31,8 +31,18 @@
     }
   }
 
-  .side:hover ~ .content {
-    opacity: 0.4;
+  // or if hover redditname
+  .titlebox .redditname:hover {
+    ~ .tagline,
+    ~ .subscribers,
+    ~ .users-online,
+    ~ .leavemoderator,
+    ~ form.flairtoggle,
+    ~ .subButtons .res-fancy-toggle-button,
+    ~ .toggle.res-sr-style-toggle,
+    ~ form.leavecontributor-button {
+      display: none;
+    }
   }
 
   // popout styles
@@ -83,8 +93,8 @@
       position: absolute;
       text-align: center !important;
       box-sizing: border-box;
-      background: @color-background;
-      border: 1px solid @color-shadow;
+      background: @color-shadow;
+      border: 1px solid @color-border;
       border-right-color: transparent;
       transition: all 0.2s ease;
     }
