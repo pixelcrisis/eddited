@@ -50,15 +50,16 @@ body > .content {
 
 ul.tabmenu.formtab,
 .content > .tabmenu {
-  position: relative;
-  margin: 0;
-  padding: 0;
-  border: none;
-  list-style: initial;
+  padding: 12px;
 
   &:hover {
     border: none;
     background: transparent;
+  }
+
+  a {
+    border: none;
+    font-size: 1rem !important;
   }
 }
 
@@ -67,6 +68,7 @@ ul.formtab li a:hover,
 .content > .tabmenu li a:hover
 .content > .tabmenu .selected a {
   color: @color-link !important;
+  background-color: transparent;
 }
 
 .linefield,
