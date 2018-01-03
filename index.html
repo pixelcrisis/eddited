@@ -15,93 +15,101 @@
 
 <body>
 
-  <div class="container" id="eddit">
-    <header class="header clearfix">
-      <h3 class="text-muted">eddited web compiler</h3>
+  <div class="container" id="edditor">
+    <header class="header row align-items-center">
+      <div class="col-sm-6">
+        <h3 class="text-muted">eddited web compiler</h3>
+      </div>
+      <div class="col-sm-6 text-right">
+        <span class="badge badge-light">v{{ version }}</span>
+      </div>
     </header>
 
-    <nav class="nav nav-tabs" id="myTab" role="tablist">
-      <a class="nav-item nav-link active" id="nav-config-tab" data-toggle="tab" href="#nav-config" role="tab" aria-controls="nav-config" aria-selected="true">Config</a>
-      <a class="nav-item nav-link" id="nav-load-tab" data-toggle="tab" href="#nav-load" role="tab" aria-controls="nav-load" aria-selected="false">Load/Save</a>
-      <a class="nav-item nav-link" id="nav-build-tab" data-toggle="tab" href="#nav-build" role="tab" aria-controls="nav-build" aria-selected="false">Compile</a>
-    </nav>
+    <main class="row">
+      <div class="config col-lg-6">
 
-    <main role="main" class="tab-content" id="nav-tabContent">
+        <card title="General Colors" tag="tabcolor">
+          <color name="Main Accent Color" v-model="color_accent"></color>
+          <color name="Background Color" v-model="color_background"></color>
+          <color name="Text Color" v-model="color_text"></color>
+          <color name="Subtle Text Color" v-model="color_text_subtle"></color>
+          <color name="Shadow Color" v-model="color_shadow"></color>
+          <color name="Border Color" v-model="color_border"></color>
+          <color name="Link Color" v-model="color_link"></color>
+          <color name="Button Color" v-model="color_button"></color>
+          <color name="Button Text Color" v-model="color_button_text"></color>
+          <color name="Upvote Color" v-model="color_upvote"></color>
+          <color name="Downvote Color" v-model="color_downvote"></color>
+          <color name="Thumbnail Color" v-model="color_thumbnail"></color>
+          <color name="NSFW Color" v-model="color_nsfw"></color>
+          <color name="Locked Color" v-model="color_locked"></color>
+          <color name="Stickied Color" v-model="color_stickied"></color>
+          <color name="Visited Color" v-model="color_visited"></color>
+          <color name="Red Flair Color" v-model="color_red_flair"></color>
+          <color name="Green Flair Color" v-model="color_green_flair"></color>
+        </card>
 
-      <div class="tab-pane fade show active" id="nav-config" role="tabpanel" aria-labelledby="config-tab">
-        <div class="row align-items-center config">
+        <card title="General Options" tag="taboption">
+          <string name="Sidebar Width" v-model="width_sidebar"></string>
+          <string name="Thumbnail Width" v-model="width_thumbnail"></string>
+          <string name="Thumbnail Height" v-model="height_thumbnail"></string>
+          <string name="Hover Delay" v-model="hover_delay"></string>
+        </card>
 
-          <!-- Loop through config options -->
-          <div class="col-lg-6 conf" v-for="conf in config">
+        <card title="Text Options" tag="tabtext">
+          <string name="Submit Link" v-model="text_submit_link"></string>
+          <string name="Submit Text" v-model="text_submit_text"></string>
+          <string name="Browsing" v-model="text_subscribers"></string>
+          <string name="Users Online" v-model="text_here_now"></string>
+          <string name="Subreddit Prefix" v-model="text_sub_prefix"></string>
+          <string name="Header Box" v-model="text_header_box"></string>
+        </card>
 
-            <!-- If color -->
-            <div class="form-group row" v-if="is('color', conf)">
+        <card title="Theme Plugins" tag="tabplugin">
+          <toggle name="Header Box" v-model="enable_header_box"></toggle>
+          <toggle name="Dropdown Tabmenu" v-model="enable_tabmenu_dropdown"></toggle>
+          <toggle name="Sidebar Image" v-model="enable_sidebar_image"></toggle>
+          <toggle name="Sidebar Popout" v-model="enable_sidebar_popout"></toggle>
+          <toggle name="Headline" v-model="enable_headline_box"></toggle>
+          <toggle name="Split Submit Buttons" v-model="enable_split_submit_buttons"></toggle>
+          <toggle name="Show NSFW Thumbnails" v-model="enable_nsfw_thumbnails"></toggle>
+        </card>
 
-              <div class="col-sm-6">
-                <div class="input-group">
-                  <input type="text" class="form-control" v-model="conf.data">
-                  <span class="input-group-addon">
-                    <input type="color" v-model="conf.data">
-                  </span>
-                </div>
-              </div>
+        <card title="Header Box" tag="tabheaderbox" v-show="enable_header_box">
+          <string name="Box Height" v-model="header_box_height"></string>
+          <string name="Header Text" v-model="text_header_box"></string>
+          <color name="Background Color" v-model="header_box_bg_color"></color>
+          <color name="Text Color" v-model="header_box_text_color"></color>
+          <toggle name="Use Background Image" v-model="header_box_bg_image"></toggle>
+        </card>
 
-              <label class="col-sm-6 col-form-label text-capitalize">
-                {{ label(conf.name) }}
-              </label>
+        <card title="Sidebar Image" tag="tabsidebarimage" v-show="enable_sidebar_image">
+          <string name="Image Height"
+            v-model="sidebar_image_height" v-show="enable_sidebar_image"></string>
+        </card>
 
-            </div>
+        <card title="Headline" tag="tabheadline" v-show="enable_headline_box">
+          <color name="Background Color" v-model="headline_box_bg_color"></color>
+          <color name="Text Color" v-model="headline_box_text_color"></color>
+        </card>
 
-            <!-- If text -->
-            <div class="form-group" v-if="is('text', conf)">
-              <label class="text-capitalize"> {{ label(conf.name) }} </label>
-              <input type="text" class="form-control" v-model="conf.data">
-            </div>
-
-            <!-- If size -->
-            <div class="form-group row" v-if="is('size', conf)">
-              <div class="col-sm-6">
-                <input type="text" class="form-control" v-model="conf.data">
-              </div>
-              <label class="col-sm-6 col-form-label text-capitalize">
-                {{ label(conf.name) }}
-              </label>
-            </div>
-
-            <!-- If toggle -->
-            <div class="form-group row" v-if="is('toggle', conf)">
-
-              <div class="col-sm-12">
-                <div class="input-group">
-                  <span class="input-group-addon">
-                    <input type="checkbox" v-model="conf.data">
-                  </span>
-                  <span class="input-group-addon">{{ label(conf.name) }}</span>
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </div>
       </div>
+      <div class="col-lg-6">
 
-      <div class="tab-pane fade" id="nav-load" role="tabpanel" aria-labelledby="nav-profile-tab">
-        <h5>Copy this and save it somewhere.</h5>
-        <textarea class="form-control" rows="10" disabled>{{ config }}</textarea>
+        <card title="Import Config" tag="tabimport" class="bg-info text-white">
+          <import @input="importConfig"></import>
+        </card>
 
-        <h5>Paste settings here to restore.</h5>
-        <textarea class="form-control" id="restore" rows="10" v-model="imported"></textarea>
-        <span class="btn btn-primary btn-sm" @click="restore">Restore!</span>
-      </div>
+        <card title="Export Config" tag="tabexport" class="bg-info text-white">
+          <export :config="exportConfig"></export>
+        </card>
 
-      <div class="tab-pane fade" id="nav-build" role="tabpanel" aria-labelledby="nav-contact-tab">
-        <span class="btn btn-primary btn-sm" @click="compile">Compile!</span>
+        <card title="Compile Theme" shown="true" tag="tabcompile" class="bg-success text-white">
+          <compiled @input="compileTheme"></compiled>
+        </card>
 
-        <h5>Your custom eddited theme.</h5>
-        <textarea class="form-control" rows="10" v-model="compiled"></textarea>
       </div>
     </main>
-
 
     <footer class="footer text-center">
       <p>
@@ -110,18 +118,21 @@
         by <a target="_blank" href="http://12px.io">12px</a>
       </p>
     </footer>
+  </div>
 
-  </div> <!-- /container -->
 
-  <!-- Scripts -->
-  <script src="./web/config.js"></script>
+  <!-- Vendor Scripts -->
+  <script src="./web/scripts.js"></script>
+  <script src="./web/lib/clean-css-v4.1.9.js"></script>
   <script src="https://unpkg.com/vue"></script>
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
-  <script src="./web/clean-css-v4.1.9.js"></script>
   <script src="./node_modules/less/dist/less.min.js"></script>
-  <script src="./web/scripts.js"></script>
+
+  <!-- User Scripts -->
+  <script src="./web/templates.js"></script>
+  <script src="./web/config.js"></script>
 
 </body>
 

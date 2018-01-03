@@ -1,91 +1,93 @@
 /*=== eddited web compiler ===*/
 
-// contains
-String.prototype.is = function(string) { return this.indexOf(string) > -1; };
-var str = function(str) { return String.prototype.toString(str); };
+// Utility Functions
+const updateConfig = function(val) { this.$emit('input', val); };
 
-// Start Vue
-var start = new Vue({
-  el: '#eddit',
+const lessVars = function() {
+  let exported = {};
+  for (var lvar in this._data) {
+    let varName = "@" + lvar.replace(/_/g, "-");
+    let varData = this._data[lvar] + "";
 
-  data: {
-    toload: '',
-    imported: '',
-    compiled: '',
-    config: config
-  },
+    if (varName.indexOf('text') > -1) varData = `"${varData}"`;
+    exported[varName] = varData;
+  }
+  return exported;
+}
 
-  methods: {
-    is: function(type, data) {
-      let name = data.name;
-      let value = data.data + "";
-      if (type == "size") return (value.is('px'));
-      else if (type == "text") return (name.is('@text'));
-      else if (type == "color") return (name.is('@color') || value.is('#'));
-      else if (type == "toggle") {
-        return (name.is('@enabled') || value.is('true') || value.is('false'));
-      }
-    },
+// File loader function
+const loadFiles = function(file, callback) {
+  var loader = new XMLHttpRequest();
+  loader.onreadystatechange = function() {
+    if (this.readyState == 4) callback(this.response);
+  };
+  loader.open('GET', '../src/build/' + file + '.less', true);
+  loader.send();
+};
 
-    label: function(str) { return str.split('-').join(' ').replace('@', ''); },
+// Build Less Function
+const buildLess = function(file, vars, clean, callback) {
+  less.render(file, { modifyVars: vars, relativeUrls: true }, function(e,o) {
+    if (e) return console.log(e);
+    if (clean) {
+      new CleanCSS().minify(o.css, function(err, out) {
+        if (!err) callback(out.styles);
+        else console.log(err);
+      })
+    }
+  });
+};
 
-    restore: function() {
-      if (!this.imported) return alert('Nothing to compile!');
-      try {
-        var processing = JSON.parse(this.imported);
-      } catch (e) {
-        if (e.name == 'SyntaxError') return alert('Syntax Error!');
-        else return alert(e.message);
-      }
+const importConfig = function() {
+  let imported = $('#importcfg').val();
+  if (!imported) return alert('Nothing to import!');
+  try {
+    var processing = JSON.parse(imported);
+  } catch (e) {
+    if (e.name == 'SyntaxError') return alert('Syntax Error!');
+    else return alert(e.message);
+  }
 
-      for (var d = 0; d < processing.length; d++) {
-        var _new = processing[d];
-        for (var c = 0; c < this.config.length; c++) {
-          var _old = this.config[c];
+  // is array
+  if (imported.charAt(0) == "[") {
+    for (var ac = 0;ac < processing.length;ac++) {
+      let varData = processing[ac].data;
+      let varName = processing[ac].name.replace('@', '').replace(/-/g, "_");
+      if (!this.hasOwnProperty(varName)) return alert("Unrecognized: " + varName);
+      this[varName] = varData;
+    }
+  // else if is object
+  } else if (imported.charAt(0) == "{") {
+    for (var ao in processing) {
+      if (!this.hasOwnProperty(ao)) return alert("Unrecognized: " + ao);
+      this[ao] = processing[ao];
+    }
+  } else {
+    return alert("Unrecognized input.");
+  }
 
-          if (_new.name == _old.name) {
-            _old.data = _new.data;
-            console.log(`Imported ${_old.name}.`);
-          }
-        }
-      }
+  return alert("Imported!");
+};
 
-      alert('Imported!');
-    },
-
-    loadFiles: function(cb) {
-      if (this.toload) return cb(this.toload);
-      var _get = new XMLHttpRequest();
-      _get.onreadystatechange = function() {
-        if (this.readyState == 4) {
-          this.toload = this.response;
-          cb(this.response);
-        }
-      };
-      _get.open("GET", "../src/build/web.less", true);
-      _get.send();
-    },
-
-    compile: function() {
-      let that = this;
-      let lessVars = {};
-      that.compiled = '';
-
-      for (var i = 0;i < this.config.length;i++) {
-        var name = this.config[i].name;
-        lessVars[name] = this.config[i].data + "";
-        if (this.is('text', this.config[i])) lessVars[name] = `"${lessVars[name]}"`;
-      }
-
-      this.loadFiles(function(imports){
-        less.render(imports, { modifyVars: lessVars, relativeUrls: true }, function(e,o) {
-          if (e) return console.log(e);
-          new CleanCSS().minify(o.css, function (err, out) {
-            if (!err) that.compiled = out.styles;
-            else console.log(err);
-          });
-        })
-      });
+const exportConfig = function() {
+  let exported = {};
+  for (var val in this._data) {
+    if (val != "version") {
+      exported[val] = this._data[val];
     }
   }
-});
+  return exported;
+};
+
+
+const compileTheme = function() {
+  let theme = '', that = this;
+  $('#compiledTheme').val('');
+
+  loadFiles('web', function(imports) {
+    let built = buildLess(imports, start.lessVars, true, function(css) {
+      $('#compiledTheme').val(css);
+    });
+  })
+
+};

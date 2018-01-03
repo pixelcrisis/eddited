@@ -6,6 +6,8 @@ const decomment = require('decomment');
 const LessPluginCleanCSS = require('less-plugin-clean-css');
 const LessToJS = require('less-vars-to-js');
 
+// contains
+String.prototype.is = function(string) { return this.indexOf(string) > -1; };
 
 // define buildTools function
 const buildTools = function(version) {
@@ -66,25 +68,39 @@ buildTools.prototype = {
     let data = file[0].data.toString();
 
     // if less, get and organize the variables
-    if (name.indexOf('.less') > -1) {
+    if (name.is('.less')) {
+      this.config = ['var start = new Vue({'];
+      this.config.push('  el: "#edditor",');
+      this.config.push('  data: {');
+
       let extracted = LessToJS(data);
-      this.config = ['var config = ['];
 
       for (var ex in extracted) {
-        let varName = ex;
-        let varData = extracted[ex];
+        let exName = ex;
+        let exData = extracted[ex];
 
         // if data is variable, get data
-        while (varData.indexOf('@') > -1) { varData = extracted[varData]; }
+        while (exData.is('@')) exData = extracted[exData];
 
-        // wrap data in quotes if color or px
-        if (varData.indexOf('#') > -1) varData = `"${varData}"`;
-        if (varData.indexOf('px') > -1) varData = `"${varData}"`;
+        // wrap raw data in quotes
+        if (exName.is('width')) exData = `"${exData}"`;
+        if (exName.is('color')) exData = `"${exData}"`;
+        if (exName.is('delay')) exData = `"${exData}"`;
+        if (exName.is('height')) exData = `"${exData}"`;
 
-        this.config.push(`  { name: "${varName}", data: ${varData} },`);
+        exName = exName.replace('@', '');
+        exName = exName.replace(/-/g, '_');
+
+        this.config.push(`    ${exName}: ${exData},`);
       }
 
-      this.config.push('];');
+      // version
+      this.config.push(`    version: "${this.build.ver}"`);
+      this.config.push('  },');
+      this.config.push('  computed: { exportConfig, lessVars },');
+      this.config.push('  methods: { importConfig, compileTheme },');
+      this.config.push('});');
+
     } else {
       // else export variables to file data
       file[0].data = new Buffer(this.config.join('\n'));

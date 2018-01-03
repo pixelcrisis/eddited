@@ -28,6 +28,7 @@ body {
 
 /* Custom page footer */
 .footer {
+  margin-top: 2rem;
   padding-top: 1.5rem;
   color: #777;
   border-top: .05rem solid #e5e5e5;
@@ -38,48 +39,6 @@ body {
   .container {
     max-width: 56rem;
   }
-}
-.container-narrow > hr {
-  margin: 2rem 0;
-}
-
-/* Main config message and sign up button */
-.jumbotron {
-  text-align: center;
-  border-bottom: .05rem solid #e5e5e5;
-}
-.jumbotron .btn {
-  padding: .75rem 1.5rem;
-  font-size: 1.5rem;
-}
-
-/* Supporting config content */
-.config {
-  margin: 3rem 0;
-}
-.config p + h4 {
-  margin-top: 1.5rem;
-}
-
-.conf {
-  margin: 1px 0;
-  padding-top: 16px;
-  background: #f7f7f7;
-  border-left: 2px solid #fff;
-}
-
-.form-check input {
-  margin-right: 15px;
-}
-
-.tab-pane,
-.tab-pane h5,
-.tab-pane .btn {
-  margin: 20px 0;
-}
-
-.tab-pane .btn {
-  color: #FFF!important;
 }
 
 /* Responsive: Portrait tablets and up */
@@ -96,9 +55,47 @@ body {
   .header {
     margin-bottom: 2rem;
   }
+}
 
-  /* Remove the bottom border on the jumbotron for visual effect */
-  .jumbotron {
-    border-bottom: 0;
-  }
+.card {
+  margin-bottom: .5rem;
+}
+
+.import,
+.export {
+  margin-top: 10px;
+}
+
+.import .btn {
+  margin-top: 5px;
+}
+
+.conf {
+  margin-bottom: 5px;
+}
+
+.card h5 {
+  margin-bottom: 0;
+  cursor: pointer;
+}
+
+.config .collapse,
+.config .collapsing {
+  padding-top: 1rem !important;
+}
+
+.conf label {
+  display: block;
+  font-size: 12px;
+  text-align: right;
+}
+
+.color label {
+  padding: 3px 5px;
+}
+
+.text-white textarea.form-control {
+  color: #fff;
+  border-color: rgba(255,255,255,0.4);
+  background-color: rgba(255,255,255,0.3);
 }
