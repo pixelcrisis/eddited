@@ -3,59 +3,36 @@
    (hot, new, top, etc)
 /*============================*/
 
-.header .tabmenu {
-  position: absolute;
-  margin: -5px 0 0 12px;
-  border: 1px solid transparent;
-  color: @color-text;
+#header .tabmenu {
+  margin-left: 12px;
+}
+
+.tabmenu {
+  margin: 0;
 
   &, a, li {
+    display: inline-block;
     box-sizing: border-box;
   }
 
-  &:hover {
-    border-color: @color-border;
-    background: @color-background;
-  }
-
-  &:not(:hover) {
-    li:not(.selected) {
-      display: none;
+  li {
+    a {
+      padding: 0 3px 4px;
+      margin-bottom: -3px;
+      color: @color-text;
+      background: transparent;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 400;
+      font-size: .65rem;
     }
 
-    .selected a {
-      border-color: @color-border;
-      color: @color-link;
-    }
-  }
-
-  a, li {
-    display: block;
-    margin: 0;
-  }
-
-  li a,
-  li.selected a {
-    padding: 6px 12px;
-    width: 100%;
-    border: 1px solid transparent;
-    border-bottom-color: @color-shadow;
-    background: transparent;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-weight: 400;
-    font-size: .65rem;
-  }
-
-  li a {
-    color: @color-text;
-
-    &:hover {
-      background: @color-shadow;
+    &.selected, &:hover {
+      a {
+        color: @color-accent;
+        border-color: transparent transparent @color-accent transparent;
+      }
     }
   }
 
-  li.selected a {
-    color: @color-link;
-  }
 }
