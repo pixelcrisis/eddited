@@ -43,7 +43,7 @@ var start = new Vue({
     headline_box_text_color: "#ffffff",
     enable_split_submit_buttons: true,
     enable_nsfw_thumbnails: false,
-    version: "1.0.0-rc1"
+    version: "1.0.0-rc2"
   },
   computed: { exportConfig, lessVars },
   methods: { importConfig, compileTheme },
