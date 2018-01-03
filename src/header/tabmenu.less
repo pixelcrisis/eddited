@@ -4,7 +4,8 @@
 /*============================*/
 
 #header .tabmenu {
-  margin-left: 12px;
+  position: absolute;
+  margin: -1px 0 0 12px;
 }
 
 .tabmenu {
@@ -17,21 +18,25 @@
 
   li {
     a {
-      padding: 0 3px 4px;
+      padding: 4px 5px;
       margin-bottom: -3px;
-      color: @color-text;
+      color: @color-text-subtle;
       background: transparent;
+      border: 1px solid @color-shadow;
       text-transform: uppercase;
       letter-spacing: 1px;
       font-weight: 400;
       font-size: .65rem;
     }
 
-    &.selected, &:hover {
-      a {
-        color: @color-accent;
-        border-color: transparent transparent @color-accent transparent;
-      }
+    &:hover a {
+      color: @color-text;
+      border-color: @color-text;
+    }
+
+    &.selected a {
+      color: @color-accent;
+      border-color: @color-accent;
     }
   }
 
