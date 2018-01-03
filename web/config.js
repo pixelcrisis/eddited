@@ -20,6 +20,7 @@ var config = [
   { name: "@width-sidebar", data: "300px" },
   { name: "@width-thumbnail", data: "55px" },
   { name: "@height-thumbnail", data: "45px" },
+  { name: "@hover-delay", data: 1.5s },
   { name: "@text-submit-link", data: "Show" },
   { name: "@text-submit-text", data: "Tell" },
   { name: "@text-subscribers", data: "Users" },
