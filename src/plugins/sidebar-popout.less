@@ -22,11 +22,9 @@
     .tagline,
     .subscribers,
     .users-online,
-    .leavemoderator,
     form.flairtoggle,
-    .subButtons .res-fancy-toggle-button,
     .toggle.res-sr-style-toggle,
-    form.leavecontributor-button {
+    .subButtons .res-fancy-toggle-button {
       right: -500px;
     }
   }
@@ -36,11 +34,9 @@
     ~ .tagline,
     ~ .subscribers,
     ~ .users-online,
-    ~ .leavemoderator,
     ~ form.flairtoggle,
-    ~ .subButtons .res-fancy-toggle-button,
     ~ .toggle.res-sr-style-toggle,
-    ~ form.leavecontributor-button {
+    ~ .subButtons .res-fancy-toggle-button {
       right: -500px;
     }
   }
@@ -55,7 +51,7 @@
     .res-fancy-toggle-button,
     .toggle.res-sr-style-toggle,
     form.leavecontributor-button {
-      transition-delay: 2s;
+      transition-delay: 1.5s;
     }
   }
 
@@ -71,23 +67,19 @@
     // half width popups (both)
     .subscribers,
     .users-online,
-    .leavemoderator,
-    .res-fancy-toggle-button,
-    form.leavecontributor-button {
+    .res-fancy-toggle-button {
       width: (@width-sidebar / 2);
     }
 
     // half width right
     .tagline,
     .subscribers,
-    .leavemoderator,
     .res-fancy-toggle-button.RESshortcut {
       right: @width-sidebar - 12;
     }
 
     // half width left
     .users-online,
-    form.leavecontributor-button,
     .res-fancy-toggle-button.RESDashboardToggle {
       right: @width-sidebar + (@width-sidebar / 2) - 12;
     }
@@ -96,11 +88,9 @@
     .tagline,
     .subscribers,
     .users-online,
-    .leavemoderator,
     form.flairtoggle,
     .res-fancy-toggle-button,
-    .toggle.res-sr-style-toggle,
-    form.leavecontributor-button {
+    .toggle.res-sr-style-toggle {
       z-index: 1000;
       padding: 12px;
       display: block;
@@ -116,7 +106,6 @@
     // border padding for offset
     .tagline,
     .subscribers,
-    .leavemoderator,
     .toggle.res-sr-style-toggle,
     .res-fancy-toggle-button.RESshortcut {
       border-right: 10px solid @color-background;
@@ -136,14 +125,9 @@
       margin-top: 20px;
     }
 
-    .leavemoderator,
-    form.leavecontributor-button {
-      .get-top(37px);
-    }
-
     .tagline,
     form.flairtoggle {
-      .get-top(74px) !important;
+      .get-top(37px) !important;
     }
 
     .tagline {
@@ -157,7 +141,7 @@
     }
 
     .res-fancy-toggle-button {
-      .get-top(103px);
+      .get-top(66px);
     }
 
   }
