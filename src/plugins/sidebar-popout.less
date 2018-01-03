@@ -24,10 +24,10 @@
     .users-online,
     .leavemoderator,
     form.flairtoggle,
-    .res-fancy-toggle-button,
+    .subButtons .res-fancy-toggle-button,
     .toggle.res-sr-style-toggle,
     form.leavecontributor-button {
-      display: none;
+      right: -500px;
     }
   }
 
@@ -41,7 +41,21 @@
     ~ .subButtons .res-fancy-toggle-button,
     ~ .toggle.res-sr-style-toggle,
     ~ form.leavecontributor-button {
-      display: none;
+      right: -500px;
+    }
+  }
+
+  // hide popout unless hover
+  .titlebox:hover {
+    .tagline,
+    .subscribers,
+    .users-online,
+    .leavemoderator,
+    form.flairtoggle,
+    .res-fancy-toggle-button,
+    .toggle.res-sr-style-toggle,
+    form.leavecontributor-button {
+      transition-delay: 2s;
     }
   }
 
@@ -96,7 +110,7 @@
       background: @color-shadow;
       border: 1px solid @color-border;
       border-right-color: transparent;
-      transition: all 0.2s ease;
+      transition: all 0.5s ease;
     }
 
     // border padding for offset
