@@ -25,8 +25,8 @@ input[type=text] {
 /*---- buttons ----*/
 
 .btn,
-[href="#btn"] + a,
-[href="#obtn"] + a {
+[href^="#btn"] + a,
+[href^="#obtn"] + a {
   padding: 6px 12px;
 }
 
@@ -42,13 +42,13 @@ input[type=text] {
   background-image: none !important;
 }
 
-[href="#btn"] + a,
-[href="#obtn"] + a {
+[href^="#btn"] + a,
+[href^="#obtn"] + a {
   display: inline-block;
   font-size: 0.65rem;
 }
 
-[href="#btn"] + a {
+[href^="#btn"] + a {
   background: @color-button;
   color: @color-button-text !important;
 }
@@ -56,9 +56,14 @@ input[type=text] {
 .btn,
 button,
 .morelink a,
-[href="#obtn"] {
+[href^="#obtn"] {
   background: transparent;
   color: @color-button !important;
+}
+
+[href$="-f"] + a {
+  width: 100%;
+  text-align: center;
 }
 
 // core button styles
@@ -66,11 +71,12 @@ button,
 .btn,
 button,
 .morelink a,
-[href="#btn"] + a,
-[href="#obtn"] + a,
+[href^="#btn"] + a,
+[href^="#obtn"] + a,
 .res-fancy-toggle-button,
 .fancy-toggle-button .option,
 .fancy-toggle-button .option.active {
+  box-sizing: border-box;
   border: 1px solid @color-button;
   text-transform: uppercase;
   letter-spacing: 0.1em;
