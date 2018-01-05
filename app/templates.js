@@ -60,7 +60,7 @@ Vue.component('color', {
         :value="value" @input="updateConfig($event.target.value)">
       <span class="input-group-addon">
         <input type="color"
-          :value="value" @change="updateConfig('ding')">
+          :value="value" @change="updateConfig($event.target.value)">
       </span>
     </div>
     <label class="text-muted text-uppercase">
