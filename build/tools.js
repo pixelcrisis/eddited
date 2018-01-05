@@ -18,12 +18,12 @@ const buildTools = function(version) {
 buildTools.prototype = {
 
   // files to build
-  _theme: 'src/build/theme.less',
-  _plugins: 'src/build/plugins.less',
-  _pretty: 'src/build/pretty.less',
-  _conf: 'src/config.less',
-  _out: 'dist/theme.css',
-  _web: 'web/config.js',
+  _theme: './build/theme.less',
+  _plugins: './build/plugins.less',
+  _pretty: './build/pretty.less',
+  _conf: './src/config.less',
+  _out: './dist/theme.css',
+  _web: './app/config.js',
 
   // define build data object
   build: {},

@@ -1,7 +1,7 @@
 'use strict';
 
 // import eddited utilities
-const buildTools = require('./build-tools.js');
+const buildTools = require('./build/tools.js');
 const version = require('./package.json').version;
 const $ = new buildTools(version);
 const _ = { every: false }; // for inline plugins
@@ -24,7 +24,7 @@ module.exports = {
   },
 
   * joiner (task) {
-    yield task.source($._web).run(_, vars).target('./web');
+    yield task.source($._web).run(_, vars).target('./app');
     yield task.source($._out).run(_, join).target('./dist');
   },
 

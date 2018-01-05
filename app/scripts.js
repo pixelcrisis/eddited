@@ -21,7 +21,7 @@ const loadFiles = function(file, callback) {
   loader.onreadystatechange = function() {
     if (this.readyState == 4) callback(this.response);
   };
-  loader.open('GET', '../src/build/' + file + '.less', true);
+  loader.open('GET', '../app/less/' + file + '.less', true);
   loader.send();
 };
 

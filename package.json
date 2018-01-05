@@ -6,11 +6,6 @@
   "repository": "git://github.com/12px/eddited.git",
   "author": "12px, dalton@12px.io",
   "license": "MIT",
-  "taskr": {
-    "requires": [
-      "./build/taskr-plugins.js"
-    ]
-  },
   "devDependencies": {
     "@taskr/esnext": "^1.1.0",
     "@taskr/less": "^1.1.0",
