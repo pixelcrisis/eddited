@@ -34,6 +34,10 @@ const buildLess = function(file, vars, clean, callback) {
         if (!err) callback(out.styles);
         else console.log(err);
       })
+    } else {
+      // split out at first comment
+      let styles = o.css.split(".titlebox");
+      callback(".titlebox" + styles[1]);
     }
   });
 };
@@ -81,13 +85,31 @@ const exportConfig = function() {
 
 
 const compileTheme = function() {
-  let theme = '', that = this;
+  let that = this;
   $('#compiledTheme').val('');
 
-  loadFiles('web', function(imports) {
-    let built = buildLess(imports, start.lessVars, true, function(css) {
-      $('#compiledTheme').val(css);
+  loadFiles('pretty', function(less1) {
+    let stage1 = buildLess(less1, start.lessVars, false, function(css1) {
+
+      loadFiles('plugins', function(less2) {
+        let stage2 = buildLess(less2, start.lessVars, true, function(css2) {
+
+          loadFiles('theme', function(less3) {
+            let stage3 = buildLess(less3, start.lessVars, true, function(css3) {
+
+              let template = [
+                `/* eddited options */`, css1,
+                `/* eddited plugins */`, css2,
+                `/* eddited core v${start.version} */`, css3
+              ];
+
+              $('#compiledTheme').val(template.join('\n\n'));
+
+            });
+          });
+        });
+      });
     });
-  })
+  });
 
 };
