@@ -28,6 +28,8 @@ Vue.component('demos', {
         <option selected>Choose a demo...</option>
         <option value="default">Default</option>
         <option value="noplugins">No Plugins</option>
+        <option value="red">Red Demo</option>
+        <option value="green">Green Demo</option>
       </select>
       <div class="input-group-append">
         <button class="btn btn-primary-secondary" type="button"
