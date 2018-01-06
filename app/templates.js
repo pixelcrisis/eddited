@@ -27,6 +27,7 @@ Vue.component('demos', {
       <select class="form-control custom-select" id="loadDemo">
         <option selected>Choose a demo...</option>
         <option value="default">Default</option>
+        <option value="noplugins">No Plugins</option>
       </select>
       <div class="input-group-append">
         <button class="btn btn-primary-secondary" type="button"

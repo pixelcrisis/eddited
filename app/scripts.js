@@ -36,8 +36,12 @@ const buildLess = function(file, vars, clean, callback) {
       })
     } else {
       // split out at first comment
-      let styles = o.css.split(".titlebox");
-      callback(".titlebox" + styles[1]);
+      if (o.css && o.css.indexOf('.titlebox') > -1) {
+        let styles = o.css.split(".titlebox");
+        callback(".titlebox" + styles[1]);
+      } else {
+        callback("");
+      }
     }
   });
 };
