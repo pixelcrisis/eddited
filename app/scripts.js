@@ -9,7 +9,7 @@ const lessVars = function() {
     let varName = "@" + lvar.replace(/_/g, "-");
     let varData = this._data[lvar] + "";
 
-    if (varName.indexOf('text') > -1) varData = `"${varData}"`;
+    if (varName.indexOf('@text') > -1) varData = `"${varData}"`;
     exported[varName] = varData;
   }
   return exported;
