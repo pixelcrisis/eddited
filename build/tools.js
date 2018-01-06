@@ -98,7 +98,7 @@ buildTools.prototype = {
       this.config.push(`    version: "${this.build.ver}"`);
       this.config.push('  },');
       this.config.push('  computed: { exportConfig, lessVars },');
-      this.config.push('  methods: { importConfig, compileTheme },');
+      this.config.push('  methods: { importConfig, compileTheme, loadDemo },');
       this.config.push('});');
 
     } else {

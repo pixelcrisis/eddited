@@ -18,6 +18,26 @@ Vue.component('card', {
   </div>`
 });
 
+// Demo Loader Template
+Vue.component('demos', {
+  props: ['name', 'value'],
+  methods: { updateConfig },
+  template: `<div class="demos col-lg-12">
+    <div class="input-group">
+      <select class="form-control custom-select" id="loadDemo">
+        <option selected>Choose a demo...</option>
+        <option value="default">Default</option>
+      </select>
+      <div class="input-group-append">
+        <button class="btn btn-primary-secondary" type="button"
+          @click="updateConfig()">
+          Load Demo
+        </button>
+      </div>
+    </div>
+  </div>`
+});
+
 // Export Template
 Vue.component('export', {
   props: ['config'],

@@ -46,5 +46,5 @@ var start = new Vue({
     version: "1.0.0-rc2"
   },
   computed: { exportConfig, lessVars },
-  methods: { importConfig, compileTheme },
+  methods: { importConfig, compileTheme, loadDemo },
 });
