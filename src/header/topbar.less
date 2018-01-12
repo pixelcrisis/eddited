@@ -4,6 +4,7 @@
 /*============================*/
 
 #sr-header-area {
+  overflow: visible;
   position: relative;
   margin-top: -13px;
   padding: 3px 6px 0;
@@ -29,6 +30,21 @@
   }
 }
 
+// Menu icon
+#sr-header-area:after {
+  content: "☰";
+  cursor: pointer;
+  display: block;
+  width: 26px;
+  height: 40px;
+  margin-left: -13px;
+  line-height: 40px;
+  overflow: visible;
+  text-align: center;
+  font-size: 1rem;
+  color: @color-accent;
+}
+
 #header:hover {
 
   #sr-header-area {
@@ -43,6 +59,10 @@
   #sr-more-link,
   #sr-header-area {
     transition-delay: @hover-delay;
+
+    &:hover {
+      transition: none !important;
+    }
   }
 }
 
