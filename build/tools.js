@@ -20,7 +20,6 @@ buildTools.prototype = {
   _theme: './build/theme.less',
   _plugins: './build/plugins.less',
   _pretty: './build/pretty.less',
-  _conf: './src/config.less',
   _out: './dist/theme.css',
 
   // define build data object

@@ -16,7 +16,6 @@ module.exports = {
 
   // Methods
   * builder (task) {
-    yield task.source($._conf).run(_, vars);
     yield task.source($._theme).less($.less).target('./dist');
     yield task.source($._plugins).less($.less).run(_, save);
     yield task.source($._pretty).less().run(_, save);
