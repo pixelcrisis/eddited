@@ -1,144 +1,257 @@
 <!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>eddited web compiler</title>
 
-  <title>eddited web compiler</title>
+    <link rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootswatch/4.0.0-beta.3/litera/bootstrap.min.css">
+    <link rel="stylesheet" href="./app/styles.css">
+  </head>
 
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
-  <link rel="stylesheet" href="./app/styles.css">
+  <body>
+    <div id="edditor">
 
-</head>
+      <header class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand mr-auto" href="#">Edditor</a>
+        <span class="badge badge-dark">v{{ version }}</span>
+      </header>
 
-<body>
+      <div class="container-fluid pt-3">
+        <div class="row">
 
-  <div class="container" id="edditor">
-    <header class="header row align-items-center">
-      <div class="col-sm-6">
-        <h3 class="text-muted">eddited web compiler</h3>
+          <!-- Sidebar -->
+          <div class="col-12 col-sm-4 col-md-3 col-xl-2 ed-sidebar">
+            <div class="sticky-top pt-3">
+
+              <preview :css="css"></preview>
+
+            </div>
+          </div>
+          <!-- End Sidebar -->
+
+          <!-- Content -->
+          <div class="col-12 col-sm-8 col-md-7 col-lg-7 col-xl-8 mt-3 pb-5 ed-content"
+            data-spy="scroll" data-target=".content-nav" data-offset="10">
+
+            <step num="0" title="Welcome to the Edditor.">
+              <p>The Edditor was built to allow you to easily configure your own subreddit style based on the power and customization of the eddited theme.</p>
+              <p>You can use the navigation links on the left to go to any section, or you can use the <a href="#loadDialog" data-toggle="modal">Load</a> button to load a previously saved config file.</p>
+            </step>
+
+            <step num="1" title="Color Scheme">
+              <p>The easiest way to customize your subreddit is to give it its own color palette. <a href="#loadDialog" data-toggle="modal">Use the demos</a> to load some basic presets, or feel free to fiddle around!</p>
+
+              <div class="conf row">
+                <strong class="col-12 my-3">General Colors</strong>
+                <color label="Background" v-model="color_background"></color>
+                <color label="Text" v-model="color_text"></color>
+                <color label="Subtle Text" v-model="color_text_subtle"></color>
+                <color label="Accent" v-model="color_accent"></color>
+                <color label="Border" v-model="color_border"></color>
+                <color label="Shadow" v-model="color_shadow"></color>
+                <color label="Thumbnail" v-model="color_thumbnail"></color>
+
+                <strong class="col-12 my-3">Primary Colors</strong>
+                <color label="Locked" v-model="color_locked"></color>
+                <color label="Upvote" v-model="color_upvote"></color>
+                <color label="Downvote" v-model="color_downvote"></color>
+                <color label="Stickied" v-model="color_stickied"></color>
+                <color label="NSFW" v-model="color_nsfw"></color>
+                <color label="Red Flair" v-model="color_red_flair"></color>
+                <color label="Green Flair" v-model="color_green_flair"></color>
+
+                <strong class="col-12 my-3">Link Colors</strong>
+                <color label="Link" v-model="color_link"></color>
+                <color label="Visited Link" v-model="color_visited"></color>
+                <color label="Button Background" v-model="color_button"></color>
+                <color label="Button Text" v-model="color_button_text"></color>
+              </div>
+            </step>
+
+            <step num="2" title="Header">
+              <div class="conf row">
+                <strong class="col-12 mb-3">Header Options</strong>
+                <toggle label="Big Header" v-model="enable_header_box">
+                  Enables an expanded header.
+                </toggle>
+              </div>
+
+              <!-- Header Box Preview -->
+              <div class="row mb-4" v-if="enable_header_box">
+                <div class="col-12 card hbox" :style="css.headerBox">
+                  {{ text_header_box }}
+                </div>
+              </div>
+
+              <!-- Header Box -->
+              <div class="conf row" v-if="enable_header_box">
+                <toggle label="Background Image" v-model="header_box_bg_image">
+                  Use a header background image. <small><em>(named "sidebar")</em></small>
+                </toggle>
+                <string label="Expanded Height" v-model="header_box_height"></string>
+                <color label="Background Color" v-model="header_box_bg_color"></color>
+                <color label="Text Color" v-model="header_box_text_color"></color>
+                <string label="Header Text" v-model="text_header_box"></string>
+              </div>
+
+              <!-- Tabmenu -->
+              <div class="conf row">
+                <strong class="col-12 my-3">Tabmenu</strong>
+                <toggle label="Tabmenu as dropdown" v-model="enable_tabmenu_dropdown">
+                  Turns the "hot/new/top" tabs into a dropdown.
+                </toggle>
+              </div>
+
+              <!-- Announcement -->
+              <div class="conf row">
+                <strong class="col-12 my-3">Announcement Box</strong>
+                <toggle label="Enable Announcement Box" v-model="enable_headline_box">
+                  Add "<code># Your Message Here</code>" at the top of your sidebar.
+                </toggle>
+              </div>
+
+              <div class="conf row" v-if="enable_headline_box">
+                <color label="Background Color" v-model="headline_box_bg_color"></color>
+                <color label="Text Color" v-model="headline_box_text_color"></color>
+
+                <!-- Preview -->
+                <div class="col-12 col-lg-6">
+                  <div class="badge" :style="css.headline">
+                    Your Message Here
+                  </div>
+                </div>
+              </div>
+            </step>
+
+            <step num="3" title="Content">
+              <div class="conf row">
+                <toggle label="Show NSFW Thumbnails" v-model="enable_nsfw_thumbnails">
+                  Show NSFW thumbnails. (For NSFW subs.)
+                </toggle>
+                <string label="Thumbnail Width" v-model="width_thumbnail"></string>
+                <string label="Thumbnail Height" v-model="height_thumbnail"></string>
+                <string label="Subreddit Prefix" v-model="text_sub_prefix"></string>
+                <string label="Hover Delay" v-model="hover_delay"></string>
+                <div class="col-12 text-muted">
+                  <em><small>Hover Delay is how long it takes for the sidebar popout to show up, and the header to drop down.</small></em>
+                </div>
+              </div>
+            </step>
+
+            <step num="4" title="Sidebar">
+              <div class="conf row">
+                <toggle label="Sidebar Image" v-model="enable_sidebar_image">
+                  Show a sidebar image. <small><em>(named "sidebar")</em></small>
+                </toggle>
+                <string label="Sidebar Width" v-model="width_sidebar"></string>
+                <string v-if="enable_sidebar_image"
+                  label="Sidebar Image Height" v-model="sidebar_image_height"></string>
+                <toggle label="Sidebar Popout" v-model="enable_sidebar_popout">
+                  Hide some of the lesser used sidebar info unless hover.
+                </toggle>
+                <toggle label="Split Submit Buttons" v-model="enable_split_submit_buttons">
+                  Put the Submit Text/Link buttons on one line.
+                </toggle>
+                <string label="Submit Link Label" v-model="text_submit_link"></string>
+                <string label="Submit Text Label" v-model="text_submit_text"></string>
+                <string label="'Users Here Now' Label" v-model="text_here_now"></string>
+                <string label="'Readers' Label" v-model="text_subscribers"></string>
+              </div>
+            </step>
+
+            <step num="5" title="Compile">
+              <compiled @input="compileTheme"></compiled>
+            </step>
+
+            <footer class="mt-5 text-center">
+              <a class="mr-3" href="https://github.com/12px/eddited">Github</a>
+              <a class="mr-3" href="https://reddit.com/r/eddited">r/eddited</a>
+              <a href="https://github.com/12px/eddited/releases/download/v1.0.0-rc3/eddited-v1.0.0-rc3.zip">Download Release Files</a>
+            </footer>
+          </div>
+          <!-- End Content -->
+
+          <div class="col-md-2 col-lg-2 col-xl-2 ed-spacer">
+            <div class="sticky-top pt-3">
+
+              <helper-navs></helper-navs>
+
+            </div>
+          </div>
+
+          <!-- Modals -->
+          <div class="modal" tabindex="-1" role="dialog" id="loadDialog">
+            <div class="modal-dialog modal-lg" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">Load Config</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+
+                  <import>
+                    <load-demo @input="loadDemo"></load-demo>
+                  </import>
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="modal" tabindex="-1" role="dialog" id="saveDialog">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">Save Config</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+
+                  <export :config="saveConfig"></export>
+
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- End Modals -->
+
+          <!-- Alerts -->
+          <div class="alert alert-success fixed-bottom col-11 col-md-8 col-lg-4"></div>
+          <div class="alert alert-danger fixed-bottom col-11 col-md-8 col-lg-4"></div>
+
+        </div>
       </div>
-      <div class="col-sm-6 text-right">
-        <span class="badge badge-light">v{{ version }}</span>
-      </div>
-    </header>
 
-    <main class="row">
-      <div class="config col-lg-6">
+    </div>
 
-        <card title="General Colors" tag="tabcolor">
-          <color name="Main Accent Color" v-model="color_accent"></color>
-          <color name="Background Color" v-model="color_background"></color>
-          <color name="Text Color" v-model="color_text"></color>
-          <color name="Subtle Text Color" v-model="color_text_subtle"></color>
-          <color name="Shadow Color" v-model="color_shadow"></color>
-          <color name="Border Color" v-model="color_border"></color>
-          <color name="Link Color" v-model="color_link"></color>
-          <color name="Button Color" v-model="color_button"></color>
-          <color name="Button Text Color" v-model="color_button_text"></color>
-          <color name="Upvote Color" v-model="color_upvote"></color>
-          <color name="Downvote Color" v-model="color_downvote"></color>
-          <color name="Thumbnail Color" v-model="color_thumbnail"></color>
-          <color name="NSFW Color" v-model="color_nsfw"></color>
-          <color name="Locked Color" v-model="color_locked"></color>
-          <color name="Stickied Color" v-model="color_stickied"></color>
-          <color name="Visited Color" v-model="color_visited"></color>
-          <color name="Red Flair Color" v-model="color_red_flair"></color>
-          <color name="Green Flair Color" v-model="color_green_flair"></color>
-        </card>
+    <!-- Library Scripts -->
+    <script src="https://unpkg.com/vue"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js">
+      </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js">
+      </script>
+    <script src="./node_modules/less/dist/less.min.js"></script>
+    <script src="./app/lib/util.js?v=1.0.0-rc3"></script>
+    <script src="./app/lib/demos.js?v=1.0.0-rc3"></script>
+    <script src="./app/lib/clean-css-v4.1.9.js"></script>
 
-        <card title="General Options" tag="taboption">
-          <string name="Sidebar Width" v-model="width_sidebar"></string>
-          <string name="Thumbnail Width" v-model="width_thumbnail"></string>
-          <string name="Thumbnail Height" v-model="height_thumbnail"></string>
-          <string name="Hover Delay" v-model="hover_delay"></string>
-        </card>
+    <!-- Template Scripts -->
+    <script src="./app/vue/preview.js?v=1.0.0-rc3"></script>
+    <script src="./app/vue/content.js?v=1.0.0-rc3"></script>
+    <script src="./app/vue/settings.js?v=1.0.0-rc3"></script>
+    <script src="./app/vue/saveload.js?v=1.0.0-rc3"></script>
 
-        <card title="Text Options" tag="tabtext">
-          <string name="Submit Link" v-model="text_submit_link"></string>
-          <string name="Submit Text" v-model="text_submit_text"></string>
-          <string name="Browsing" v-model="text_subscribers"></string>
-          <string name="Users Online" v-model="text_here_now"></string>
-          <string name="Subreddit Prefix" v-model="text_sub_prefix"></string>
-          <string name="Header Box" v-model="text_header_box"></string>
-        </card>
-
-        <card title="Theme Plugins" tag="tabplugin">
-          <toggle name="Header Box" v-model="enable_header_box"></toggle>
-          <toggle name="Dropdown Tabmenu" v-model="enable_tabmenu_dropdown"></toggle>
-          <toggle name="Sidebar Image" v-model="enable_sidebar_image"></toggle>
-          <toggle name="Sidebar Popout" v-model="enable_sidebar_popout"></toggle>
-          <toggle name="Headline" v-model="enable_headline_box"></toggle>
-          <toggle name="Inline Submit Buttons" v-model="enable_split_submit_buttons"></toggle>
-          <toggle name="Show NSFW Thumbnails" v-model="enable_nsfw_thumbnails"></toggle>
-        </card>
-
-        <card title="Header Box" tag="tabheaderbox" v-show="enable_header_box">
-          <string name="Box Height" v-model="header_box_height"></string>
-          <string name="Header Text" v-model="text_header_box"></string>
-          <color name="Background Color" v-model="header_box_bg_color"></color>
-          <color name="Text Color" v-model="header_box_text_color"></color>
-          <toggle name="Use Background Image" v-model="header_box_bg_image"></toggle>
-        </card>
-
-        <card title="Sidebar Image" tag="tabsidebarimage" v-show="enable_sidebar_image">
-          <string name="Image Height"
-            v-model="sidebar_image_height" v-show="enable_sidebar_image"></string>
-        </card>
-
-        <card title="Headline" tag="tabheadline" v-show="enable_headline_box">
-          <color name="Background Color" v-model="headline_box_bg_color"></color>
-          <color name="Text Color" v-model="headline_box_text_color"></color>
-        </card>
-
-      </div>
-      <div class="col-lg-6">
-
-        <card shown="true">
-          <demos @input="loadDemo"></demos>
-        </card>
-
-        <card title="Import Config" tag="tabimport" class="bg-info text-white">
-          <import @input="importConfig"></import>
-        </card>
-
-        <card title="Export Config" tag="tabexport" class="bg-info text-white">
-          <export :config="exportConfig"></export>
-        </card>
-
-        <card title="Compile Theme" shown="true" tag="tabcompile" class="bg-success text-white">
-          <compiled @input="compileTheme"></compiled>
-        </card>
-
-      </div>
-    </main>
-
-    <footer class="footer text-center">
-      <p>
-        <a target="_blank" href="http://reddit.com/r/eddited">r/eddited</a> -
-        <a target="_blank" href="http://github.com/12px/eddited">Github</a> -
-        by <a target="_blank" href="http://12px.io">12px</a>
-      </p>
-    </footer>
-  </div>
-
-
-  <!-- Vendor Scripts -->
-  <script src="./app/scripts.js?v=1.0.0-rc2.2"></script>
-  <script src="./app/lib/clean-css-v4.1.9.js"></script>
-  <script src="https://unpkg.com/vue"></script>
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
-  <script src="./node_modules/less/dist/less.min.js"></script>
-
-  <!-- User Scripts -->
-  <script src="./app/demos.js?v=1.0.0-rc2.2"></script>
-  <script src="./app/templates.js?v=1.0.0-rc2.2"></script>
-  <script src="./app/config.js?v=1.0.0-rc2.2"></script>
-
-</body>
+    <!-- User Scripts -->
+    <script src="./app/scripts.js?v=1.0.0-rc3"></script>
+  </body>
 
 </html>

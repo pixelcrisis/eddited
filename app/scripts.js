@@ -1,120 +1,188 @@
-/*=== eddited web compiler ===*/
+/*=== edditor scripts ===*/
 
-// Utility Functions
-const updateConfig = function(val) { this.$emit('input', val); };
+// Start Vue
+var start = new Vue({
+  el: "#edditor",
+  data: {
+    color_accent: "#0071c5",
+    color_background: "#ffffff",
+    color_text: "#191a23",
+    color_text_subtle: "#aaaaaa",
+    color_shadow: "#f7f7f7",
+    color_border: "#eaeaea",
+    color_link: "#0071c5",
+    color_button: "#0071c5",
+    color_button_text: "#ffffff",
+    color_upvote: "#f44336",
+    color_downvote: "#0071c5",
+    color_thumbnail: "#f7f7f7",
+    color_nsfw: "#d86a62",
+    color_locked: "#ead340",
+    color_stickied: "#399b76",
+    color_visited: "#aaaaaa",
+    color_red_flair: "#d86a62",
+    color_green_flair: "#399b76",
+    width_sidebar: "300px",
+    width_thumbnail: "55px",
+    height_thumbnail: "45px",
+    hover_delay: "1.5s",
+    text_submit_link: "Show",
+    text_submit_text: "Tell",
+    text_subscribers: "Users",
+    text_here_now: "Browsing",
+    text_sub_prefix: "r/",
+    enable_header_box: true,
+    header_box_height: "150px",
+    header_box_bg_color: "#ffffff",
+    header_box_text_color: "#ffffff",
+    header_box_bg_image: true,
+    text_header_box: "r/eddited - clean. simple.",
+    enable_tabmenu_dropdown: true,
+    enable_sidebar_image: true,
+    sidebar_image_height: "206px",
+    enable_sidebar_popout: true,
+    enable_headline_box: true,
+    headline_box_bg_color: "#0071c5",
+    headline_box_text_color: "#ffffff",
+    enable_split_submit_buttons: true,
+    enable_nsfw_thumbnails: false,
+    version: "1.0.0-rc3"
+  },
+  computed: {
+    saveConfig: function() {
+      let exported = {};
+      for (var val in this._data) {
+        if (val != "version") {
+          exported[val] = this._data[val];
+        }
+      }
+      return exported;
+    },
+    lessVars: function() {
+      let exported = {};
+      for (var lvar in this._data) {
+        let varName = "@" + lvar.replace(/_/g, "-");
+        let varData = this._data[lvar] + "";
 
-const lessVars = function() {
-  let exported = {};
-  for (var lvar in this._data) {
-    let varName = "@" + lvar.replace(/_/g, "-");
-    let varData = this._data[lvar] + "";
-
-    if (varName.indexOf('@text') > -1) varData = `"${varData}"`;
-    exported[varName] = varData;
-  }
-  return exported;
-}
-
-// File loader function
-const loadFiles = function(file, callback) {
-  var loader = new XMLHttpRequest();
-  loader.onreadystatechange = function() {
-    if (this.readyState == 4) callback(this.response);
-  };
-  loader.open('GET', '../app/less/' + file + '.less', true);
-  loader.send();
-};
-
-// Build Less Function
-const buildLess = function(file, vars, clean, callback) {
-  less.render(file, { modifyVars: vars, relativeUrls: true }, function(e,o) {
-    if (e) return console.log(e);
-    if (clean) {
-      new CleanCSS().minify(o.css, function(err, out) {
-        if (!err) callback(out.styles);
-        else console.log(err);
-      })
-    } else {
-      // split out at first comment
-      if (o.css && o.css.indexOf('.titlebox') > -1) {
-        let styles = o.css.split('.titlebox');
-        callback(".titlebox" + styles[1]);
-      } else {
-        let styles = o.css.split('.submit-text');
-        callback(".submit-text" + styles[1]);
+        if (varName.indexOf('@text') > -1) varData = `"${varData}"`;
+        exported[varName] = varData;
+      }
+      return exported;
+    },
+    css: function() {
+      return {
+        base: {
+          color: this.color_text,
+          backgroundColor: this.color_background
+        },
+        textSubtle: { color: this.color_text_subtle },
+        accent: { color: this.color_accent },
+        border: { border: '1px solid ' + this.color_border },
+        shadow: { backgroundColor: this.color_shadow },
+        thumbnail: { backgroundColor: this.color_thumbnail },
+        locked: { color: this.color_locked },
+        lockedBorder: { borderBottom: '2px solid ' + this.color_locked },
+        upvote: { color: this.color_upvote },
+        downvote: { color: this.color_downvote },
+        stickied: { color: this.color_stickied },
+        nsfw: { color: this.color_nsfw },
+        redFlair: { backgroundColor: this.color_red_flair },
+        greenFlair: { backgroundColor: this.color_green_flair },
+        link: { color: this.color_link },
+        visited: { color: this.color_visited },
+        button: {
+          color: this.color_button_text,
+          backgroundColor: this.color_button
+        },
+        obutton: {
+          color: this.color_button,
+          border: '1px solid ' + this.color_button
+        },
+        headerBox: {
+          height: this.header_box_height,
+          lineHeight: this.header_box_height,
+          color: this.header_box_text_color,
+          backgroundColor: this.header_box_bg_color,
+          backgroundImage: this.header_box_bg_image ? 'url("../dist/header.jpg")' : 'none'
+        },
+        headline: {
+          color: this.headline_box_text_color,
+          backgroundColor: this.headline_box_bg_color
+        }
       }
     }
-  });
-};
+  },
+  methods: {
+    loadConfig: function() {
+      let done = 0, total = -1,
+          imported = $('#importcfg').val();
+      if (!imported) return nay('Nothing to import!');
+      try {
+        var processing = JSON.parse(imported);
+      } catch (e) {
+        if (e.name == 'SyntaxError') return nay('Syntax Error!');
+        else return nay(e.message);
+      }
 
-const importConfig = function() {
-  let imported = $('#importcfg').val();
-  if (!imported) return alert('Nothing to import!');
-  try {
-    var processing = JSON.parse(imported);
-  } catch (e) {
-    if (e.name == 'SyntaxError') return alert('Syntax Error!');
-    else return alert(e.message);
-  }
+      for (var count in this._data) total += 1;
 
-  // is array
-  if (imported.charAt(0) == "[") {
-    for (var ac = 0;ac < processing.length;ac++) {
-      let varData = processing[ac].data;
-      let varName = processing[ac].name.replace('@', '').replace(/-/g, "_");
-      if (!this.hasOwnProperty(varName)) return alert("Unrecognized: " + varName);
-      this[varName] = varData;
-    }
-  // else if is object
-  } else if (imported.charAt(0) == "{") {
-    for (var ao in processing) {
-      if (!this.hasOwnProperty(ao)) return alert("Unrecognized: " + ao);
-      this[ao] = processing[ao];
-    }
-  } else {
-    return alert("Unrecognized input.");
-  }
+      // is array
+      if (imported.charAt(0) == "[") {
+        for (var ac = 0;ac < processing.length;ac++) {
+          let varData = processing[ac].data;
+          let varName = processing[ac].name.replace('@', '').replace(/-/g, "_");
+          if (!this.hasOwnProperty(varName)) return nay("Unrecognized: " + varName);
+          this[varName] = varData; done += 1;
+        }
+      // else if is object
+      } else if (imported.charAt(0) == "{") {
+        for (var ao in processing) {
+          if (!this.hasOwnProperty(ao)) return nay("Unrecognized: " + ao);
+          this[ao] = processing[ao]; done += 1;
+        }
+      } else {
+        return nay("Unrecognized input.");
+      }
 
-  return alert("Imported!");
-};
+      return yay(`Imported ${done} out of ${total} options.`);
+    },
+    loadDemo: function() {
+      let demo = $('#loadDemo').val();
+      if (demos.hasOwnProperty(demo)) {
+        $('#importcfg').val(JSON.stringify(demos[demo]));
+        this.loadConfig();
+      } else {
+        return nay("Not Sure what you're trying to do...");
+      }
+    },
+    compileTheme: function() {
+      let that = this;
+      $('#compiledTheme').val('');
 
-const exportConfig = function() {
-  let exported = {};
-  for (var val in this._data) {
-    if (val != "version") {
-      exported[val] = this._data[val];
-    }
-  }
-  return exported;
-};
+      loadFiles('pretty', function(less1) {
+        let stage1 = buildLess(less1, start.lessVars, false, function(css1) {
 
+          loadFiles('plugins', function(less2) {
+            let stage2 = buildLess(less2, start.lessVars, true, function(css2) {
 
-const compileTheme = function() {
-  let that = this;
-  $('#compiledTheme').val('');
+              loadFiles('theme', function(less3) {
+                let stage3 = buildLess(less3, start.lessVars, true, function(css3) {
 
-  loadFiles('pretty', function(less1) {
-    let stage1 = buildLess(less1, start.lessVars, false, function(css1) {
+                  let template = [
+                    `/* eddited options */`, css1,
+                    `/* eddited plugins */`, css2,
+                    `/* eddited core v${start.version} */`, css3
+                  ];
 
-      loadFiles('plugins', function(less2) {
-        let stage2 = buildLess(less2, start.lessVars, true, function(css2) {
-
-          loadFiles('theme', function(less3) {
-            let stage3 = buildLess(less3, start.lessVars, true, function(css3) {
-
-              let template = [
-                `/* eddited options */`, css1,
-                `/* eddited plugins */`, css2,
-                `/* eddited core v${start.version} */`, css3
-              ];
-
-              $('#compiledTheme').val(template.join('\n\n'));
-
+                  $('#compiledTheme').val(template.join('\n\n'));
+                  yay('Theme Compiled!');
+                });
+              });
             });
           });
         });
       });
-    });
-  });
 
-};
+    }
+  }
+});

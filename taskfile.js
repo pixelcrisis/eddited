@@ -9,7 +9,6 @@ const _ = { every: false }; // for inline plugins
 // plugin wrappers
 const save = function * (files) { return $.saveFile(files); };
 const join = function * (files) { files = $.joinFiles(files); };
-const vars = function * (files) { files = $.extractVars(files); };
 
 
 // the build process
@@ -24,7 +23,6 @@ module.exports = {
   },
 
   * joiner (task) {
-    yield task.source($._web).run(_, vars).target('./app');
     yield task.source($._out).run(_, join).target('./dist');
   },
 
