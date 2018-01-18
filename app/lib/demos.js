@@ -38,7 +38,6 @@ const demos = {
     "enable_tabmenu_dropdown": true,
     "enable_sidebar_image": true,
     "sidebar_image_height": "206px",
-    "enable_sidebar_popout": true,
     "enable_headline_box": true,
     "headline_box_bg_color": "#0071c5",
     "headline_box_text_color": "#ffffff",
@@ -51,7 +50,6 @@ const demos = {
     "header_box_bg_image": true,
     "enable_tabmenu_dropdown": false,
     "enable_sidebar_image": false,
-    "enable_sidebar_popout": false,
     "enable_headline_box": false,
     "enable_split_submit_buttons": false,
     "enable_nsfw_thumbnails": false
