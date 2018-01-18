@@ -4,75 +4,38 @@
 /*============================*/
 
 #sr-header-area {
+  left: 0;
+  right: 0;
+  top: 40px;
+  padding: 0 7px;
   overflow: visible;
-  position: relative;
-  margin-top: -13px;
-  padding: 3px 6px 0;
-  height: 10px;
-  line-height: 10px;
+  position: absolute;
+  box-sizing: border-box;
+  color: @color-background;
+  transition: all 0.2s ease;
+  background: @color-accent;
 
   a {
-    margin-right: 6px;
     color: @color-background;
-    font-size: 0.5rem;
-
-    &:hover {
-      color: @color-link !important;
-    }
   }
 
-  .separator {
-    display: none;
-  }
-
-  .dropdown.srdrop {
-    font-size: 0;
+  // buffer to prevent accidental un-focus
+  &:before {
+    left: 0;
+    right: 0;
+    top: 18px;
+    content: "";
+    height: 12px;
+    display: block;
+    position: absolute;
+    background: transparent;
   }
 }
 
-// Menu icon
-#sr-header-area:after {
-  content: "☰";
-  cursor: pointer;
-  display: block;
-  width: 26px;
-  height: 40px;
-  margin-left: -13px;
-  line-height: 40px;
-  overflow: visible;
-  text-align: center;
-  font-size: 1rem;
-  color: @color-accent;
-}
-
-#header:hover {
-
+#header:not(:hover) {
   #sr-header-area {
-    margin-top: 0;
-    margin-bottom: 0;
-
-    &, a {
-      color: @color-text-subtle;
-    }
+    height: 0;
+    opacity: 0;
+    overflow: hidden;
   }
-
-  #sr-more-link,
-  #sr-header-area {
-    transition-delay: @hover-delay;
-
-    &:hover {
-      transition: none !important;
-    }
-  }
-}
-
-#sr-more-link,
-#sr-header-area {
-  color: @color-background;
-  background: @color-background;
-  transition: all 0.15s ease;
-}
-
-#sr-more-link {
-  margin-right: 0 !important;
 }
