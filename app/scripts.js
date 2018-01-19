@@ -40,7 +40,6 @@ var start = new Vue({
     enable_tabmenu_dropdown: true,
     enable_sidebar_image: true,
     sidebar_image_height: "206px",
-    enable_sidebar_popout: true,
     enable_headline_box: true,
     headline_box_bg_color: "#0071c5",
     headline_box_text_color: "#ffffff",
