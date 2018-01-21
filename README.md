@@ -1,5 +1,10 @@
 # r/eddited
-A back-to-basics subreddit theme. Flat, minimal, with a focus on content, eddited is arguably reddit's cleanest and most customizable subreddit theme.
+A back-to-basics subreddit theme. Flat, minimal, with a focus on content, eddited is arguably reddit's cleanest and most customizable subreddit theme.  
+
+[![MIT Licence](https://badges.frapsoft.com/os/mit/mit.svg?v=103)](https://opensource.org/licenses/mit-license.php)
+[![GitHub version](https://badge.fury.io/gh/12px%2Feddited.svg)](https://badge.fury.io/gh/12px%2Feddited)
+[![Dependency Status](https://david-dm.org/12px/eddited.svg)](https://david-dm.org/12px/eddited)
+[![devDependency Status](https://david-dm.org/12px/badges/eddited.svg)](https://david-dm.org/12px/eddited#info=devDependencies)
 
 #### Contents
 - [Quick Install](#quick-install)
