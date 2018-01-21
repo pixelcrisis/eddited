@@ -1,6 +1,6 @@
 {
   "name": "eddited",
-  "version": "1.0.0-rc3",
+  "version": "1.0.0-rc3.1",
   "description": "A Subreddit Theme",
   "main": "dist/theme.css",
   "repository": "git://github.com/12px/eddited.git",
