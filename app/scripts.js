@@ -130,14 +130,17 @@ var start = new Vue({
         for (var ac = 0;ac < processing.length;ac++) {
           let varData = processing[ac].data;
           let varName = processing[ac].name.replace('@', '').replace(/-/g, "_");
-          if (!this.hasOwnProperty(varName)) return nay("Unrecognized: " + varName);
-          this[varName] = varData; done += 1;
+          if (this.hasOwnProperty(varName)) {
+            this[varName] = varData; done += 1;
+          }
         }
       // else if is object
       } else if (imported.charAt(0) == "{") {
         for (var ao in processing) {
-          if (!this.hasOwnProperty(ao)) return nay("Unrecognized: " + ao);
-          this[ao] = processing[ao]; done += 1;
+          if (this.hasOwnProperty(ao)) {
+            this[ao] = processing[ao]; done += 1;
+          }
+
         }
       } else {
         return nay("Unrecognized input.");

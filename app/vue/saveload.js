@@ -14,13 +14,13 @@ Vue.component('export', {
 
 // Import Template
 Vue.component('import', {
-  methods: { updateConfig },
+  methods: { load: function() { this.$emit('input'); } },
   template: `<div class="import">
     <textarea id="importcfg" rows="5" class="form-control"></textarea>
     <p><small class="text-muted font-italic">
       Paste your text file contents here.
     </small></p>
-    <button class="btn btn-dark" @click="loadConfig()">Load</button>
+    <button class="btn btn-dark" @click="load()">Load</button>
     or
     <slot></slot>
   </div>`
