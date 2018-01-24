@@ -23,6 +23,10 @@
       top: @header-box-height + 31px;
     }
 
+    & when not (@enable-header-box) {
+      top: 34px;
+    }
+
     a {
       color: @headline-box-text-color;
       border-bottom: 1px dotted;
