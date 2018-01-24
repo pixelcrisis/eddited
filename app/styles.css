@@ -31,6 +31,14 @@
   cursor: pointer;
 }
 
+.step h3:not(.collapsed):before {
+  content: "▿";
+}
+
+.step h3.collapsed:before {
+  content: "▹";
+}
+
 .navbar-nav {
   margin-bottom: -3px;
 }

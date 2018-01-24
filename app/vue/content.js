@@ -26,9 +26,11 @@ Vue.component('helper-navs', {
 Vue.component('step', {
   props: ['title', 'num', 'show'],
   template: `<div class="step" :id="'step' + num">
-    <h3 data-toggle="collapse" :data-target="'#Card' + num">{{ title }}</h3>
+    <h3 :class="{ collapsed: !show }" data-toggle="collapse" :data-target="'#Card' + num">
+      {{ title }}
+    </h3>
     <hr />
-    <div class="collapse show" :id="'Card' + num">
+    <div :class="{ collapse: 1, show: show }" :id="'Card' + num">
       <slot></slot>
     </div>
   </div>`
