@@ -49,6 +49,7 @@ const demos = {
   },
 
   "noplugins": {
+    "enable_body_margin": false,
     "enable_header_box": false,
     "header_box_bg_image": true,
     "enable_tabmenu_dropdown": false,
