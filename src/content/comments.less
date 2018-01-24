@@ -24,7 +24,7 @@
 .gold-accent.comment-visits-box {
   border-width: 0;
   margin: 12px 10px 24px;
-  border-bottom-width: 4px;
+  border-bottom-width: 3px;
   color: darken(@color-locked, 60%);
 }
 
@@ -40,4 +40,8 @@
     color: @color-accent;
     content: "new comment";
   }
+}
+
+.thing.comment.stickied {
+  border-left: 3px solid @color-stickied !important;
 }
