@@ -40,7 +40,7 @@ var start = new Vue({
     header_box_text_color: "#ffffff",
     header_box_bg_image: true,
     text_header_box: "r/eddited - clean. simple.",
-    enable_tabmenu_dropdown: true,
+    enable_tabmenu_dropdown: false,
     enable_sidebar_image: true,
     sidebar_image_height: "206px",
     enable_headline_box: true,
