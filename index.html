@@ -129,6 +129,13 @@
 
             <step num="3" title="Content">
               <div class="conf row">
+                <toggle label="Enable Page Margin" v-model="enable_body_margin">
+                  Adds a border around the content of the page.
+                </toggle>
+                <string label="Margin Width" v-model="width_body_margin"></string>
+                <color label="Margin BG Color" v-model="color_body_margin"></color>
+              </div>
+              <div class="conf row">
                 <toggle label="Show NSFW Thumbnails" v-model="enable_nsfw_thumbnails">
                   Show NSFW thumbnails. (For NSFW subs.)
                 </toggle>

@@ -4,14 +4,14 @@
 var start = new Vue({
   el: "#edditor",
   data: {
-    color_accent: "#0071c5",
+    color_accent: "#3d3d3d",
     color_background: "#ffffff",
     color_text: "#191a23",
     color_text_subtle: "#aaaaaa",
     color_shadow: "#f7f7f7",
     color_border: "#eaeaea",
-    color_link: "#0071c5",
-    color_button: "#0071c5",
+    color_link: "#3d3d3d",
+    color_button: "#3d3d3d",
     color_button_text: "#ffffff",
     color_upvote: "#f44336",
     color_downvote: "#0071c5",
@@ -31,8 +31,11 @@ var start = new Vue({
     text_subscribers: "Users",
     text_here_now: "Browsing",
     text_sub_prefix: "r/",
+    enable_body_margin: true,
+    width_body_margin: "20px",
+    color_body_margin: "#5c6052",
     enable_header_box: true,
-    header_box_height: "150px",
+    header_box_height: "250px",
     header_box_bg_color: "#ffffff",
     header_box_text_color: "#ffffff",
     header_box_bg_image: true,
@@ -41,7 +44,7 @@ var start = new Vue({
     enable_sidebar_image: true,
     sidebar_image_height: "206px",
     enable_headline_box: true,
-    headline_box_bg_color: "#0071c5",
+    headline_box_bg_color: "#3d3d3d",
     headline_box_text_color: "#ffffff",
     enable_split_submit_buttons: true,
     enable_nsfw_thumbnails: false,
@@ -164,16 +167,16 @@ var start = new Vue({
       loadFiles('pretty', function(less1) {
         let stage1 = buildLess(less1, start.lessVars, false, function(css1) {
 
-          loadFiles('plugins', function(less2) {
+          loadFiles('theme', function(less2) {
             let stage2 = buildLess(less2, start.lessVars, true, function(css2) {
 
-              loadFiles('theme', function(less3) {
+              loadFiles('plugins', function(less3) {
                 let stage3 = buildLess(less3, start.lessVars, true, function(css3) {
 
                   let template = [
-                    `/* eddited options */`, css1,
-                    `/* eddited plugins */`, css2,
-                    `/* eddited core v${start.version} */`, css3
+                    `/* eddited options v${start.version} */`, css1,
+                    `/* eddited core v${start.version} */`, css2,
+                    `/* eddited plugins v${start.version} */`, css3
                   ];
 
                   $('#compiledTheme').val(template.join('\n\n'));

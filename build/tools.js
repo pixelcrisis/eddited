@@ -47,9 +47,9 @@ buildTools.prototype = {
 
     // define template for finale file
     let template = [
-      `/* eddited options */`, this.build.pretty,
-      `/* eddited plugins */`, this.build.plugins,
-      `/* eddited core v${this.build.ver} */`, core
+      `/* eddited options v${this.build.ver} */`, this.build.pretty,
+      `/* eddited core v${this.build.ver} */`, core,
+      `/* eddited plugins v${this.build.ver} */`, this.build.plugins
     ];
 
     // join template with new lines

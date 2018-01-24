@@ -123,6 +123,8 @@ span.input-group-prepend {
 .hbox {
   font-weight: bold;
   text-align: center;
+  background-size: cover;
+  background-position: center center;
 }
 
 .export textarea[readonly] {
