@@ -135,6 +135,23 @@ span.input-group-prepend {
   background-position: center center;
 }
 
+@-webkit-keyframes backgroundScroll {
+  from { background-position: center center; }
+  to { background-position: -3000px 0px; }
+}
+@keyframes backgroundScroll {
+  from { background-position: center center; }
+  to { background-position: -3000px 0px; }
+}
+
+.hbox.animated,
+.hbox.animated-hover:hover {
+  -webkit-animation: backgroundScroll 150s infinite linear;
+  -webkit-animation-fill-mode: forwards;
+  animation: backgroundScroll 150s infinite linear;
+  animation-fill-mode: forwards;
+}
+
 .export textarea[readonly] {
   background-color: transparent;
 }

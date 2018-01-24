@@ -82,7 +82,7 @@
 
               <!-- Header Box Preview -->
               <div class="row mb-4" v-if="enable_header_box">
-                <div class="col-12 card hbox" :style="css.headerBox">
+                <div :style="css.headerBox" :class="css.headerBoxClass">
                   {{ text_header_box }}
                 </div>
               </div>
@@ -91,6 +91,12 @@
               <div class="conf row" v-if="enable_header_box">
                 <toggle label="Background Image" v-model="header_box_bg_image">
                   Use a header background image. <small><em>(named "sidebar")</em></small>
+                </toggle>
+                <toggle label="Animate Background Image" v-model="header_box_bg_scroll">
+                  Makes the header image scroll left.
+                </toggle>
+                <toggle label="Only Animate on Hover" v-model="header_box_bg_scroll_hover">
+                  Only show the scrolling background image on hover.
                 </toggle>
                 <string label="Expanded Height" v-model="header_box_height"></string>
                 <color label="Background Color" v-model="header_box_bg_color"></color>

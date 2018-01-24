@@ -39,6 +39,8 @@ var start = new Vue({
     header_box_bg_color: "#ffffff",
     header_box_text_color: "#ffffff",
     header_box_bg_image: true,
+    header_box_bg_scroll: true,
+    header_box_bg_scroll_hover: true,
     text_header_box: "r/eddited - clean. simple.",
     enable_tabmenu_dropdown: false,
     enable_sidebar_image: true,
@@ -106,6 +108,11 @@ var start = new Vue({
           color: this.header_box_text_color,
           backgroundColor: this.header_box_bg_color,
           backgroundImage: this.header_box_bg_image ? 'url("../dist/header.jpg")' : 'none'
+        },
+        headerBoxClass: {
+          'col-12': 1, 'card': 1, 'hbox': 1,
+          'animated': (this.header_box_bg_scroll && !this.header_box_bg_scroll_hover),
+          'animated-hover': (this.header_box_bg_scroll && this.header_box_bg_scroll_hover)
         },
         headline: {
           color: this.headline_box_text_color,

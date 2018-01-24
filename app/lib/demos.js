@@ -37,6 +37,8 @@ const demos = {
     "header_box_bg_color": "#ffffff",
     "header_box_text_color": "#ffffff",
     "header_box_bg_image": true,
+    "header_box_bg_scroll": true,
+    "header_box_bg_scroll_hover": true,
     "text_header_box": "r/eddited - clean. simple.",
     "enable_tabmenu_dropdown": false,
     "enable_sidebar_image": true,
