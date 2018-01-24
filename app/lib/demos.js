@@ -66,6 +66,7 @@ const demos = {
     "color_nsfw": "#c63e4e",
     "color_red_flair": "#c63e4e",
     "headline_box_bg_color": "#c63e4e",
+    "color_body_margin": "#bfbfbf",
   },
 
   "green": {
@@ -75,6 +76,7 @@ const demos = {
     "color_stickied": "#299a29",
     "color_green_flair": "#299a29",
     "headline_box_bg_color": "#299a29",
+    "color_body_margin": "#bfbfbf",
   }
 
 };
