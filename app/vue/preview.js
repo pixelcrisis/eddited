@@ -5,10 +5,6 @@ Vue.component('preview', {
   template: `<div class="card ed-preview" :style="css.base">
     <div class="card-header">Live Preview</div>
     <div>General Text Color</div>
-    <div :style="css.textSubtle">Lighter, Subtle Text</div>
-    <div :style="css.link" class="mb-2">Link & Submission Text</div>
-    <div :style="css.border" class="box">Border</div>
-    <div :style="css.shadow" class="box">Shadow</div>
     <hr />
     <div :style="css.thumbnail" class="box sq">Thumbnail</div>
     <div :style="css.lockedBorder" class="mb-2">

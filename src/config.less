@@ -7,11 +7,7 @@
 
 @color-background: #ffffff;
 @color-text: #191a23;
-@color-text-subtle: #aaaaaa;
 @color-submenu: #3d3d3d;
-
-@color-shadow: #f7f7f7;
-@color-border: #eaeaea;
 
 @color-link: #3d3d3d;
 @color-button: @color-link;
@@ -78,3 +74,17 @@
 @enable-split-submit-buttons: true;
 
 @enable-nsfw-thumbnails: false;
+
+// auto generated variables
+.compiled-variables(@bg) when (lightness(@bg) >= 50%) {
+  @color-shadow: darken(@bg, 5%);
+  @color-border: darken(@bg, 8%);
+}
+.compiled-variables(@bg) when (lightness(@bg) < 50%) {
+  @color-shadow: lighten(@bg, 5%);
+  @color-border: lighten(@bg, 8%);
+}
+.compiled-variables(@bg) {
+  @color-text-subtle: mix(@color-text, @bg, 40%);
+}
+.compiled-variables(@color-background);

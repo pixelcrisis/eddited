@@ -6,10 +6,7 @@ var start = new Vue({
   data: {
     color_background: "#ffffff",
     color_text: "#191a23",
-    color_text_subtle: "#aaaaaa",
     color_submenu: "#3d3d3d",
-    color_shadow: "#f7f7f7",
-    color_border: "#eaeaea",
     color_link: "#3d3d3d",
     color_button: "#3d3d3d",
     color_button_text: "#ffffff",
@@ -79,10 +76,6 @@ var start = new Vue({
           color: this.color_text,
           backgroundColor: this.color_background
         },
-        textSubtle: { color: this.color_text_subtle },
-        link: { color: this.color_link },
-        border: { border: '1px solid ' + this.color_border },
-        shadow: { backgroundColor: this.color_shadow },
         thumbnail: { backgroundColor: this.color_thumbnail },
         locked: { color: this.color_locked },
         lockedBorder: { borderBottom: '2px solid ' + this.color_locked },
