@@ -4,6 +4,7 @@ Vue.component('preview', {
   props: ['css'],
   template: `<div class="card ed-preview" :style="css.base">
     <div class="card-header">Live Preview</div>
+    <div class="sbm" :style="css.submenu">HOME - ALL - FRONT</div>
     <div>General Text Color</div>
     <hr />
     <div :style="css.thumbnail" class="box sq">Thumbnail</div>

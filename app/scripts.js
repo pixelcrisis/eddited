@@ -7,6 +7,7 @@ var start = new Vue({
     color_background: "#ffffff",
     color_text: "#191a23",
     color_submenu: "#3d3d3d",
+    color_submenu_text: "#ffffff",
     color_link: "#3d3d3d",
     color_button: "#3d3d3d",
     color_button_text: "#ffffff",
@@ -75,6 +76,10 @@ var start = new Vue({
         base: {
           color: this.color_text,
           backgroundColor: this.color_background
+        },
+        submenu: {
+          color: this.color_submenu_text,
+          backgroundColor: this.color_submenu
         },
         thumbnail: { backgroundColor: this.color_thumbnail },
         locked: { color: this.color_locked },

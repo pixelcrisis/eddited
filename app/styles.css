@@ -76,6 +76,12 @@
   margin: -20px -20px 20px;
 }
 
+.ed-preview .sbm {
+  padding: 2px 5px;
+  font-size: 0.85em;
+  margin: -20px -20px 20px;
+}
+
 .ed-preview .badge {
   color: #fff;
   font-weight: bold;

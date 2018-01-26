@@ -3,6 +3,7 @@ const demos = {
 
   "default": {
     "color_submenu": "#0071c5",
+    "color_submenu_text": "#ffffff",
     "color_background": "#ffffff",
     "color_text": "#191a23",
     "color_link": "#0071c5",
