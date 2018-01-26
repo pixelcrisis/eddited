@@ -31,7 +31,7 @@ var start = new Vue({
     text_subscribers: "Users",
     text_here_now: "Browsing",
     text_sub_prefix: "r/",
-    enable_body_margin: true,
+    enable_body_margin: false,
     width_body_margin: "25px",
     color_body_margin: "#5c6052",
     enable_header_box: true,
