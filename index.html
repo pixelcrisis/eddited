@@ -90,12 +90,15 @@
                 <toggle label="Background Image" v-model="header_box_bg_image">
                   Use a header background image. <small><em>(named "header")</em></small>
                 </toggle>
-                <toggle label="Animate Background Image" v-model="header_box_bg_scroll">
+                <toggle label="Animate Background Image" v-model="header_box_bg_scroll"
+                  v-if="header_box_bg_image">
                   Makes the header image scroll left.
                 </toggle>
-                <toggle label="Only Animate on Hover" v-model="header_box_bg_scroll_hover">
+                <toggle label="Only Animate on Hover" v-model="header_box_bg_scroll_hover"
+                  v-if="header_box_bg_image && header_box_bg_scroll">
                   Only show the scrolling background image on hover.
                 </toggle>
+                </span>
                 <string label="Expanded Height" v-model="header_box_height"></string>
                 <color label="Background Color" v-model="header_box_bg_color"></color>
                 <color label="Text Color" v-model="header_box_text_color"></color>
@@ -136,8 +139,10 @@
                 <toggle label="Enable Page Margin" v-model="enable_body_margin">
                   Adds a border around the content of the page.
                 </toggle>
-                <string label="Margin Width" v-model="width_body_margin"></string>
-                <color label="Margin BG Color" v-model="color_body_margin"></color>
+                <string label="Margin Width" v-model="width_body_margin"
+                  v-if="enable_body_margin"></string>
+                <color label="Margin BG Color" v-model="color_body_margin"
+                  v-if="enable_body_margin"></color>
               </div>
               <div class="conf row">
                 <toggle label="Show NSFW Thumbnails" v-model="enable_nsfw_thumbnails">
