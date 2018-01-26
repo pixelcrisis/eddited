@@ -49,8 +49,8 @@
                 <strong class="col-12 my-3">General Colors</strong>
                 <color label="Background" v-model="color_background"></color>
                 <color label="Text" v-model="color_text"></color>
+                <color label="Header Submenu" v-model="color_submenu"></color>
                 <color label="Subtle Text" v-model="color_text_subtle"></color>
-                <color label="Accent" v-model="color_accent"></color>
                 <color label="Border" v-model="color_border"></color>
                 <color label="Shadow" v-model="color_shadow"></color>
                 <color label="Thumbnail" v-model="color_thumbnail"></color>
@@ -90,7 +90,7 @@
               <!-- Header Box -->
               <div class="conf row" v-if="enable_header_box">
                 <toggle label="Background Image" v-model="header_box_bg_image">
-                  Use a header background image. <small><em>(named "sidebar")</em></small>
+                  Use a header background image. <small><em>(named "header")</em></small>
                 </toggle>
                 <toggle label="Animate Background Image" v-model="header_box_bg_scroll">
                   Makes the header image scroll left.

@@ -6,7 +6,7 @@ Vue.component('preview', {
     <div class="card-header">Live Preview</div>
     <div>General Text Color</div>
     <div :style="css.textSubtle">Lighter, Subtle Text</div>
-    <div :style="css.accent" class="mb-2">Accent Color Text</div>
+    <div :style="css.link" class="mb-2">Link & Submission Text</div>
     <div :style="css.border" class="box">Border</div>
     <div :style="css.shadow" class="box">Shadow</div>
     <hr />

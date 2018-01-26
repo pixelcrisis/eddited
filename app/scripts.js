@@ -4,10 +4,10 @@
 var start = new Vue({
   el: "#edditor",
   data: {
-    color_accent: "#3d3d3d",
     color_background: "#ffffff",
     color_text: "#191a23",
     color_text_subtle: "#aaaaaa",
+    color_submenu: "#3d3d3d",
     color_shadow: "#f7f7f7",
     color_border: "#eaeaea",
     color_link: "#3d3d3d",
@@ -80,7 +80,7 @@ var start = new Vue({
           backgroundColor: this.color_background
         },
         textSubtle: { color: this.color_text_subtle },
-        accent: { color: this.color_accent },
+        link: { color: this.color_link },
         border: { border: '1px solid ' + this.color_border },
         shadow: { backgroundColor: this.color_shadow },
         thumbnail: { backgroundColor: this.color_thumbnail },

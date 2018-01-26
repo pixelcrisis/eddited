@@ -2,7 +2,7 @@
 const demos = {
 
   "default": {
-    "color_accent": "#0071c5",
+    "color_submenu": "#0071c5",
     "color_background": "#ffffff",
     "color_text": "#191a23",
     "color_text_subtle": "#aaaaaa",
@@ -62,7 +62,7 @@ const demos = {
   },
 
   "red": {
-    "color_accent": "#c63e4e",
+    "color_submenu": "#c63e4e",
     "color_link": "#c63e4e",
     "color_button": "#c63e4e",
     "color_nsfw": "#c63e4e",
@@ -72,7 +72,7 @@ const demos = {
   },
 
   "green": {
-    "color_accent": "#299a29",
+    "color_submenu": "#299a29",
     "color_link": "#299a29",
     "color_button": "#299a29",
     "color_stickied": "#299a29",
