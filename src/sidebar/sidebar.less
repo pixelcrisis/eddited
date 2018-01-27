@@ -21,6 +21,7 @@
   &:after {
     display: block;
     text-align: center;
+    font-size: @font-small;
     color: @color-text-subtle;
     content: "theme @ r/eddited";
   }
@@ -31,6 +32,18 @@
 .sidecontentbox .more a,
 .sidecontentbox .title h1 {
   color: @color-text-subtle;
+}
+
+.sidecontentbox .title h1 {
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.sidecontentbox a,
+.create .morelink a,
+.sidecontentbox .title h1,
+.account-activity-box a {
+  font-size: @font-small;
 }
 
 // remove some backgrounds
@@ -58,6 +71,11 @@
   color: @color-link;
   border: 1px solid @color-link;
   background-color: @color-background;
+
+  .date,
+  .shortlink {
+    font-size: @font-small;
+  }
 }
 
 .sidebox.create {
@@ -79,8 +97,7 @@
 
     &:before {
       content: "[-]";
-      font-size: 10.4px;
-      font-size: 0.65rem;
+      font-size: @font-small;
     }
   }
 
@@ -96,7 +113,6 @@
   &:before {
     content: "Mod Tools";
     text-transform: capitalize;
-    font-size: 12px;
-    font-size: 0.75rem;
+    font-size: @font-small;
   }
 }

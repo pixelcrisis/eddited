@@ -17,6 +17,7 @@
 .search-result-meta,
 .entry .buttons li a,
 .redditSingleClick:after {
+  font-size: @font-small;
   font-weight: 400;
   color: @color-text-subtle;
 }
@@ -25,6 +26,10 @@
 .domain a:hover,
 .entry .buttons li a:hover {
   color: @color-text;
+}
+
+.entry .buttons {
+  margin-top: 2px;
 }
 
 // accent comments link
@@ -48,7 +53,7 @@
     border-bottom: 2px solid @color-locked;
     color: darken(@color-locked, 60%);
     text-transform: uppercase;
-    font-size: .75rem;
+    font-size: @font-base;
   }
 
   &.with-icon:before {
@@ -65,7 +70,7 @@
 .thing .title:hover {
   font-size: 17px;
   color: @color-link;
-  margin-bottom: 7px;
+  margin-bottom: 4px;
 }
 
 .thing.visited .title,
@@ -105,7 +110,7 @@
     height: @height-thumbnail;
     color: @color-text;
     text-align: center;
-    font-size: 0.65rem;
+    font-size: @font-small;
     line-height: @height-thumbnail;
   }
 }
@@ -157,7 +162,7 @@
   background-image: none !important;
   text-align: center;
   font-weight: 700;
-  font-size: 1rem;
+  font-size: @font-base;
   line-height: 18px;
 
   &:hover,

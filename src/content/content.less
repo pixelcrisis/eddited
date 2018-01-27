@@ -59,7 +59,7 @@ ul.tabmenu.formtab,
 
   a {
     border: none;
-    font-size: 1rem !important;
+    font-size: @font-base !important;
   }
 }
 
@@ -121,4 +121,24 @@ ul.formtab li a:hover,
   .dropdown.lightdrop .selected {
     color: @color-background;
   }
+}
+
+.sheets .btn,
+.sheets label {
+  margin-top: 4px;
+  padding: 4px 8px;
+  font-size: @font-smaller;
+}
+
+#image-upload #file,
+#image-upload #sumbit-img {
+  margin: 10px 0;
+}
+
+#image-upload label input {
+  margin: 2px 5px;
+}
+
+ul.image-list {
+  font-size: @font-base;
 }
