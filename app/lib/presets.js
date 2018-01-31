@@ -87,6 +87,27 @@ const presets = {
     "headline_box_bg_color": "#0071c5",
   },
 
+  "dark": {
+    "color_background": "#262626",
+    "color_text": "#9aa3a8",
+    "color_link": "#bec3c7",
+    "color_visited": "#66767d",
+    "color_thumbnail": "#2f2f2f",
+    "color_locked": "#ece159",
+    "color_upvote": "#e67f23",
+    "color_downvote": "#00558b",
+    "color_button": "#bec3c7",
+    "color_button_text": "#262626",
+    "color_submenu": "#0c0c0c",
+    "color_submenu_text": "#bec3c7",
+    "color_nsfw": "#f15355",
+    "color_stickied": "#29ac60",
+    "color_red_flair": "#f15355",
+    "color_green_flair": "#29ac60",
+    "headline_box_bg_color": "#0c0c0c",
+    "headline_box_text_color": "#bec3c7"
+  },
+
   "space": {
     "enable_body_margin": true,
     "width_body_margin": "35px",
@@ -94,6 +115,7 @@ const presets = {
     "color_background": "#303a52",
     "color_text": "#c3cee6",
     "color_link": "#ffffff",
+    "color_visited": "#6e7c9c",
     "color_thumbnail": "#1d1c33",
     "color_locked": "#f3a683",
     "color_upvote": "#e77e66",
@@ -106,7 +128,7 @@ const presets = {
     "color_stickied": "#3ec1d4",
     "color_red_flair": "#e66767",
     "color_green_flair": "#3ec1d4",
-    "headline_box_bg_color": "#778aeb"
+    "headline_box_bg_color": "#786ea6"
   }
 
 };
@@ -125,13 +147,13 @@ Vue.component('preset-loader', {
   methods: { updateConfig },
   template: `<span class="input-group" id="loadPreset">
     <select class="custom-select input-sm">
-      <option selected>Load Preset</option>
-      <option value="default">Reset to default</option>
+      <option value="default" selected>Reset to default</option>
       <option value="noplugins">Disable All Plugins</option>
       <option value="red">Red Accent</option>
       <option value="green">Green Accent</option>
       <option value="blue">Blue Accent</option>
-      <option value="space">In Space</option>
+      <option value="dark">Eddited Dark</option>
+      <option value="space">Spacefaring (Dark Purple)</option>
     </select>
     <span class="input-group-append">
       <button class="btn btn-info btn-sm" type="button" @click="updateConfig()">Load</button>

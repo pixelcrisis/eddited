@@ -16,6 +16,14 @@ body > .content {
   width: 100%;
 }
 
+.gray, h2 {
+  color: @color-text-subtle;
+}
+
+.error {
+  color: @color-nsfw;
+}
+
 .md a {
   color: @color-link;
 }
@@ -63,6 +71,10 @@ ul.tabmenu.formtab,
   }
 }
 
+.submit_text.roundfield.enabled {
+  display: none;
+}
+
 ul.formtab li a:hover,
 .tabmenu.formtab .selected a,
 .content > .tabmenu li a:hover
@@ -80,6 +92,14 @@ ul.formtab li a:hover,
 }
 
 // misc pages
+
+pre {
+  padding: 3px 6px !important;
+  color: @color-text !important;
+  border: 1px solid @color-border;
+  display: inline-block !important;
+  background-color: @color-shadow !important;
+}
 
 .submit-page {
 
@@ -128,6 +148,12 @@ ul.formtab li a:hover,
   margin-top: 4px;
   padding: 4px 8px;
   font-size: @font-smaller;
+}
+
+.sheets textarea {
+  color: #ccc !important;
+  padding: 20px !important;
+  background: #000 !important;
 }
 
 #image-upload #file,
