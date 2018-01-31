@@ -85,6 +85,28 @@ const presets = {
     "color_link": "#0071c5",
     "color_button": "#0071c5",
     "headline_box_bg_color": "#0071c5",
+  },
+
+  "space": {
+    "enable_body_margin": true,
+    "width_body_margin": "35px",
+    "color_body_margin": "#1d1c33",
+    "color_background": "#303a52",
+    "color_text": "#c3cee6",
+    "color_link": "#ffffff",
+    "color_thumbnail": "#1d1c33",
+    "color_locked": "#f3a683",
+    "color_upvote": "#e77e66",
+    "color_downvote": "#778aeb",
+    "color_button": "#778aeb",
+    "color_button_text": "#303a52",
+    "color_submenu": "#786ea6",
+    "color_submenu_text": "#ffffff",
+    "color_nsfw": "#e66767",
+    "color_stickied": "#3ec1d4",
+    "color_red_flair": "#e66767",
+    "color_green_flair": "#3ec1d4",
+    "headline_box_bg_color": "#778aeb"
   }
 
 };
@@ -104,10 +126,12 @@ Vue.component('preset-loader', {
   template: `<span class="input-group" id="loadPreset">
     <select class="custom-select input-sm">
       <option selected>Load Preset</option>
-      <option value="default">Default</option>
-      <option value="noplugins">No Plugins</option>
-      <option value="red">Red Demo</option>
-      <option value="green">Green Demo</option>
+      <option value="default">Reset to default</option>
+      <option value="noplugins">Disable All Plugins</option>
+      <option value="red">Red Accent</option>
+      <option value="green">Green Accent</option>
+      <option value="blue">Blue Accent</option>
+      <option value="space">In Space</option>
     </select>
     <span class="input-group-append">
       <button class="btn btn-info btn-sm" type="button" @click="updateConfig()">Load</button>
