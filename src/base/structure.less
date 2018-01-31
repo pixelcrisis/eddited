@@ -16,6 +16,16 @@ body {
   flex-flow: row wrap;
 }
 
+.md {
+  color: @color-text;
+
+  hr {
+    margin: 12px 0;
+    height: 1px;
+    background-color: @color-border;
+  }
+}
+
 .side,
 .content {
   box-sizing: border-box;
@@ -27,12 +37,6 @@ body {
   margin: 0;
   padding: 0;
   border: none;
-}
-
-.md hr {
-  margin: 12px 0;
-  height: 1px;
-  background-color: @color-border;
 }
 
 // fixes for use on r/all
