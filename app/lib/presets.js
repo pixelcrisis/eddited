@@ -38,7 +38,7 @@ const presets = {
     "header_box_bg_image": true,
     "header_box_bg_scroll": false,
     "header_box_bg_scroll_hover": true,
-    "text_header_box": "r/eddited - clean. simple.",
+    "text_header_box": "r/eddited - make it your own",
     "enable_tabmenu_dropdown": false,
     "enable_sidebar_image": true,
     "sidebar_image_height": "206px",
