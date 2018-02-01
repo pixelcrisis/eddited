@@ -68,6 +68,7 @@ const presets = {
     "color_red_flair": "#c63e4e",
     "headline_box_bg_color": "#c63e4e",
     "color_body_margin": "#bfbfbf",
+    "text_header_box": "r/eddited - red"
   },
 
   "green": {
@@ -78,6 +79,7 @@ const presets = {
     "color_green_flair": "#299a29",
     "headline_box_bg_color": "#299a29",
     "color_body_margin": "#bfbfbf",
+    "text_header_box": "r/eddited - green"
   },
 
   "blue": {
@@ -85,6 +87,7 @@ const presets = {
     "color_link": "#0071c5",
     "color_button": "#0071c5",
     "headline_box_bg_color": "#0071c5",
+    "text_header_box": "r/eddited - blue"
   },
 
   "dark": {
@@ -106,6 +109,7 @@ const presets = {
     "color_green_flair": "#29ac60",
     "headline_box_bg_color": "#0c0c0c",
     "headline_box_text_color": "#bec3c7",
+    "text_header_box": "r/eddited - dark"
   },
 
   "space": {
@@ -133,6 +137,7 @@ const presets = {
     "header_box_bg_image": false,
     "header_box_bg_color": "#10101d",
     "enable_sidebar_image": false
+    "text_header_box": "r/eddited - spacefaring"
   }
 
 };
