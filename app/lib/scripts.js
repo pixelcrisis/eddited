@@ -43,6 +43,7 @@ var vm = new Vue({
     text_here_now: "Browsing",
     text_sub_prefix: "r/",
     enable_body_margin: false,
+    enable_submenu_fade: true,
     width_body_margin: "25px",
     color_body_margin: "#bfbfbf",
     enable_header_box: true,

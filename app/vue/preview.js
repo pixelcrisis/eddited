@@ -36,6 +36,9 @@ const previewStyles = function() {
       color: this.color_button,
       border: '1px solid ' + this.color_button
     },
+    header: { 'preview': 1, 'head': 1,
+      'subfade': this.enable_submenu_fade
+    },
     headerBox: {
       height: this.header_box_height,
       lineHeight: this.header_box_height,
@@ -43,7 +46,7 @@ const previewStyles = function() {
       backgroundColor: this.header_box_bg_color,
       backgroundImage: this.header_box_bg_image ? 'url("../dist/header.jpg")' : 'none'
     },
-    headerBoxClass: { 'hbox': 1, 'mb-3': 1,
+    headerBoxClass: { 'hbox': 1,
       'animated': (this.header_box_bg_scroll && !this.header_box_bg_scroll_hover),
       'animated-hover': (this.header_box_bg_scroll && this.header_box_bg_scroll_hover)
     },
@@ -96,7 +99,13 @@ Vue.component('preview-colors', {
 
 Vue.component('preview-header', {
   props: ['css'],
-  template: `<div :style="css.headerBox" :class="css.headerBoxClass"><slot></slot></div>`
+  template: `<div :class="css.header">
+    <div class="sb" :style="css.submenu">
+      MY SUBREDDITS - HOME - ALL - MOD - ETC
+    </div>
+    <div :style="css.headerBox" :class="css.headerBoxClass"><slot></slot></div>
+    <slot name="more"></slot>
+  </div>`
 });
 
 Vue.component('preview-headline', {

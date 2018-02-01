@@ -104,12 +104,16 @@
 
                 <preview-header :css="css" v-if="enable_header_box">
                   {{ text_header_box }}
+                  <preview-headline slot="more" :css="css" v-if="enable_headline_box">
+                    Your Message Here! (From Sidebar)
+                  </preview-headline>
                 </preview-header>
-                <preview-headline :css="css" v-if="enable_headline_box">
-                  Your Message Here! (From Sidebar)
-                </preview-headline>
 
                 <div class="conf row">
+                  <h5 class="col-12 my-3">Submenu Fade</h5>
+                  <toggle label="Fade Out Top Bar" v-model="enable_submenu_fade">
+                    Only shows the "All / Front / Subreddits" bar on hover
+                  </toggle>
                   <h5 class="col-12 my-3">Expanded Header</h5>
                   <toggle label="Big Header" v-model="enable_header_box">
                     Enables an expanded header area above the content.
