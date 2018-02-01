@@ -1,10 +1,10 @@
 # r/eddited
 A back-to-basics subreddit theme. Flat, minimal, with a focus on content, eddited is arguably reddit's cleanest and most customizable subreddit theme.  
 
-[![MIT Licence](https://badges.frapsoft.com/os/mit/mit.svg?v=103)](https://opensource.org/licenses/mit-license.php)
-[![GitHub version](https://badge.fury.io/gh/12px%2Feddited.svg)](https://badge.fury.io/gh/12px%2Feddited)
-[![Dependency Status](https://david-dm.org/12px/eddited.svg)](https://david-dm.org/12px/eddited)
-[![devDependency Status](https://david-dm.org/12px/badges/eddited.svg)](https://david-dm.org/12px/eddited#info=devDependencies)
+[![GitHub release](https://img.shields.io/github/release/12px/eddited.svg)]()
+[![David](https://img.shields.io/david/12px/eddited.svg)]()
+[![David](https://img.shields.io/david/dev/12px/eddited.svg)]()
+[![Github All Releases](https://img.shields.io/github/downloads/12px/eddited/total.svg)]()
 
 #### Contents
 - [Quick Install](#quick-install)
