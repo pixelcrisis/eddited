@@ -136,7 +136,7 @@ const presets = {
     "headline_box_text_color": "#ffffff",
     "header_box_bg_image": false,
     "header_box_bg_color": "#10101d",
-    "enable_sidebar_image": false
+    "enable_sidebar_image": false,
     "text_header_box": "r/eddited - spacefaring"
   }
 
