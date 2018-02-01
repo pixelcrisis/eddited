@@ -31,6 +31,14 @@
   text-transform: uppercase;
 }
 
+.full-preview { margin-top: 25px; }
+.full-preview .header { margin-bottom: -1rem; }
+.full-preview .content,
+.full-preview .sidebar {
+  display: inline-block;
+  vertical-align: top;
+}
+
 
 .hbox {
   font-size: 25px;

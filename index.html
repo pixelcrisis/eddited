@@ -234,6 +234,37 @@
 
                 <compile-theme @input="compiled"></compile-theme>
 
+                <h1 class="mt-5">Rough Sketch</h1>
+                <div class="full-preview" :style="css.bodyMargin">
+                  <div class="header">
+                    <preview-header :css="css" v-if="enable_header_box">
+                      {{ text_header_box }}
+                    </preview-header>
+                    <preview-headline :css="css" v-if="enable_headline_box">
+                      Your Message Here! (From Sidebar)
+                    </preview-headline>
+                  </div>
+                  <div class="content" :style="css.content">
+                    <preview-colors :css="css"></preview-colors>
+                  </div>
+                  <preview-sidebar :css="css">
+                    <div class="row">
+                      <div class="col-6">
+                        <strong>4 {{ text_here_now }}</strong>
+                      </div>
+                      <div class="col-6 text-right">
+                        <strong>100 {{ text_subscribers }}</strong>
+                      </div>
+                      <div :class="css.submitBtn">
+                        <div class="box" :style="css.button">{{ text_submit_link }}</div>
+                      </div>
+                      <div :class="css.submitBtn">
+                        <div class="box" :style="css.button">{{ text_submit_text }}</div>
+                      </div>
+                    </div>
+                  </preview-sidebar>
+                </div>
+
                 <page-back to="sidebar"></page-back>
                 <page-next to="export"></page-next>
               </page>

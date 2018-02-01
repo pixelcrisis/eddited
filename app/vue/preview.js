@@ -51,9 +51,10 @@ const previewStyles = function() {
       backgroundColor: this.headline_box_bg_color
     },
     bodyMargin: {
-      padding: this.width_body_margin,
+      padding: this.enable_body_margin ? this.width_body_margin : '0px',
       backgroundColor: this.color_body_margin
     },
+    content: { width: "calc(100% - " + this.width_sidebar + " - 5px) !important" },
     sidebar: { width: this.width_sidebar },
     sidebarImage: { height: this.sidebar_image_height },
     submitBtn: { 'text-center': 1, 'mt-1': 1,
