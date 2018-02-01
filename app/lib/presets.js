@@ -105,7 +105,7 @@ const presets = {
     "color_red_flair": "#f15355",
     "color_green_flair": "#29ac60",
     "headline_box_bg_color": "#0c0c0c",
-    "headline_box_text_color": "#bec3c7"
+    "headline_box_text_color": "#bec3c7",
   },
 
   "space": {
@@ -114,13 +114,13 @@ const presets = {
     "color_body_margin": "#1d1c33",
     "color_background": "#303a52",
     "color_text": "#c3cee6",
-    "color_link": "#ffffff",
+    "color_link": "#bddee2",
     "color_visited": "#6e7c9c",
-    "color_thumbnail": "#1d1c33",
+    "color_thumbnail": "#10101d",
     "color_locked": "#f3a683",
     "color_upvote": "#e77e66",
     "color_downvote": "#778aeb",
-    "color_button": "#778aeb",
+    "color_button": "#64cddb",
     "color_button_text": "#303a52",
     "color_submenu": "#786ea6",
     "color_submenu_text": "#ffffff",
@@ -128,7 +128,11 @@ const presets = {
     "color_stickied": "#3ec1d4",
     "color_red_flair": "#e66767",
     "color_green_flair": "#3ec1d4",
-    "headline_box_bg_color": "#786ea6"
+    "headline_box_bg_color": "#786ea6",
+    "headline_box_text_color": "#ffffff",
+    "header_box_bg_image": false,
+    "header_box_bg_color": "#10101d",
+    "enable_sidebar_image": false
   }
 
 };
