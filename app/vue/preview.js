@@ -2,6 +2,7 @@
 
 // Define CSS
 const previewStyles = function() {
+  var marginWidth = this.enable_body_margin ? this.width_body_margin : '0px';
   return {
     base: {
       color: this.color_text,
@@ -51,8 +52,8 @@ const previewStyles = function() {
       backgroundColor: this.headline_box_bg_color
     },
     bodyMargin: {
-      padding: this.enable_body_margin ? this.width_body_margin : '0px',
-      backgroundColor: this.color_body_margin
+      backgroundColor: this.color_background,
+      border: marginWidth + ' solid ' + this.color_body_margin
     },
     content: { width: "calc(100% - " + this.width_sidebar + " - 5px) !important" },
     sidebar: { width: this.width_sidebar },

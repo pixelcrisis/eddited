@@ -33,6 +33,7 @@
 
 .full-preview { margin-top: 25px; }
 .full-preview .header { margin-bottom: -1rem; }
+.full-preview .sb { display: none; }
 .full-preview .content,
 .full-preview .sidebar {
   display: inline-block;
