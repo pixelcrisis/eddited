@@ -13,9 +13,16 @@
   margin-top: 12px;
 }
 
-.comment .md {
-  color: @color-text;
+.comment {
+  padding: 12px;
+   .md {
+    color: @color-text;
+  }
+  .child {
+    border-left-color: @color-border;
+  }
 }
+
 
 .commentarea .menuarea {
   color: @color-text-subtle;
@@ -25,15 +32,23 @@
   }
 }
 
-.dropdown.lightdrop .selected {
+.morecomments a,
+.tagline .submitter,
+.dropdown.lightdrop .selected,
+.search-result-meta .submitter {
   color: @color-link;
+}
+
+.morecomments .gray {
+  color: @color-text-subtle;
 }
 
 .gold-accent.comment-visits-box {
   border-width: 0;
   margin: 12px 10px 24px;
   border-bottom-width: 3px;
-  color: darken(@color-locked, 60%);
+  background: @color-background;
+  color: @color-locked-text;
 }
 
 .new-comment {
