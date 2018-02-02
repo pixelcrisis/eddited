@@ -62,7 +62,7 @@ var vm = new Vue({
     headline_box_text_color: "#ffffff",
     enable_split_submit_buttons: true,
     enable_nsfw_thumbnails: false,
-    version: "1.0.0"
+    version: "1.0.1"
   },
   computed: {
     css: previewStyles,
