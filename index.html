@@ -205,10 +205,10 @@
                       <strong>100 {{ text_subscribers }}</strong>
                     </div>
                     <div :class="css.submitBtn">
-                      <div class="box" :style="css.button">{{ text_submit_link }}</div>
+                      <div class="box" :style="css.obutton">Show</div>
                     </div>
                     <div :class="css.submitBtn">
-                      <div class="box" :style="css.button">{{ text_submit_text }}</div>
+                      <div class="box" :style="css.obutton">Tell</div>
                     </div>
                   </div>
                 </preview-sidebar>
@@ -223,8 +223,6 @@
                   <toggle label="Split Submit Buttons" v-model="enable_split_submit_buttons">
                     Put the Submit Text/Link buttons on one line.
                   </toggle>
-                  <string label="Submit Link Label" v-model="text_submit_link"></string>
-                  <string label="Submit Text Label" v-model="text_submit_text"></string>
                   <string label="'Users Here Now' Label" v-model="text_here_now"></string>
                   <string label="'Readers' Label" v-model="text_subscribers"></string>
                 </div>
@@ -260,10 +258,10 @@
                         <strong>100 {{ text_subscribers }}</strong>
                       </div>
                       <div :class="css.submitBtn">
-                        <div class="box" :style="css.button">{{ text_submit_link }}</div>
+                        <div class="box" :style="css.obutton">Show</div>
                       </div>
                       <div :class="css.submitBtn">
-                        <div class="box" :style="css.button">{{ text_submit_text }}</div>
+                        <div class="box" :style="css.obutton">Tell</div>
                       </div>
                     </div>
                   </preview-sidebar>

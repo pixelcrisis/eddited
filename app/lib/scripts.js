@@ -37,8 +37,6 @@ var vm = new Vue({
     width_sidebar: "300px",
     width_thumbnail: "80px",
     height_thumbnail: "60px",
-    text_submit_link: "Show",
-    text_submit_text: "Tell",
     text_subscribers: "Users",
     text_here_now: "Browsing",
     text_sub_prefix: "r/",

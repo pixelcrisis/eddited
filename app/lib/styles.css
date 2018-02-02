@@ -42,10 +42,14 @@
 }
 
 .full-preview { margin-top: 25px; }
+.full-preview .preview { padding: 0; }
+.full-preview .hbox,
+.full-preview .preview { border-radius: 0; }
 .full-preview .header { margin-bottom: -1rem; }
 .full-preview .sb { display: none; }
 .full-preview .content,
 .full-preview .sidebar {
+  padding: 12px;
   display: inline-block;
   vertical-align: top;
 }
