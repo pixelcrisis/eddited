@@ -5,7 +5,9 @@ const lessVars = function() {
   let lvars = {};
   for (var v in this._data) {
     let vName = "@" + v.replace(/_/g, "-"), vData = "" + this._data[v];
-    if (vName.indexOf('@text') > -1) vData = `'${vData}'`;
+    vData = vData.split('"').join();
+    if (vName.indexOf('@text') > -1) vData = `"${vData}"`;
+    if (vData.indexOf("'") > -1) console.log(vData);
     lvars[vName] = vData;
   }
   return lvars;
