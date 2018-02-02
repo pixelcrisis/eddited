@@ -113,11 +113,6 @@
 
 
 // post types
-.thing.over18 .thumbnail {
-  color: @color-background;
-  background: @color-nsfw;
-}
-
 .thing.self .thumbnail:after {
   content: "self";
 }
@@ -128,6 +123,9 @@
 
 .thing.over18 .thumbnail:after {
   content: "nsfw";
+  font-weight: bold;
+  color: mix(@color-nsfw, @color-thumbnail, 80%);
+  text-transform: uppercase;
 }
 
 .thing.locked .thumbnail img {
