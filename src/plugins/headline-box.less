@@ -20,11 +20,21 @@
     border-bottom-right-radius: 3px;
 
     & when (@enable-header-box) {
-      top: @header-box-height + 31px;
+      & when (@enable-submenu-fade) {
+        top: @header-box-height + 31px;
+      }
+      & when not (@enable-submenu-fade) {
+        top: @header-box-height + 51px;
+      }
     }
 
     & when not (@enable-header-box) {
-      top: 34px;
+      & when (@enable-submenu-fade) {
+        top: 34px;
+      }
+      & when not (@enable-submenu-fade) {
+        top: 54px;
+      }
     }
 
     a {
