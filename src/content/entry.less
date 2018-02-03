@@ -88,6 +88,7 @@
   height: @height-thumbnail !important;
   border-radius: 3px;
   text-align: center;
+  background-image: none;
   background: @color-thumbnail;
 
   &:after {
@@ -95,9 +96,10 @@
     display: block;
     width: @width-thumbnail - 1;
     height: @height-thumbnail;
-    color: @color-text;
     text-align: center;
+    font-weight: bold;
     font-size: @font-small;
+    text-transform: uppercase;
     line-height: @height-thumbnail;
   }
 }
@@ -106,17 +108,19 @@
 // post types
 .thing.self .thumbnail:after {
   content: "self";
+  color: @color-text-subtle;
 }
 
 .thing.locked .thumbnail:after {
   content: "locked";
+  color: mix(@color-locked, @color-text, 50%);
+  background-color: mix(@color-locked, @color-thumbnail, 50%);
 }
 
 .thing.over18 .thumbnail:after {
   content: "nsfw";
-  font-weight: bold;
-  color: mix(@color-nsfw, @color-thumbnail, 80%);
-  text-transform: uppercase;
+  color: mix(@color-nsfw, @color-text, 50%);
+  background-color: mix(@color-nsfw, @color-thumbnail, 50%);
 }
 
 .thing.locked .thumbnail img {
