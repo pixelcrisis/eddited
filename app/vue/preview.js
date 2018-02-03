@@ -60,7 +60,10 @@ const previewStyles = function() {
     },
     content: { width: "calc(100% - " + this.width_sidebar + " - 5px) !important" },
     sidebar: { width: this.width_sidebar },
-    sidebarImage: { height: this.sidebar_image_height },
+    sidebarImage: {
+      height: this.sidebar_image_height,
+      display: this.enable_sidebar_image ? 'block' : 'none'
+    },
     submitBtn: { 'text-center': 1, 'mt-1': 1,
       'col-6': this.enable_split_submit_buttons,
       'col-12': !this.enable_split_submit_buttons
