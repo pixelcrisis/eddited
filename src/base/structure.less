@@ -12,6 +12,11 @@ body {
   background: @color-shadow;
   color: @color-text;
   font: 400 @font-base @font-family;
+  & when not (@enable-header-box) {
+    & when not (@enable-submenu-fade) {
+      padding-top: 12px;
+    }
+  }
 
   flex-flow: row wrap;
 }
