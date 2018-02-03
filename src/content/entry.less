@@ -76,19 +76,9 @@
 }
 
 // thumbnail
-
-// determine how we size the thumbnail by
-// the thumbnail dimensions we have set
-.thumb-size(@h, @w) when (@w >= @h) {
-  height: auto !important;
-  width: @w !important;
-}
-.thumb-size(@h, @w) when (@h > @w) {
-  height: @h !important;
-  width: auto !important;
-}
 .thing .thumbnail img {
-  .thumb-size(@height-thumbnail, @width-thumbnail);
+  min-height: @height-thumbnail;
+  width: auto !important;
 }
 
 // general thumbnail styles
@@ -97,6 +87,7 @@
   width: @width-thumbnail;
   height: @height-thumbnail !important;
   border-radius: 3px;
+  text-align: center;
   background: @color-thumbnail;
 
   &:after {
