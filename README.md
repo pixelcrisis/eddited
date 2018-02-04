@@ -16,7 +16,7 @@ A back-to-basics subreddit theme. Flat, minimal, with a focus on content, eddite
 
 
 ## Quick Install
-- Download the [**latest release zip**](https://github.com/12px/eddited/releases) and extract.
+- Download the [**latest release zip**](https://github.com/12px/eddited/releases/latest) and extract.
 - Upload **header.jpg** and **sidebar.jpg** to your subreddit.
 - Paste the contents of **theme.css** into your stylesheet settings.
 
