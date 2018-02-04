@@ -137,7 +137,6 @@
 }
 
 // expand buttons
-
 .thing .expando-button {
   width: 20px;
   height: 20px;
@@ -153,9 +152,7 @@
 
   &:hover,
   &.expanded {
-    color: @color-link;
-    background: @color-background;
-    border-color: @color-link;
+    border-color: mix(@color-link, @color-thumbnail, 80%);
   }
 
   &:before {
@@ -171,10 +168,23 @@
   }
 }
 
+// Position for top-level expands
 .thing .thumbnail + .entry .top-matter .expando-button {
   position: absolute;
   top: @height-thumbnail - 10px;
   margin-left: -28px;
+}
+
+// Styles for top-level expands
+.thing.over18 .thumbnail + .entry .top-matter .expando-button {
+  color: mix(@color-nsfw, @color-text, 50%);
+  background-color: mix(@color-nsfw, @color-thumbnail, 50%);
+  &:hover,&.expanded { border-color: mix(@color-nsfw, @color-text, 50%); }
+}
+.thing.locked .thumbnail + .entry .top-matter .expando-button {
+  color: mix(@color-locked, @color-text, 50%);
+  background-color: mix(@color-locked, @color-thumbnail, 50%);
+  &:hover,&.expanded { border-color: mix(@color-locked, @color-text, 50%); }
 }
 
 // voting
