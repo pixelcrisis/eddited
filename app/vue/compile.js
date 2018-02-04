@@ -36,8 +36,7 @@ const bLess = function(file, vars, clean, callback) {
         let styles = o.css.split('.titlebox');
         callback(".titlebox" + styles[1]);
       } else {
-        let styles = o.css.split('.submit-text');
-        callback(".submit-text" + styles[1]);
+        callback("");
       }
     }
   });
