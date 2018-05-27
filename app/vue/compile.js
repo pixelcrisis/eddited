@@ -23,7 +23,8 @@ const loadFiles = function(file, callback) {
 
 // Less Builder
 const bLess = function(file, vars, clean, callback) {
-  less.render(file, { modifyVars: vars, relativeUrls: true }, function(e,o) {
+  file = file.split('../../').join('./eddited/');
+  less.render(file, { modifyVars: vars, relativeUrls: false }, function(e,o) {
     if (e) return console.log(e);
     if (clean) {
       new CleanCSS().minify(o.css, function(err, out) {
@@ -46,11 +47,9 @@ const bLess = function(file, vars, clean, callback) {
 const compileTheme = function() {
   $('#compiled').val('');
   loadFiles('pretty', function(less1) {
-    less1 = less1.split('../../').join('./');
     let stage1 = bLess(less1, vm.opts, false, function(css1) {
       loadFiles('theme', function(less2) {
         let stage2 = bLess(less2, vm.opts, true, function(css2) {
-          console.log('hi');
           loadFiles('plugins', function(less3) {
             let stage3 = bLess(less3, vm.opts, true, function(css3) {
               let template = [
