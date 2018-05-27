@@ -50,7 +50,7 @@ const compileTheme = function() {
     let stage1 = bLess(less1, vm.opts, false, function(css1) {
       loadFiles('theme', function(less2) {
         console.log(less2);
-        less2 = less2.split('../../').join('/');
+        less2 = less2.split('../../').join('./');
         console.log(less2);
         let stage2 = bLess(less2, vm.opts, true, function(css2) {
           loadFiles('plugins', function(less3) {
