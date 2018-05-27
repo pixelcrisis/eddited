@@ -44,7 +44,7 @@ const previewStyles = function() {
       lineHeight: this.header_box_height,
       color: this.header_box_text_color,
       backgroundColor: this.header_box_bg_color,
-      backgroundImage: this.header_box_bg_image ? 'url("../dist/header.jpg")' : 'none'
+      backgroundImage: this.header_box_bg_image ? 'url("./dist/header.jpg")' : 'none'
     },
     headerBoxClass: { 'hbox': 1,
       'animated': (this.header_box_bg_scroll && !this.header_box_bg_scroll_hover),
