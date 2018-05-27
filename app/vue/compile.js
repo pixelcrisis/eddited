@@ -17,7 +17,7 @@ const lessVars = function() {
 const loadFiles = function(file, callback) {
   var loader = new XMLHttpRequest();
   loader.onreadystatechange = function() {if (this.readyState == 4) callback(this.response); };
-  loader.open('GET', '../app/less/' + file + '.less', true);
+  loader.open('GET', './app/less/' + file + '.less', true);
   loader.send();
 };
 
