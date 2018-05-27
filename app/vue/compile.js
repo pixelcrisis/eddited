@@ -23,7 +23,7 @@ const loadFiles = function(file, callback) {
 
 // Less Builder
 const bLess = function(file, vars, clean, callback) {
-  file = file.split('../../').join('./eddited/');
+  file = file.split('../../').join('./');
   less.render(file, { modifyVars: vars, relativeUrls: false }, function(e,o) {
     if (e) return console.log(e);
     if (clean) {
