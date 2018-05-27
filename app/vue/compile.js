@@ -46,7 +46,7 @@ const bLess = function(file, vars, clean, callback) {
 const compileTheme = function() {
   $('#compiled').val('');
   loadFiles('pretty', function(less1) {
-    console.log(less1);
+    less1 = less1.split('../../').join('./')
     let stage1 = bLess(less1, vm.opts, false, function(css1) {
       loadFiles('theme', function(less2) {
         let stage2 = bLess(less2, vm.opts, true, function(css2) {
