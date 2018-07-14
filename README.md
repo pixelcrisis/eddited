@@ -21,7 +21,7 @@ A back-to-basics subreddit theme. Flat, minimal, with a focus on content, eddite
 - Paste the contents of **theme.css** into your stylesheet settings.
 
 ## Customizer
-If you want to build a custom version, but don't want to learn how to compile LESS, there is a handy web compiler located at [eddited.12px.io](http://eddited.12px.io)  
+If you want to build a custom version, but don't want to learn how to compile LESS, there is a handy web compiler located at [12px.io/eddited](http://12px.io/eddited)  
 
 #### Config
 Changing any values here will update the them on compile.
